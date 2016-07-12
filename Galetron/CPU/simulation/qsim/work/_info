@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/simulation/qsim
+vCPU
+Z1 !s110 1466900700
+!i10b 1
+!s100 G3gEHJI@FdW28^QTI=LeG3
+IC`8ofM99IDICTbkj8Y9kd0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1466900698
+8CPU.vo
+FCPU.vo
+L0 32
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1466900699.000000
+!s107 CPU.vo|
+!s90 -work|work|CPU.vo|
+!i113 1
+Z4 o-work work
+n@c@p@u
+vCPU_vlg_vec_tst
+R1
+!i10b 1
+!s100 9=BlKfFejnQ96ef419EBV1
+INXbnO`iQ`hCHQ]=ML41De1
+R2
+R0
+w1466900690
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1466900700.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+n@c@p@u_vlg_vec_tst

@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/morales/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagem 2/dataRAM/simulation/qsim
+vdataRAM
+Z1 !s110 1461341642
+!i10b 1
+!s100 ORQQfQUC=Abm5G;8Ybm[F2
+IoGg_4dTchLGJB^m1_;]`o1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1461341641
+8dataRAM.vo
+FdataRAM.vo
+L0 32
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z4 !s108 1461341642.000000
+!s107 dataRAM.vo|
+!s90 -work|work|dataRAM.vo|
+!i113 1
+Z5 o-work work
+ndata@r@a@m
+vdataRAM_vlg_vec_tst
+R1
+!i10b 1
+!s100 <9HAU@HSzzK3ka5STXQ?_3
+IXnS^he@>1G`XdEnN2Kc_61
+R2
+R0
+w1461341636
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+ndata@r@a@m_vlg_vec_tst

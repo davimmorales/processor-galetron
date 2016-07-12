@@ -1,0 +1,15 @@
+module outputController (operation, switches, IO_RAMOutput, binary);
+  input [5:0] operation;
+  input [17:0] switches;
+  input [31:0] IO_RAMOutput;
+  output reg [31:0] binary;
+
+  always @ ( * ) begin
+    case (operation)
+      6'b011101: binary = {14'h0000, switches};;//in
+      6'b011110: binary = IO_RAMOutput;//out
+      default: binary = 32'b0;
+    endcase
+  end
+
+endmodule // outputController

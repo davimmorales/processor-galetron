@@ -1,0 +1,27 @@
+module Galetron(writeAddress, readAddress1, readAddress2, clock, writeRegister, writeData, dataA, dataB);
+	input [4:0] readAddress1, readAddress2, writeAddress;
+  input clock, writeRegister;
+  input  [31:0] writeData;
+  output [31:0] dataA, dataB;
+	// integer  firstClock = 1;
+
+	reg[31:0] RF [31:0];
+
+	assign dataA = RF[readAddress1];
+	assign dataB = RF[readAddress2];
+
+	always @ (posedge clock) begin
+		if(writeRegister == 1) RF[writeAddress] <= writeData;
+	end
+
+	// always@(readAddress1 or RegCell[readAddress1]) begin// para casos onde $0=0
+	// 	if(readAddress1 == 0) readSA = 0;
+	// 	else readSA = RegCell[readAddress1];
+	// end
+	// always@(readAddress2 or RegCell[readAddress2]) begin
+	// 	if(readAddress1 == 0) readSB = 0;
+	// 	else readSB = RegCell[readAddress2];
+	// end
+	// assign readDR = RegCell[writeAddress];
+
+endmodule

@@ -1,0 +1,100 @@
+# do CPU_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying /home/davi/Programas/Quartus/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/davi/Programas/Quartus/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/CPU {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:35 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v 
+# -- Compiling module clockMultiplexer
+# 
+# Top level modules:
+# 	clockMultiplexer
+# End time: 18:08:35 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/controlUnit {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:35 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v 
+# -- Compiling module controlUnit
+# 
+# Top level modules:
+# 	controlUnit
+# End time: 18:08:35 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/galetronCPU {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:35 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v 
+# -- Compiling module tripleMux
+# 
+# Top level modules:
+# 	tripleMux
+# End time: 18:08:35 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/galetronCPU {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:35 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v 
+# -- Compiling module qFlipflop
+# 
+# Top level modules:
+# 	qFlipflop
+# End time: 18:08:35 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/galetronCPU {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:35 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v 
+# -- Compiling module multiplexer
+# 
+# Top level modules:
+# 	multiplexer
+# End time: 18:08:36 on Jun 25,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/simpleInstructionsRAM {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:36 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v 
+# -- Compiling module simpleInstructionsRam
+# 
+# Top level modules:
+# 	simpleInstructionsRam
+# End time: 18:08:36 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/registerFile {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:36 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v 
+# -- Compiling module registerFile
+# 
+# Top level modules:
+# 	registerFile
+# End time: 18:08:36 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/PC {/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 18:08:36 on Jun 25,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC" /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v 
+# -- Compiling module PC
+# ** Error: /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v(8): 'programCounter' already declared in this scope (PC) with a conflicting net type.
+# ** Error: /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v(8): 'programCounter' already declared in this scope (PC) with a type.
+# ** Error: /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v(1): Identifier must be declared with a port mode: programCounter.
+# End time: 18:08:36 on Jun 25,2016, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /home/davi/Programas/Quartus/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./CPU_run_msim_rtl_verilog.do line 15
+# /home/davi/Programas/Quartus/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab\ AOC/Atividades/Checagens\ 2\ e\ 3/PC {/home/davi/Dropbox/UNIFESP/Unifesp..."
+# 
+# stdin: <EOF>

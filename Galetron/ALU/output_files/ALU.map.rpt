@@ -1,0 +1,1451 @@
+Analysis & Synthesis report for ALU
+Wed Apr 13 14:11:38 2016
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 16. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3
+ 17. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out4
+ 18. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5
+ 19. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out6
+ 20. lpm_mult Parameter Settings by Entity Instance
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 13 14:11:38 2016       ;
+; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                      ; ALU                                         ;
+; Top-level Entity Name              ; ALU                                         ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 3,528                                       ;
+;     Total combinational functions  ; 3,528                                       ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 107                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; ALU                ; ALU                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+; ALU.v                            ; yes             ; User Verilog HDL File        ; /home-local/aluno/Downloads/Galetron/ALU.v                           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc      ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mult_1ht.tdf                 ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; db/lpm_divide_bom.tdf            ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/lpm_divide_bom.tdf           ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/sign_div_unsign_9nh.tdf      ;         ;
+; db/alt_u_div_0ef.tdf             ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/alt_u_div_0ef.tdf            ;         ;
+; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/add_sub_1tc.tdf              ;         ;
+; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/add_sub_2tc.tdf              ;         ;
+; db/lpm_divide_egm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/lpm_divide_egm.tdf           ;         ;
+; alt_mac_mult.tdf                 ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/alt_mac_mult.tdf    ;         ;
+; lpm_mult.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/lpm_mult.inc        ;         ;
+; db/mac_mult_33h1.tdf             ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mac_mult_33h1.tdf            ;         ;
+; db/mult_rul.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mult_rul.tdf                 ;         ;
+; alt_mac_out.tdf                  ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/alt_mac_out.tdf     ;         ;
+; alt_zaccum.inc                   ; yes             ; Megafunction                 ; /opt/altera/13.1/quartus/libraries/megafunctions/alt_zaccum.inc      ;         ;
+; db/mac_out_sv82.tdf              ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mac_out_sv82.tdf             ;         ;
+; db/mac_mult_r2h1.tdf             ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mac_mult_r2h1.tdf            ;         ;
+; db/mult_jul.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mult_jul.tdf                 ;         ;
+; db/mac_out_kv82.tdf              ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mac_out_kv82.tdf             ;         ;
+; db/mac_mult_s2h1.tdf             ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mac_mult_s2h1.tdf            ;         ;
+; db/mult_kul.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home-local/aluno/Downloads/Galetron/db/mult_kul.tdf                 ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+---------+
+
+
++------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary    ;
++--------------------------+---------------------+
+; Resource                 ; Usage               ;
++--------------------------+---------------------+
+; I/O pins                 ; 107                 ;
+; DSP block 9-bit elements ; 0                   ;
+; Maximum fan-out node     ; aluControl[1]~input ;
+; Maximum fan-out          ; 117                 ;
+; Total fan-out            ; 12071               ;
+; Average fan-out          ; 3.23                ;
++--------------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Library Name ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |ALU                                       ; 3528 (658)        ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 107  ; 0            ; |ALU                                                                                                                       ; work         ;
+;    |lpm_divide:Div0|                       ; 1107 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Div0                                                                                                       ; work         ;
+;       |lpm_divide_bom:auto_generated|      ; 1107 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Div0|lpm_divide_bom:auto_generated                                                                         ; work         ;
+;          |sign_div_unsign_9nh:divider|     ; 1107 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Div0|lpm_divide_bom:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;             |alt_u_div_0ef:divider|        ; 1107 (1106)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Div0|lpm_divide_bom:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider                       ; work         ;
+;                |add_sub_2tc:add_sub_1|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Div0|lpm_divide_bom:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider|add_sub_2tc:add_sub_1 ; work         ;
+;    |lpm_divide:Mod0|                       ; 1080 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Mod0                                                                                                       ; work         ;
+;       |lpm_divide_egm:auto_generated|      ; 1080 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Mod0|lpm_divide_egm:auto_generated                                                                         ; work         ;
+;          |sign_div_unsign_9nh:divider|     ; 1080 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Mod0|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;             |alt_u_div_0ef:divider|        ; 1080 (1080)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_divide:Mod0|lpm_divide_egm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider                       ; work         ;
+;    |lpm_mult:Mult0|                        ; 683 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0                                                                                                        ; work         ;
+;       |mult_1ht:auto_generated|            ; 683 (28)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                                ; work         ;
+;          |alt_mac_mult:mac_mult1|          ; 401 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                                         ; work         ;
+;             |mac_mult_33h1:auto_generated| ; 401 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated                            ; work         ;
+;                |mult_rul:mult1|            ; 401 (401)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1             ; work         ;
+;          |alt_mac_mult:mac_mult3|          ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3                                                         ; work         ;
+;             |mac_mult_r2h1:auto_generated| ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated                            ; work         ;
+;                |mult_jul:mult1|            ; 127 (127)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1             ; work         ;
+;          |alt_mac_mult:mac_mult5|          ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5                                                         ; work         ;
+;             |mac_mult_s2h1:auto_generated| ; 127 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated                            ; work         ;
+;                |mult_kul:mult1|            ; 127 (127)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1             ; work         ;
++--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; aluOut[0]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[1]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[2]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[3]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[4]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[5]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[6]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[7]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[8]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[9]$latch                                     ; Mux32               ; yes                    ;
+; aluOut[10]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[11]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[12]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[13]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[14]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[15]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[16]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[17]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[18]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[19]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[20]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[21]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[22]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[23]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[24]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[25]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[26]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[27]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[28]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[29]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[30]$latch                                    ; Mux32               ; yes                    ;
+; aluOut[31]$latch                                    ; Mux32               ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |ALU|Add0                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |ALU|Add0                  ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |ALU|Mux15                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |ALU|Mux23                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |ALU|Mux5                  ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |ALU|Mux27                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 20 LEs               ; 6 LEs                  ; No         ; |ALU|Mux2                  ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 20 LEs               ; 6 LEs                  ; No         ; |ALU|Mux29                 ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |ALU|Mux31                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                      ;
++------------------------------------------------+---------------+---------------------+
+; Parameter Name                                 ; Value         ; Type                ;
++------------------------------------------------+---------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32            ; Untyped             ;
+; LPM_WIDTHB                                     ; 32            ; Untyped             ;
+; LPM_WIDTHP                                     ; 64            ; Untyped             ;
+; LPM_WIDTHR                                     ; 64            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1             ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
+; LPM_PIPELINE                                   ; 0             ; Untyped             ;
+; LATENCY                                        ; 0             ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
+; USE_EAB                                        ; OFF           ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5             ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
++------------------------------------------------+---------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_bom ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_egm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                            ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                         ;
+; DATAA_WIDTH                  ; 18            ; Untyped                                                         ;
+; DATAB_WIDTH                  ; 18            ; Untyped                                                         ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                         ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                         ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                         ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                         ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                         ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                         ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                         ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                         ;
+; USING_ROUNDING               ; NO            ; Untyped                                                         ;
+; USING_SATURATION             ; NO            ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                         ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                         ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                         ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                         ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                         ;
+; CBXI_PARAMETER               ; mac_mult_33h1 ; Untyped                                                         ;
++------------------------------+---------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                          ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                       ;
+; DATAA_WIDTH                   ; 36           ; Untyped                                                       ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                       ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                       ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                       ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                       ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                       ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                       ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                       ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                       ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                       ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                       ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                       ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                       ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; USING_ROUNDING                ; NO           ; Untyped                                                       ;
+; USING_SATURATION              ; NO           ; Untyped                                                       ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                       ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                       ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                       ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                       ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; CBXI_PARAMETER                ; mac_out_sv82 ; Untyped                                                       ;
++-------------------------------+--------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3 ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                            ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                         ;
+; DATAA_WIDTH                  ; 18            ; Untyped                                                         ;
+; DATAB_WIDTH                  ; 14            ; Untyped                                                         ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                         ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                         ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                         ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                         ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                         ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                         ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                         ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                         ;
+; USING_ROUNDING               ; NO            ; Untyped                                                         ;
+; USING_SATURATION             ; NO            ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                         ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                         ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                         ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                         ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                         ;
+; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                         ;
++------------------------------+---------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out4 ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                          ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                       ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                       ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                       ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                       ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                       ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                       ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                       ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                       ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                       ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                       ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                       ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                       ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                       ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                       ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; USING_ROUNDING                ; NO           ; Untyped                                                       ;
+; USING_SATURATION              ; NO           ; Untyped                                                       ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                       ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                       ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                       ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                       ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                       ;
++-------------------------------+--------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5 ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                            ;
++------------------------------+---------------+-----------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                         ;
+; DATAA_WIDTH                  ; 14            ; Untyped                                                         ;
+; DATAB_WIDTH                  ; 18            ; Untyped                                                         ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                         ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                         ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                         ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                         ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                         ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                         ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                         ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                         ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                         ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                         ;
+; USING_ROUNDING               ; NO            ; Untyped                                                         ;
+; USING_SATURATION             ; NO            ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                         ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                         ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                         ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                         ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                         ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                         ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                         ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                         ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                         ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                         ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                         ;
+; CBXI_PARAMETER               ; mac_mult_s2h1 ; Untyped                                                         ;
++------------------------------+---------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out6 ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                          ;
++-------------------------------+--------------+---------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                       ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                       ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                       ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                       ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                       ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                       ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                       ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                       ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                       ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                       ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                       ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                       ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                       ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                       ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                       ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                       ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                       ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                       ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                       ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                       ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                       ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                       ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                       ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                       ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                       ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                       ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                       ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                       ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                       ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                       ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                       ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                       ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                       ;
+; USING_ROUNDING                ; NO           ; Untyped                                                       ;
+; USING_SATURATION              ; NO           ; Untyped                                                       ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                       ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                       ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                       ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                       ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                       ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                       ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                       ;
++-------------------------------+--------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:16     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Wed Apr 13 14:11:20 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ALU.v
+    Info (12023): Found entity 1: ALU
+Info (12127): Elaborating entity "ALU" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(20): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(21): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at ALU.v(10): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(9): inferring latch(es) for variable "aluOut", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "aluOut[0]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[1]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[2]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[3]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[4]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[5]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[6]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[7]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[8]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[9]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[10]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[11]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[12]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[13]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[14]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[15]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[16]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[17]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[18]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[19]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[20]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[21]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[22]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[23]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[24]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[25]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[26]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[27]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[28]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[29]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[30]" at ALU.v(9)
+Info (10041): Inferred latch for "aluOut[31]" at ALU.v(9)
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_1ht.tdf
+    Info (12023): Found entity 1: mult_1ht
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0"
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_bom.tdf
+    Info (12023): Found entity 1: lpm_divide_bom
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0ef.tdf
+    Info (12023): Found entity 1: alt_u_div_0ef
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_1tc.tdf
+    Info (12023): Found entity 1: add_sub_1tc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
+    Info (12023): Found entity 1: add_sub_2tc
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_egm.tdf
+    Info (12023): Found entity 1: lpm_divide_egm
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult7"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out8"
+Info (270001): Converted 3 DSP block slices
+    Info (270002): Used 3 DSP blocks before DSP block balancing
+        Info (270003): Used 3 DSP block slices in "Simple Multiplier (18-bit)" mode implemented in approximately 3 DSP blocks
+    Info (270013): Converted the following 3 DSP block slices to logic elements
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
+            Info (270004): DSP block output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2"
+            Info (270005): DSP block multiplier node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1"
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out4"
+            Info (270004): DSP block output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out4"
+            Info (270005): DSP block multiplier node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult3"
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out6"
+            Info (270004): DSP block output node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_out6"
+            Info (270005): DSP block multiplier node "lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult5"
+    Info (270002): Used 0 DSP blocks after DSP block balancing
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" with the following parameter:
+    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
+    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
+    Info (12134): Parameter "MULT_PIPELINE" = "0"
+    Info (12134): Parameter "MULT_CLOCK" = "NONE"
+    Info (12134): Parameter "MULT_CLEAR" = "NONE"
+    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "dataa_width" = "18"
+    Info (12134): Parameter "datab_width" = "18"
+    Info (12134): Parameter "output_width" = "36"
+    Info (12134): Parameter "dataa_clock" = "NONE"
+    Info (12134): Parameter "datab_clock" = "NONE"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "dataa_clear" = "NONE"
+    Info (12134): Parameter "datab_clear" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_33h1.tdf
+    Info (12023): Found entity 1: mac_mult_33h1
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_rul.tdf
+    Info (12023): Found entity 1: mult_rul
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
+    Info (12134): Parameter "dataa_width" = "36"
+    Info (12134): Parameter "datab_width" = "0"
+    Info (12134): Parameter "datac_width" = "0"
+    Info (12134): Parameter "datad_width" = "0"
+    Info (12134): Parameter "output_width" = "36"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_clock" = "NONE"
+    Info (12134): Parameter "first_adder0_clock" = "NONE"
+    Info (12134): Parameter "first_adder1_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_clear" = "NONE"
+    Info (12134): Parameter "first_adder0_clear" = "NONE"
+    Info (12134): Parameter "first_adder1_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_sv82.tdf
+    Info (12023): Found entity 1: mac_out_sv82
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3" with the following parameter:
+    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
+    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
+    Info (12134): Parameter "MULT_PIPELINE" = "0"
+    Info (12134): Parameter "MULT_CLOCK" = "NONE"
+    Info (12134): Parameter "MULT_CLEAR" = "NONE"
+    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "dataa_width" = "18"
+    Info (12134): Parameter "datab_width" = "14"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "dataa_clock" = "NONE"
+    Info (12134): Parameter "datab_clock" = "NONE"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "dataa_clear" = "NONE"
+    Info (12134): Parameter "datab_clear" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_r2h1.tdf
+    Info (12023): Found entity 1: mac_mult_r2h1
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jul.tdf
+    Info (12023): Found entity 1: mult_jul
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out4"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out4" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
+    Info (12134): Parameter "dataa_width" = "32"
+    Info (12134): Parameter "datab_width" = "0"
+    Info (12134): Parameter "datac_width" = "0"
+    Info (12134): Parameter "datad_width" = "0"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_clock" = "NONE"
+    Info (12134): Parameter "first_adder0_clock" = "NONE"
+    Info (12134): Parameter "first_adder1_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_clear" = "NONE"
+    Info (12134): Parameter "first_adder0_clear" = "NONE"
+    Info (12134): Parameter "first_adder1_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_kv82.tdf
+    Info (12023): Found entity 1: mac_out_kv82
+Info (12130): Elaborated megafunction instantiation "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5"
+Info (12133): Instantiated megafunction "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5" with the following parameter:
+    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
+    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
+    Info (12134): Parameter "MULT_PIPELINE" = "0"
+    Info (12134): Parameter "MULT_CLOCK" = "NONE"
+    Info (12134): Parameter "MULT_CLEAR" = "NONE"
+    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "dataa_width" = "14"
+    Info (12134): Parameter "datab_width" = "18"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "dataa_clock" = "NONE"
+    Info (12134): Parameter "datab_clock" = "NONE"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "dataa_clear" = "NONE"
+    Info (12134): Parameter "datab_clear" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_s2h1.tdf
+    Info (12023): Found entity 1: mac_mult_s2h1
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_kul.tdf
+    Info (12023): Found entity 1: mult_kul
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le11a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le11a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le12a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le12a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le12a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le12a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le13a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le13a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le13a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le13a[15]"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[4]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[3]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le10a[2]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[4]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[3]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[2]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le11a[1]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le4a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le5a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le6a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le7a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le8a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5|mac_mult_s2h1:auto_generated|mult_kul:mult1|le9a[4]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[4]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[3]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[2]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[4]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[3]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[2]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[1]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[19]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[18]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[17]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[16]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[15]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[14]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[13]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[12]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[11]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[10]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[9]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[8]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[7]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[6]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[5]"
+        Warning (14320): Synthesized away node "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[4]"
+Info (13014): Ignored 1009 buffer(s)
+    Info (13016): Ignored 46 CARRY_SUM buffer(s)
+    Info (13019): Ignored 963 SOFT buffer(s)
+Warning (13012): Latch aluOut[0]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[1]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[2]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[3]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[4]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[5]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[6]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[7]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[8]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[9]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[10]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[11]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[12]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[13]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[14]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[15]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[16]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[17]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[18]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[19]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[20]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[21]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[22]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[23]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[24]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[25]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[26]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[27]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[28]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[29]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[30]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13012): Latch aluOut[31]$latch has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal aluControl[3]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "negative" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_33h1:auto_generated|mult_rul:mult1|le4a[19]"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3635 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 73 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 3528 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 292 warnings
+    Info: Peak virtual memory: 477 megabytes
+    Info: Processing ended: Wed Apr 13 14:11:38 2016
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:18
+
+

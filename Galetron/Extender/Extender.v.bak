@@ -1,0 +1,27 @@
+module Extender(selection, inputA, inputB, extenderOutput);
+
+  input [15:0] inputA;
+  input [21:0] inputB;
+  input [1:0] selection;
+
+  always @ ( * ) begin
+    case (selection)
+      2'b00: begin
+        extenderOutput = inputA;
+        if(inputA[15]==1'b1) begin
+          extenderOutput = {16'h1111, inputA};
+      default: begin
+        extenderOutput = 32'b1;
+    endcase
+  end
+  endmodule
+
+  // function [31:0] extend(input[15:0] in);
+  // begin
+  //    if (in[15] === 1'bX) begin
+  //       extend = {16'hXXXX, in};
+  //    end else begin
+  //       extend = {16'h0000, in};
+  //    end
+  // end
+  // endfunction

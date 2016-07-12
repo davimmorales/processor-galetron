@@ -1,0 +1,252 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/17/2016 15:18:42"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Extender
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Extender_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [15:0] inputA;
+reg [21:0] inputB;
+reg [1:0] selection;
+// wires                                               
+wire [31:0] extenderOutput;
+
+// assign statements (if any)                          
+Extender i1 (
+// port map - connection between master ports and signals/registers   
+	.extenderOutput(extenderOutput),
+	.inputA(inputA),
+	.inputB(inputB),
+	.selection(selection)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// selection[ 1 ]
+initial
+begin
+	selection[1] = 1'b1;
+end 
+// selection[ 0 ]
+initial
+begin
+	selection[0] = 1'b1;
+end 
+// inputA[ 15 ]
+initial
+begin
+	inputA[15] = 1'b0;
+end 
+// inputA[ 14 ]
+initial
+begin
+	inputA[14] = 1'b0;
+end 
+// inputA[ 13 ]
+initial
+begin
+	inputA[13] = 1'b0;
+end 
+// inputA[ 12 ]
+initial
+begin
+	inputA[12] = 1'b0;
+end 
+// inputA[ 11 ]
+initial
+begin
+	inputA[11] = 1'b0;
+end 
+// inputA[ 10 ]
+initial
+begin
+	inputA[10] = 1'b0;
+end 
+// inputA[ 9 ]
+initial
+begin
+	inputA[9] = 1'b0;
+end 
+// inputA[ 8 ]
+initial
+begin
+	inputA[8] = 1'b1;
+end 
+// inputA[ 7 ]
+initial
+begin
+	inputA[7] = 1'b0;
+end 
+// inputA[ 6 ]
+initial
+begin
+	inputA[6] = 1'b1;
+end 
+// inputA[ 5 ]
+initial
+begin
+	inputA[5] = 1'b0;
+end 
+// inputA[ 4 ]
+initial
+begin
+	inputA[4] = 1'b0;
+end 
+// inputA[ 3 ]
+initial
+begin
+	inputA[3] = 1'b1;
+end 
+// inputA[ 2 ]
+initial
+begin
+	inputA[2] = 1'b1;
+end 
+// inputA[ 1 ]
+initial
+begin
+	inputA[1] = 1'b0;
+end 
+// inputA[ 0 ]
+initial
+begin
+	inputA[0] = 1'b0;
+end 
+// inputB[ 21 ]
+initial
+begin
+	inputB[21] = 1'b1;
+end 
+// inputB[ 20 ]
+initial
+begin
+	inputB[20] = 1'b1;
+end 
+// inputB[ 19 ]
+initial
+begin
+	inputB[19] = 1'b0;
+end 
+// inputB[ 18 ]
+initial
+begin
+	inputB[18] = 1'b1;
+end 
+// inputB[ 17 ]
+initial
+begin
+	inputB[17] = 1'b0;
+end 
+// inputB[ 16 ]
+initial
+begin
+	inputB[16] = 1'b0;
+end 
+// inputB[ 15 ]
+initial
+begin
+	inputB[15] = 1'b0;
+end 
+// inputB[ 14 ]
+initial
+begin
+	inputB[14] = 1'b0;
+end 
+// inputB[ 13 ]
+initial
+begin
+	inputB[13] = 1'b0;
+end 
+// inputB[ 12 ]
+initial
+begin
+	inputB[12] = 1'b1;
+end 
+// inputB[ 11 ]
+initial
+begin
+	inputB[11] = 1'b0;
+end 
+// inputB[ 10 ]
+initial
+begin
+	inputB[10] = 1'b0;
+end 
+// inputB[ 9 ]
+initial
+begin
+	inputB[9] = 1'b0;
+end 
+// inputB[ 8 ]
+initial
+begin
+	inputB[8] = 1'b0;
+end 
+// inputB[ 7 ]
+initial
+begin
+	inputB[7] = 1'b0;
+end 
+// inputB[ 6 ]
+initial
+begin
+	inputB[6] = 1'b0;
+end 
+// inputB[ 5 ]
+initial
+begin
+	inputB[5] = 1'b0;
+end 
+// inputB[ 4 ]
+initial
+begin
+	inputB[4] = 1'b0;
+end 
+// inputB[ 3 ]
+initial
+begin
+	inputB[3] = 1'b0;
+end 
+// inputB[ 2 ]
+initial
+begin
+	inputB[2] = 1'b0;
+end 
+// inputB[ 1 ]
+initial
+begin
+	inputB[1] = 1'b0;
+end 
+// inputB[ 0 ]
+initial
+begin
+	inputB[0] = 1'b0;
+end 
+endmodule
+

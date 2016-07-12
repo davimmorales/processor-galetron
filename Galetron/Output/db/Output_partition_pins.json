@@ -1,0 +1,365 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ones[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[6]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[0]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[1]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[2]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[3]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[4]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[5]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[6]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[0]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[1]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[2]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[3]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[4]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[5]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[6]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[7]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[8]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[9]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[10]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[11]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[12]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[13]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[14]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[15]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[16]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[17]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[18]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[19]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[20]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[21]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[22]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[23]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[24]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[25]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[26]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[27]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[28]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[29]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[31]",
+					"strict" : false
+				},
+				{
+					"name" : "binary[30]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

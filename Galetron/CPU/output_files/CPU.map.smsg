@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at simpleInstructionsRam.v(8): always construct contains both blocking and non-blocking assignments File: /home/davi/Documentos/Galetron/simpleInstructionsRAM/simpleInstructionsRam.v Line: 8

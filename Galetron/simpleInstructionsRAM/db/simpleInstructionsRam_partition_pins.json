@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "iRAMOutput[0]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[1]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[2]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[6]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[8]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[9]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[21]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[22]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[23]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[26]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[27]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[28]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[29]",
+					"strict" : false
+				},
+				{
+					"name" : "iRAMOutput[30]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

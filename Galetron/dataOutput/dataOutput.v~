@@ -1,0 +1,38 @@
+module dataOutput (dataC, resetCPU, address, IO_RAMwrite, clock, IO_RAMOutput, outputA, outputB, outputC, outputD, outputE, outputF, outputG);
+    input resetCPU, IO_RAMwrite, clock;//, dataC;
+    input [9:0] address;
+    input [31:0] IO_RAMOutput;
+    output [3:0] outputA, outputB, outputC, outputD,
+           outputE, outputF, outputG;
+    integer firstClock = 0;
+
+    reg [3:0] ramOut[1023:0];
+    always @ ( posedge clock) begin
+      if (!firstClock || resetCPU) begin
+        ramOut[0] = 4'b0000;
+        ramOut[1] = 4'b0000;
+        ramOut[2] = 4'b0000;
+        ramOut[3] = 4'b0000;
+
+        ramOut[4] = 4'b0000;
+        ramOut[5] = 4'b0000;
+        ramOut[6] = 4'b0000;
+        firstClock<=1;
+      end
+      if (IO_RAMwrite) begin
+        ramOut[address] = dataC;
+      end
+    end
+
+    assign IO_RAMOutput = ramOut[address];
+    assign outputA = ramOut[0];
+    assign outputB = ramOut[1];
+    assign outputC = ramOut[2];
+    assign outputD = ramOut[3];
+    assign outputE = ramOut[4];
+    assign outputF = ramOut[5];
+    assign outputG = ramOut[6];
+//writeData, resetCPU, address, write, clock,
+// outputData, outputA, outputB, outputC, outputD, outputE,
+// outputF, outputG
+endmodule // dataOutput

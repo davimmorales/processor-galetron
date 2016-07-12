@@ -1,0 +1,49 @@
+module ALU(aluControl, dataA, dataB, aluOut, negative, zero);
+  input [3:0] aluControl;
+  input [31:0] dataA, dataB;
+  output reg [31:0] aluOut;
+  output negative;
+  output zero;
+
+  always @ (aluControl or dataA or dataB) begin
+    case(aluControl[3:0])
+      4'b0000: aluOut = dataA;
+      4'b0001: aluOut = dataA + dataB;
+      4'b0010: aluOut = dataA - dataB;
+      4'b0011: aluOut = dataA + 1;
+      4'b0100: aluOut = dataA - 1;
+      4'b0101: aluOut = dataA & dataB;
+      4'b0110: aluOut = dataA | dataB;
+      4'b0111: aluOut = dataA ^ dataB;
+      4'b1000: aluOut = ~dataA;
+      4'b1001: aluOut = dataA << 1;
+      4'b1010: aluOut = dataA >> 1;
+      4'b1011: aluOut = dataA < dataB ? 1 : 0;
+    endcase
+    end
+
+    assign zero = (aluOut==0);
+    assign negative = (aluOut<0);
+endmodule
+
+
+
+
+
+// input [3:0] ALUctl;
+// input [31:0] A,B;
+// output reg [31:0] ALUOut;
+// output Zero;
+// assign Zero = (ALUOut==0); //Zero is true if ALUOut is 0
+// always @(ALUctl, A, B) begin //reevaluate if these change
+// case (ALUctl)
+// 0: ALUOut <= A & B;
+// 1: ALUOut <= A | B;
+// 2: ALUOut <= A + B;
+// 6: ALUOut <= A - B;
+// 7: ALUOut <= A < B ? 1 : 0;
+// 12: ALUOut <= ~(A | B); //result is nor
+// default: ALUOut <= 0;
+// endcase
+// end
+// endmodule

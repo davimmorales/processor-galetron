@@ -1,0 +1,273 @@
+// Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/22/2016 20:50:31"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          BCD
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module BCD_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [32:0] binary;
+// wires                                               
+wire [3:0] billions;
+wire [3:0] gazillions;
+wire [3:0] hundreds;
+wire [3:0] millions;
+wire [3:0] ones;
+wire [3:0] tens;
+wire [3:0] thousands;
+wire [3:0] trillions;
+
+// assign statements (if any)                          
+BCD i1 (
+// port map - connection between master ports and signals/registers   
+	.billions(billions),
+	.binary(binary),
+	.gazillions(gazillions),
+	.hundreds(hundreds),
+	.millions(millions),
+	.ones(ones),
+	.tens(tens),
+	.thousands(thousands),
+	.trillions(trillions)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+// binary[ 32 ]
+initial
+begin
+	binary[32] = 1'b0;
+end 
+// binary[ 31 ]
+initial
+begin
+	binary[31] = 1'b0;
+end 
+// binary[ 30 ]
+initial
+begin
+	binary[30] = 1'b0;
+end 
+// binary[ 29 ]
+initial
+begin
+	binary[29] = 1'b0;
+end 
+// binary[ 28 ]
+initial
+begin
+	binary[28] = 1'b0;
+end 
+// binary[ 27 ]
+initial
+begin
+	binary[27] = 1'b0;
+end 
+// binary[ 26 ]
+initial
+begin
+	binary[26] = 1'b0;
+end 
+// binary[ 25 ]
+initial
+begin
+	binary[25] = 1'b0;
+end 
+// binary[ 24 ]
+initial
+begin
+	binary[24] = 1'b0;
+end 
+// binary[ 23 ]
+initial
+begin
+	binary[23] = 1'b0;
+	binary[23] = #10000 1'b1;
+	binary[23] = #160000 1'b0;
+end 
+// binary[ 22 ]
+initial
+begin
+	binary[22] = 1'b0;
+	binary[22] = #10000 1'b1;
+	binary[22] = #160000 1'b0;
+end 
+// binary[ 21 ]
+initial
+begin
+	binary[21] = 1'b0;
+	binary[21] = #10000 1'b1;
+	binary[21] = #160000 1'b0;
+end 
+// binary[ 20 ]
+initial
+begin
+	binary[20] = 1'b0;
+end 
+// binary[ 19 ]
+initial
+begin
+	binary[19] = 1'b0;
+	binary[19] = #10000 1'b1;
+	binary[19] = #160000 1'b0;
+end 
+// binary[ 18 ]
+initial
+begin
+	binary[18] = 1'b0;
+	binary[18] = #10000 1'b1;
+	binary[18] = #160000 1'b0;
+end 
+// binary[ 17 ]
+initial
+begin
+	binary[17] = 1'b0;
+	binary[17] = #10000 1'b1;
+	binary[17] = #160000 1'b0;
+	binary[17] = #70000 1'b1;
+	binary[17] = #160000 1'b0;
+end 
+// binary[ 16 ]
+initial
+begin
+	binary[16] = 1'b0;
+	binary[16] = #240000 1'b1;
+	binary[16] = #160000 1'b0;
+end 
+// binary[ 15 ]
+initial
+begin
+	binary[15] = 1'b0;
+	binary[15] = #240000 1'b1;
+	binary[15] = #160000 1'b0;
+end 
+// binary[ 14 ]
+initial
+begin
+	binary[14] = 1'b0;
+	binary[14] = #10000 1'b1;
+	binary[14] = #160000 1'b0;
+end 
+// binary[ 13 ]
+initial
+begin
+	binary[13] = 1'b0;
+	binary[13] = #10000 1'b1;
+	binary[13] = #160000 1'b0;
+end 
+// binary[ 12 ]
+initial
+begin
+	binary[12] = 1'b0;
+	binary[12] = #240000 1'b1;
+	binary[12] = #160000 1'b0;
+end 
+// binary[ 11 ]
+initial
+begin
+	binary[11] = 1'b0;
+end 
+// binary[ 10 ]
+initial
+begin
+	binary[10] = 1'b0;
+	binary[10] = #10000 1'b1;
+	binary[10] = #160000 1'b0;
+	binary[10] = #70000 1'b1;
+	binary[10] = #160000 1'b0;
+end 
+// binary[ 9 ]
+initial
+begin
+	binary[9] = 1'b0;
+end 
+// binary[ 8 ]
+initial
+begin
+	binary[8] = 1'b0;
+	binary[8] = #240000 1'b1;
+	binary[8] = #160000 1'b0;
+end 
+// binary[ 7 ]
+initial
+begin
+	binary[7] = 1'b0;
+	binary[7] = #10000 1'b1;
+	binary[7] = #160000 1'b0;
+	binary[7] = #70000 1'b1;
+	binary[7] = #160000 1'b0;
+end 
+// binary[ 6 ]
+initial
+begin
+	binary[6] = 1'b0;
+	binary[6] = #240000 1'b1;
+	binary[6] = #160000 1'b0;
+end 
+// binary[ 5 ]
+initial
+begin
+	binary[5] = 1'b0;
+	binary[5] = #10000 1'b1;
+	binary[5] = #160000 1'b0;
+end 
+// binary[ 4 ]
+initial
+begin
+	binary[4] = 1'b0;
+	binary[4] = #10000 1'b1;
+	binary[4] = #160000 1'b0;
+end 
+// binary[ 3 ]
+initial
+begin
+	binary[3] = 1'b0;
+	binary[3] = #240000 1'b1;
+	binary[3] = #160000 1'b0;
+end 
+// binary[ 2 ]
+initial
+begin
+	binary[2] = 1'b0;
+end 
+// binary[ 1 ]
+initial
+begin
+	binary[1] = 1'b0;
+	binary[1] = #240000 1'b1;
+	binary[1] = #160000 1'b0;
+end 
+// binary[ 0 ]
+initial
+begin
+	binary[0] = 1'b0;
+	binary[0] = #10000 1'b1;
+	binary[0] = #160000 1'b0;
+end 
+endmodule
+

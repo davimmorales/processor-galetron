@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/morales/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagem 2/Extender/simulation/qsim
+vExtender
+Z1 !s110 1460917129
+!i10b 1
+!s100 m9l8jVAfi<2K9g6:BIf0Q2
+I2b:ih[Ifh:M]HciJRTP@00
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1460917128
+8Extender.vo
+FExtender.vo
+L0 32
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z4 !s108 1460917129.000000
+!s107 Extender.vo|
+!s90 -work|work|Extender.vo|
+!i113 1
+Z5 o-work work
+n@extender
+vExtender_vlg_vec_tst
+R1
+!i10b 1
+!s100 P?GAEboKK:iVQYl681gVi3
+I;eIn<XNKFW099]ga0g_[43
+R2
+R0
+w1460917122
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+n@extender_vlg_vec_tst

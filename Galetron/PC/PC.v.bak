@@ -1,0 +1,37 @@
+module PC(clock, instruction, zero, negative, branch, jump, programCounter);
+  input clock, zero, negative, jump, branch;
+  input [31:0] instruction;
+  reg[31:0] programCounter, newPc, muxA;
+  wire[31:0] pcInc, branchA, branchAdd, jumpAdd;
+  wire[9:0] address;
+  wire selectA, selectB;
+  output [31:0] programCounter;
+
+
+  assign selectA = branch & zero;
+  assign selectB = branch & negative;
+  assign pcInc = programCounter + 4;
+  assign address = instruction[9:0];
+  assign branchA =  {{22{address[9]}},address[9:0]} ;
+  assign branchAdd = pcInc + (branch << 2);
+
+  always @ ( branchAdd or pcInc or selectA or selectB ) begin
+    if(selectA or selectB)
+      muxA = branchAdd;
+    else
+      muxA = pcInc;
+  end
+
+  assign jumpAdd = ( instruction[9:0] << 2);
+
+  always @ ( jump or jumpAdd or muxA ) begin
+    if(jump)
+      newPc = jumpAdd;
+    else
+      newPc = muxA;
+  end
+
+  always @ ( posedge clock )
+    pc <= newPc;
+
+ endmodule

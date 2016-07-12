@@ -1,0 +1,15 @@
+module clockMultiplexer (operation, inputA, inputB, clock);
+
+  input inputA, inputB;
+  input [5:0] operation;
+  output reg clock;
+
+  always @ ( * ) begin
+    case(operation)
+      6'b011101: clock = inputB;//in
+      6'b011110: clock = inputB;//out
+      default: clock = inputA;
+      endcase
+  end
+
+endmodule // outputMultiplexer

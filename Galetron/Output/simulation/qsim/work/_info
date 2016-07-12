@@ -1,0 +1,94 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/Output/simulation/qsim
+vBCD
+Z1 !s110 1466639439
+!i10b 1
+!s100 5SASm`ndZgiU1D]6n_mDl3
+IMNCeb?g;Q298BRGimNg[j2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1466639438
+Z3 8Output.vo
+Z4 FOutput.vo
+Z5 L0 32
+Z6 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z7 !s108 1466639439.000000
+Z8 !s107 Output.vo|
+Z9 !s90 -work|work|Output.vo|
+!i113 1
+Z10 o-work work
+n@b@c@d
+vBCD_vlg_vec_tst
+R1
+!i10b 1
+!s100 >9S1LHl`eZBLHDT63VF<F3
+I1l?[NnJ>BfnH=dhG3Q;502
+R2
+R0
+w1466639431
+8BCDTest.vwf.vt
+FBCDTest.vwf.vt
+Z11 L0 30
+R6
+r1
+!s85 0
+31
+R7
+!s107 BCDTest.vwf.vt|
+!s90 -work|work|BCDTest.vwf.vt|
+!i113 1
+R10
+n@b@c@d_vlg_vec_tst
+vOutput
+!s110 1466641056
+!i10b 1
+!s100 L5NoAmMI>mTU^7MF<BNJD1
+Il?hH:<SCdKYChL4<V_<cK0
+R2
+R0
+w1466641056
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z12 !s108 1466641056.000000
+R8
+R9
+!i113 1
+R10
+n@output
+vOutput_vlg_vec_tst
+!s110 1466641057
+!i10b 1
+!s100 DoHoGCF?3FWTWKHhQoCMC1
+I?5^f?5@JZOdXj^9UoYOGO3
+R2
+R0
+w1466641048
+8outputTest.vwf.vt
+FoutputTest.vwf.vt
+R11
+R6
+r1
+!s85 0
+31
+R12
+!s107 outputTest.vwf.vt|
+!s90 -work|work|outputTest.vwf.vt|
+!i113 1
+R10
+n@output_vlg_vec_tst

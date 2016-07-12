@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ALU">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_bom.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0" CBX_FILE_NAME="mult_1ht.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult3" CBX_FILE_NAME="mac_mult_r2h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_egm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" CBX_FILE_NAME="mac_out_sv82.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out4" CBX_FILE_NAME="mac_out_kv82.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out6" CBX_FILE_NAME="mac_out_kv82.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" CBX_FILE_NAME="mac_mult_33h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ALU|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult5" CBX_FILE_NAME="mac_mult_s2h1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

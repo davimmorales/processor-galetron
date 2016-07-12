@@ -1,0 +1,22 @@
+module dataRAM(data, lineAddress, columnAddress, write, clock, dataRAMOutput );
+
+  input [31:0] data;
+  input  [10:0] lineAddress, columnAddress;
+  input write, clock;
+  output [31:0] dataRAMOutput;
+
+  reg [31:0] dataRam[32:0][32:0];
+  reg [10:0] lineAddessReg;
+  reg [10:0] columnAddressReg;
+
+  always @ ( posedge clock ) begin
+    if(write) begin
+      dataRam[lineAddress][columnAddress] <= data;
+    end
+    lineAddessReg <= lineAddress;
+    columnAddressReg <= columnAddress;
+  end
+
+  assign dataRAMOutput = dataRam[lineAddressReg][columnAddressReg];
+
+endmodule

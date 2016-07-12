@@ -1,0 +1,163 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/simulation/modelsim
+vclockMultiplexer
+Z1 !s110 1466888915
+!i10b 1
+!s100 [B_imzkj@^O<<_AbhiS@k2
+Ib^n[KO5TEA0RgX6ehPD_:0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1466881393
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v
+L0 1
+Z3 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z4 !s108 1466888915.000000
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/clockMultiplexer.v|
+!i113 1
+Z5 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU}
+nclock@multiplexer
+vcontrolUnit
+R1
+!i10b 1
+!s100 N0@33^MF`ML]c3K85^_;90
+IRZZFCf:X1@0T>Z>BW]ajA1
+R2
+R0
+w1466888101
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit/controlUnit.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/controlUnit}
+ncontrol@unit
+vmultiplexer
+Z6 !s110 1466888916
+!i10b 1
+!s100 bU4YI<ji6RfT`0X;VYPoo1
+I8gh<_03Mag`LX^D]c0GP@3
+R2
+R0
+w1462551453
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/multiplexer.v|
+!i113 1
+R5
+Z7 !s92 -vlog01compat -work work {+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU}
+vqFlipflop
+R1
+!i10b 1
+!s100 dI]e8f6]>@PX^=Gf9cm6P0
+IDlO1z[A<cIY_ZB^kY0JYN3
+R2
+R0
+w1462369396
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/qFlipflop.v|
+!i113 1
+R5
+R7
+nq@flipflop
+vregisterFile
+R6
+!i10b 1
+!s100 YcAjLBMJ2D]6i<ZCbmc4i0
+IVjO3SbA9FiR_lX=JS4j:^0
+R2
+R0
+w1465831387
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z8 !s108 1466888916.000000
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile/registerFile.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/registerFile}
+nregister@file
+vsimpleInstructionsRam
+R6
+!i10b 1
+!s100 89jKW395mfYXd<9IQV1hZ2
+I>4S[i5iMg]bM6BgJK5e]_0
+R2
+R0
+w1466884544
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v
+L0 1
+R3
+r1
+!s85 0
+31
+R8
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM/simpleInstructionsRam.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work {+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/simpleInstructionsRAM}
+nsimple@instructions@ram
+vtripleMux
+R1
+!i10b 1
+!s100 C7fLZ@>7JNXcNHe^W<dGA0
+IJUgzgli78:U<3de17:[gY0
+R2
+R0
+w1462550032
+8/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v
+F/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU|/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/galetronCPU/tripleMux.v|
+!i113 1
+R5
+R7
+ntriple@mux

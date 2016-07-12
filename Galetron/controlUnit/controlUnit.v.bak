@@ -1,0 +1,340 @@
+module controlUnit (operation, srcRegister, immediate, zero, negative,
+writeDataSelection, writeRegister, aluSelection, extenderSelection,
+immediateSelection, tripleMuxSelection, lastMuxSel, writeEnable,
+IO_RAMwrite, enable, mainAddress, jump, branch);
+
+  input [5:0] operation;
+  input [31:0] srcRegister, immediate;
+  input zero, negative;
+
+  output reg [31:0] mainAddress;
+  output reg [3:0] aluSelection;
+  output reg [1:0] extenderSelection, tripleMuxSelection;
+  output reg jump, branch, writeDataSelection, immediateSelection, lastMuxSel,
+  writeEnable, IO_RAMwrite, enable;
+
+  always @ ( operation ) begin
+    case (OP)
+    6'b000000: begin//add
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0001;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000001: begin//addi
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0001;
+     extenderSelection = 2'b00;
+     immediateSelection = 1'b1;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000010: begin//sub
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0010;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000011: begin//subi
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0010;
+     extenderSelection = 2'b00;
+     immediateSelection = 1'b1;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000100: begin//mul
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1100;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000101: begin//div
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1101;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000110: begin//inc
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0011;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b000111: begin//dec
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0100;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b001010: begin//mod
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1110;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b001000: begin//and
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0101;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b001001: begin//or
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0110;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b001100: begin//xor
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b0111;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b001101: begin//not
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1000;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b010000: begin//shift left
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1001;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b010001: begin//shift right
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'b1010;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'b10;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b1;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+
+     6'011000: begin//ld
+     writeDataSelection = 1'b1;
+     writeRegister = 1'b1;
+     aluSelection = 4'bxxxx;
+     extenderSelection = 2'bxx;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'b01;
+     lastMuxSel = 1'b1;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b0;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'011001:  begin//st
+     writeDataSelection = 1'bx;
+     writeRegister = 1'b0;
+     aluSelection = 4'bxxxx;
+     extenderSelection = 2'b01;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'bxx;
+     lastMuxSel = 1'b1;
+     writeEnable = 1'b1;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b0;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    6'b011010: begin//ldi
+      writeDataSelection = 1'b0;
+      writeRegister = 1'b1;
+      aluSelection = 4'bxxxx;
+      extenderSelection = 2'b01;
+      immediateSelection = 1'bx;
+      tripleMuxSelection = 2'bxx;
+      lastMuxSel = 1'bx;
+      writeEnable = 1'b0;
+      IO_RAMwrite = 1'b0;
+      enable = 1'b0;
+      mainAddress = 32'b0;
+      jump = 1'b0;
+      branch = 1'b0;
+    end
+    6'b010101: begin//jmp
+     writeDataSelection = 1'bx;
+     writeRegister = 1'b0;
+     aluSelection = 4'bxxxx;
+     extenderSelection = 2'bxx;//01
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'bxx;
+     lastMuxSel = 1'bx;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b0;
+     mainAddress = 32'b0;
+     jump = 1'b1;
+     branch = 1'b0;
+    end
+    6'b011110: begin//out
+     writeDataSelection = 1'bx;
+     writeRegister = 1'b0;
+     aluSelection = 4'bxxxx;
+     extenderSelection = 2'b01;
+     immediateSelection = 1'bx;
+     tripleMuxSelection = 2'bxx;
+     lastMuxSel = 1'b1;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b1;
+     enable = 1'b0;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+
+
+
+    default: begin
+     writeDataSelection = 1'b0;
+     writeRegister = 1'b0;
+     aluSelection = 4'b0000;
+     extenderSelection = 2'b00;
+     immediateSelection = 1'b0;
+     tripleMuxSelection = 2'b00;
+     lastMuxSel = 1'b0;
+     writeEnable = 1'b0;
+     IO_RAMwrite = 1'b0;
+     enable = 1'b0;
+     mainAddress = 32'b0;
+     jump = 1'b0;
+     branch = 1'b0;
+    end
+    endcase
+  end
+
+endmodule //controlUnit

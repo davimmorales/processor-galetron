@@ -1,0 +1,185 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "bzero",
+					"strict" : false
+				},
+				{
+					"name" : "bnegative",
+					"strict" : false
+				},
+				{
+					"name" : "writeDataSelection",
+					"strict" : false
+				},
+				{
+					"name" : "writeRegister",
+					"strict" : false
+				},
+				{
+					"name" : "aluSelection[0]",
+					"strict" : false
+				},
+				{
+					"name" : "aluSelection[1]",
+					"strict" : false
+				},
+				{
+					"name" : "aluSelection[2]",
+					"strict" : false
+				},
+				{
+					"name" : "aluSelection[3]",
+					"strict" : false
+				},
+				{
+					"name" : "extenderSelection[0]",
+					"strict" : false
+				},
+				{
+					"name" : "extenderSelection[1]",
+					"strict" : false
+				},
+				{
+					"name" : "immediateSelection",
+					"strict" : false
+				},
+				{
+					"name" : "tripleMuxSelection[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tripleMuxSelection[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lastMuxSel",
+					"strict" : false
+				},
+				{
+					"name" : "writeEnable",
+					"strict" : false
+				},
+				{
+					"name" : "IO_RAMwrite",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mainAddress[9]",
+					"strict" : false
+				},
+				{
+					"name" : "jump",
+					"strict" : false
+				},
+				{
+					"name" : "operation[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[3]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[4]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[5]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[2]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[0]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[1]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[2]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[3]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[4]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[5]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[6]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[7]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[8]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[9]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

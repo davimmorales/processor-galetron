@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "programCounter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[5]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[6]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[7]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "programCounter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "zero",
+					"strict" : false
+				},
+				{
+					"name" : "negative",
+					"strict" : false
+				},
+				{
+					"name" : "bnegative",
+					"strict" : false
+				},
+				{
+					"name" : "bzero",
+					"strict" : false
+				},
+				{
+					"name" : "jump",
+					"strict" : false
+				},
+				{
+					"name" : "address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "address[9]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
