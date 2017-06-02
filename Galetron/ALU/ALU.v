@@ -13,10 +13,10 @@ module ALU(aluSelection, dataA, dataB2, aluOut, negative, zero, shamt);
       4'b0010: aluOut = dataA - dataB2;
       4'b0011: aluOut = dataA + 1;
       4'b0100: aluOut = dataA - 1;
-      4'b0101: aluOut = dataA & dataB2;
-      4'b0110: aluOut = dataA | dataB2;
+      4'b0101: aluOut = dataA && dataB2;
+      4'b0110: aluOut = dataA || dataB2;
       4'b0111: aluOut = dataA ^ dataB2;
-      4'b1000: aluOut = ~dataA;
+      4'b1000: aluOut = !dataA;
       4'b1001: aluOut = dataA << shamt; //alterado
       4'b1010: aluOut = dataA >> shamt; //alterado
       4'b1011: aluOut = dataA < dataB2 ? 1 : 0;
