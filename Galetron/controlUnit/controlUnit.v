@@ -508,6 +508,23 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   bnegative = 1'b0;
   HLT = 0;
   end
+  6'b100000: begin//load register
+  writeDataSelection = 1'b1;
+  writeRegister = 1'b1;
+  aluSelection = 4'b0000;
+  extenderSelection = 2'bxx;
+  immediateSelection = 1'b0;
+  tripleMuxSelection = 2'b01;
+  lastMuxSel = 1'b0;
+  writeEnable = 1'b0;
+  IO_RAMwrite = 1'b0;
+  enable = 1'b0;
+  mainAddress = 10'b0;
+  jump = 1'b0;
+  bzero = 1'b0;
+  bnegative = 1'b0;
+  HLT = 0;
+  end
   default: begin
   writeDataSelection = 1'b0;
   writeRegister = 1'b0;
