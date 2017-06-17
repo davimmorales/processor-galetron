@@ -508,7 +508,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   bnegative = 1'b0;
   HLT = 0;
   end
-  6'b100000: begin//load register
+  6'b100001: begin//load register
   writeDataSelection = 1'b1;
   writeRegister = 1'b1;
   aluSelection = 4'b0000;
