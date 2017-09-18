@@ -15,14 +15,15 @@ module dataRAM(dataC, address, writeEnable, clock, dataRAMOutput);
 	begin
 	// Write
 		if (writeEnable) begin
-			RAM[address] = dataC;
+			RAM[address] <= dataC;
 		end
-		  addressRegister = address;
+		 // addressRegister = address;
 	end
+	
 
 	// Continuous assignment implies read returns NEW data.
 	// This is the natural behavior of the TriMatrix memory
 	// blocks in Single Port mode.
-	assign dataRAMOutput = RAM[addressRegister];
+	assign dataRAMOutput = RAM[address];
 
 endmodule
