@@ -1,0 +1,75 @@
+Getting Quartus II to work
+
+First, I must say that Quartus is brilliant. A complete hardware noob like myself can get up and running and creating complex hardware designs in hours.
+64 bit Fedora 14, Quartus II Web Edition 11.1
+
+This was my original setup, circa 2012.
+
+I installed to /opt/quartus2we.
+
+If you configure an external non-windowing curses based editor, using Tools > Options... > Preferred Text Editor, then you will need to preceed with xterm -geometry 80x60 -e. Can't use Gnome Terminal as the filename argument won't make into the command-line.
+
+Under Tools > Options... > Internet Connectivity, set Web Browser to /usr/bin/firefox. Doesn't seem to work well with Chrome.
+
+Create /etc/udev/rules.d/51-usbblaster.rules containing :-
+
+# USB-Blaster
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6001", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6002", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6003", MODE="0666"
+
+# USB-Blaster II
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6010", MODE="0666"
+BUS=="usb", SYSFS{idVendor}=="09fb", SYSFS{idProduct}=="6810", MODE="0666"
+
+Quartus is missing some files, preventing jtagd running in 64 bit mode, which prevents programming the device. Note that the main Quartus application reports itself as 32-bit. To fix :-
+
+# yum -y install xerces-c
+# yum -y install libicu-devel
+# cd /opt/quartus2we/quartus/linux64
+# ln -s /usr/lib64/libxerces-c-3.0.so libaxerces-c.so.26
+# ln -s /usr/lib64/libicuuc.so.44 libicuuc.so.34
+# ln -s /usr/lib64/libicudata.so.44 libicudata.so.34
+
+64 bit Fedora 25, Quartus 13.0sp1
+
+This is my new setup, as of 2017-01.
+
+Quartus is still a 32 bit program, so :-
+
+# dnf -y install \
+libX11.i686 \
+libXau.i686 \
+libXdmcp.i686 \
+libXext.i686 \
+libXft-devel.i686 \
+libXrender.i686 \
+libXt.i686 \
+libXtst.i686 \
+libpng12.i686 \
+tcsh
+
+The JTAG still needs rules allowing a normal user access to USB Blaster, so create /etc/udev/rules.d/51-altera-usb-blaster.rules containing :-
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6001", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6002", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6003", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6010", MODE="0666"
+SUBSYSTEM=="usb", ATTR{idVendor}=="09fb", ATTR{idProduct}=="6810", MODE="0666"
+
+I found running udevadm control -reload as root doesn't make the system notice the new rules, I had to reboot.
+
+As yourself :-
+
+$ touch /work/ak/.jtagd.conf
+
+None of the nasty symlinking of missing files (as per earlier configuration) is needed.
+General tips
+
+To import DE1.qsf from Altera website, use Assignments > Import Assignments...
+
+Top level port names should reflect PIN names in this file.
+
+I choose to do Active Serial Programming, which means the board will not lose the FPGA configuration at power off (the JTAG alternative isn't persistent). So under Assignments > Device > Device and Pin Options... > Configuration I select EPCS4. Under Tools > Programmer I select device as EPCS4 and select .pof file to program. Flip switch to PROG, click Start, when done, flip switch to RUN.
+
+Beware SignalTap logic analyser errors. I find I need to shutdown Quartus, kill jtagd, then restart Quartus and start SignalTap. Otherwise when I press "Run Analysis", I get "Invalid data received". If I use "Read Data", I get what looks like reasonable data, but the start-stop point is somewhere mid data. 
