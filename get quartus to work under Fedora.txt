@@ -35,6 +35,8 @@ Quartus is missing some files, preventing jtagd running in 64 bit mode, which pr
 
 This is my new setup, as of 2017-01.
 
+For waveform, add a '/' after the path in the path you'll find in tutorials
+
 Quartus is still a 32 bit program, so :-
 
 # dnf -y install \
