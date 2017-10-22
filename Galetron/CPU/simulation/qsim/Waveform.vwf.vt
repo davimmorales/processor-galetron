@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/25/2016 21:24:49"
+// Generated on "10/22/2017 11:03:18"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          CPU
 // 
@@ -36,12 +36,14 @@ reg UserClock;
 // wires                                               
 wire [6:0] billions;
 wire [6:0] gazillions;
+wire [31:0] hd_output;
 wire [6:0] hundreds;
 wire inLED;
 wire [6:0] millions;
+wire negLED;
+wire [22:0] offLEDS;
 wire [6:0] ones;
 wire outLED;
-wire [31:0] outputI;
 wire [6:0] tens;
 wire [6:0] thousands;
 wire [6:0] trillions;
@@ -51,13 +53,15 @@ CPU i1 (
 // port map - connection between master ports and signals/registers   
 	.billions(billions),
 	.gazillions(gazillions),
+	.hd_output(hd_output),
 	.hundreds(hundreds),
 	.inLED(inLED),
 	.machineClock(machineClock),
 	.millions(millions),
+	.negLED(negLED),
+	.offLEDS(offLEDS),
 	.ones(ones),
 	.outLED(outLED),
-	.outputI(outputI),
 	.switches(switches),
 	.tens(tens),
 	.thousands(thousands),

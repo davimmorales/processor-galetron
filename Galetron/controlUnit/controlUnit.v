@@ -1,7 +1,7 @@
 module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   writeDataSelection, writeRegister, aluSelection, extenderSelection,
   immediateSelection, tripleMuxSelection, lastMuxSel, writeEnable,
-  IO_RAMwrite, enable, mainAddress, jump, HLT);//, branch);
+  IO_RAMwrite, enable, flag_write_hd, mainAddress, jump, HLT);//, branch);
 
   input [5:0] operation;
   input [31:0] srcRegister, immediate;
@@ -11,7 +11,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   output reg [3:0] aluSelection;
   output reg [1:0] extenderSelection, tripleMuxSelection;
   output reg jump, writeDataSelection, immediateSelection, lastMuxSel,
-  writeEnable, IO_RAMwrite, enable, writeRegister,bzero, bnegative, HLT;//, branch;
+  writeEnable, IO_RAMwrite, enable, writeRegister,bzero, bnegative, HLT, flag_write_hd;//, branch;
 
   always @ ( operation ) begin
   case (operation)
@@ -28,8 +28,8 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-  HLT = 0;
-
+  HLT = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   end
@@ -46,10 +46,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000010: begin//sub
   writeDataSelection = 1'b1;
@@ -64,10 +64,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000011: begin//subi
   writeDataSelection = 1'b1;
@@ -82,10 +82,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000100: begin//mul
   writeDataSelection = 1'b1;
@@ -100,10 +100,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000101: begin//div
   writeDataSelection = 1'b1;
@@ -118,10 +118,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000110: begin//inc
   writeDataSelection = 1'b1;
@@ -136,10 +136,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b000111: begin//dec
   writeDataSelection = 1'b1;
@@ -154,10 +154,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b001010: begin//mod
   writeDataSelection = 1'b1;
@@ -172,10 +172,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b001000: begin//and
   writeDataSelection = 1'b1;
@@ -190,10 +190,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b001001: begin//or
   writeDataSelection = 1'b1;
@@ -208,10 +208,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b001100: begin//xor
   writeDataSelection = 1'b1;
@@ -226,10 +226,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b001101: begin//not
   writeDataSelection = 1'b1;
@@ -244,10 +244,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010000: begin//shift left
   writeDataSelection = 1'b1;
@@ -262,9 +262,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010001: begin//shift right
   writeDataSelection = 1'b1;
@@ -279,9 +280,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011111: begin//pre-branch
   writeDataSelection = 1'bx;
@@ -296,9 +298,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;//importante para testes
   mainAddress = 10'b0;//immediate[9:0];
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010011: begin//branch on zero
   writeDataSelection = 1'bx;
@@ -313,10 +316,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;//importante para testes
   mainAddress = immediate[9:0];
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b1;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010100: begin//branch on negative
   writeDataSelection = 1'bx;
@@ -331,9 +334,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;//importante para testes
   mainAddress = immediate[9:0];
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b1;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010101: begin//jmp
   writeDataSelection = 1'bx;
@@ -348,9 +352,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;//vai que
   mainAddress = immediate[9:0];
   jump = 1'b1;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b010111: begin//slt
   writeDataSelection = 1'b1;
@@ -365,9 +370,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b1;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011000: begin//ld
   writeDataSelection = 1'b1;
@@ -382,9 +388,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011001:  begin//st
   writeDataSelection = 1'bx;
@@ -399,9 +406,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011010: begin//ldi
   writeDataSelection = 1'b0;
@@ -416,9 +424,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011100: begin//hlt
   writeDataSelection = 1'bx;
@@ -433,7 +442,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1;
@@ -451,9 +460,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011101: begin//in
   writeDataSelection = 1'b0;
@@ -468,9 +478,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b011110: begin//pre-out
   writeDataSelection = 1'bx;
@@ -485,10 +496,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b100000: begin//out
   writeDataSelection = 1'bx;
@@ -503,10 +514,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b100001: begin//load register
   writeDataSelection = 1'b1;
@@ -521,9 +532,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b100010:  begin//store register
   writeDataSelection = 1'bx;
@@ -538,9 +550,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   6'b100011: begin//jmp register
   writeDataSelection = 1'bx;
@@ -555,9 +568,28 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;//vai que
   mainAddress = immediate[9:0];
   jump = 1'b1;
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
+  end
+  6'b100100:  begin//store in hd
+  writeDataSelection = 1'bx;
+  writeRegister = 1'b0;
+  aluSelection = 4'b0000;
+  extenderSelection = 2'bxx;
+  immediateSelection = 1'b0;
+  tripleMuxSelection = 2'bxx;
+  lastMuxSel = 1'b0;
+  writeEnable = 1'b1;
+  IO_RAMwrite = 1'b0;
+  enable = 1'b0;
+  mainAddress = 10'b0;
+  jump = 1'b0;
+  flag_write_hd = 1'b1;
+  bzero = 1'b0;
+  bnegative = 1'b0;
+  HLT = 1'b0;
   end
   default: begin
   writeDataSelection = 1'b0;
@@ -572,10 +604,10 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
-
+  flag_write_hd = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
-  HLT = 0;
+  HLT = 1'b0;
   end
   endcase
   end

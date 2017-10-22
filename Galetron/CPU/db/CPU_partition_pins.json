@@ -4,251 +4,131 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "inLED",
+					"name" : "hd_output[31]",
 					"strict" : false
 				},
 				{
-					"name" : "outLED",
+					"name" : "hd_output[30]",
 					"strict" : false
 				},
 				{
-					"name" : "negLED",
+					"name" : "hd_output[29]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[6]",
+					"name" : "hd_output[28]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[5]",
+					"name" : "hd_output[27]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[4]",
+					"name" : "hd_output[26]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[3]",
+					"name" : "hd_output[25]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[2]",
+					"name" : "hd_output[24]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[1]",
+					"name" : "hd_output[23]",
 					"strict" : false
 				},
 				{
-					"name" : "billions[0]",
+					"name" : "hd_output[22]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[6]",
+					"name" : "hd_output[21]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[5]",
+					"name" : "hd_output[20]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[4]",
+					"name" : "hd_output[19]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[3]",
+					"name" : "hd_output[18]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[2]",
+					"name" : "hd_output[17]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[1]",
+					"name" : "hd_output[16]",
 					"strict" : false
 				},
 				{
-					"name" : "gazillions[0]",
+					"name" : "hd_output[15]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[6]",
+					"name" : "hd_output[14]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[5]",
+					"name" : "hd_output[13]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[4]",
+					"name" : "hd_output[12]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[3]",
+					"name" : "hd_output[11]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[2]",
+					"name" : "hd_output[10]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[1]",
+					"name" : "hd_output[9]",
 					"strict" : false
 				},
 				{
-					"name" : "hundreds[0]",
+					"name" : "hd_output[8]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[6]",
+					"name" : "hd_output[7]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[5]",
+					"name" : "hd_output[6]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[4]",
+					"name" : "hd_output[5]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[3]",
+					"name" : "hd_output[4]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[2]",
+					"name" : "hd_output[3]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[1]",
+					"name" : "hd_output[2]",
 					"strict" : false
 				},
 				{
-					"name" : "millions[0]",
+					"name" : "hd_output[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ones[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ones[0]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[6]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[5]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[4]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[3]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[2]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[1]",
-					"strict" : false
-				},
-				{
-					"name" : "tens[0]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[6]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[5]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[4]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[3]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[2]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[1]",
-					"strict" : false
-				},
-				{
-					"name" : "thousands[0]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[6]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[5]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[4]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[3]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[2]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[1]",
-					"strict" : false
-				},
-				{
-					"name" : "trillions[0]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[17]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[16]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[15]",
+					"name" : "hd_output[0]",
 					"strict" : false
 				},
 				{
@@ -288,27 +168,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[5]",
+					"name" : "switches[16]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[4]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[0]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[1]",
+					"name" : "switches[17]",
 					"strict" : false
 				},
 				{
