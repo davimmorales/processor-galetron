@@ -4,6 +4,74 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "inLED",
+					"strict" : false
+				},
+				{
+					"name" : "outLED",
+					"strict" : false
+				},
+				{
+					"name" : "negLED",
+					"strict" : false
+				},
+				{
+					"name" : "billions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "billions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "gazillions[0]",
+					"strict" : false
+				},
+				{
 					"name" : "hd_output[31]",
 					"strict" : false
 				},
@@ -132,7 +200,203 @@
 					"strict" : false
 				},
 				{
+					"name" : "hundreds[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hundreds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "millions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ones[0]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[6]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[5]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[4]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[2]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[1]",
+					"strict" : false
+				},
+				{
+					"name" : "tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[6]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[5]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[4]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[3]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[2]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[1]",
+					"strict" : false
+				},
+				{
+					"name" : "thousands[0]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[6]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[5]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[4]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[3]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[2]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[1]",
+					"strict" : false
+				},
+				{
+					"name" : "trillions[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
 					"name" : "switches[14]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[16]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[15]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[17]",
 					"strict" : false
 				},
 				{
@@ -168,11 +432,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[16]",
+					"name" : "switches[5]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[17]",
+					"name" : "switches[4]",
 					"strict" : false
 				},
 				{

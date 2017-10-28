@@ -1,7 +1,7 @@
 module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   writeDataSelection, writeRegister, aluSelection, extenderSelection,
   immediateSelection, tripleMuxSelection, lastMuxSel, writeEnable,
-  IO_RAMwrite, enable, flag_write_hd, mainAddress, jump, HLT);//, branch);
+  IO_RAMwrite, enable, flag_write_hd, hd_mux_selection, mainAddress, jump, HLT);//, branch);
 
   input [5:0] operation;
   input [31:0] srcRegister, immediate;
@@ -11,7 +11,8 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   output reg [3:0] aluSelection;
   output reg [1:0] extenderSelection, tripleMuxSelection;
   output reg jump, writeDataSelection, immediateSelection, lastMuxSel,
-  writeEnable, IO_RAMwrite, enable, writeRegister,bzero, bnegative, HLT, flag_write_hd;//, branch;
+  writeEnable, IO_RAMwrite, enable, writeRegister,bzero, bnegative, HLT, flag_write_hd,
+  hd_mux_selection;//, branch;
 
   always @ ( operation ) begin
   case (operation)
@@ -30,6 +31,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   jump = 1'b0;
   HLT = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   end
@@ -47,6 +49,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -65,6 +68,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -83,6 +87,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -101,6 +106,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -119,6 +125,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -137,6 +144,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -155,6 +163,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -173,6 +182,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -191,6 +201,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -209,6 +220,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -227,6 +239,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -245,6 +258,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -263,6 +277,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -281,6 +296,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -299,6 +315,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;//immediate[9:0];
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -317,6 +334,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = immediate[9:0];
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b1;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -335,6 +353,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = immediate[9:0];
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b1;
   HLT = 1'b0;
@@ -353,6 +372,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = immediate[9:0];
   jump = 1'b1;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -371,6 +391,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -389,6 +410,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -407,6 +429,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -425,6 +448,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -443,6 +467,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1;
@@ -461,6 +486,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -479,6 +505,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -497,6 +524,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -515,6 +543,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -533,6 +562,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -551,6 +581,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -569,6 +600,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = immediate[9:0];
   jump = 1'b1;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -587,6 +619,26 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b1;
+  hd_mux_selection = 1'b0;
+  bzero = 1'b0;
+  bnegative = 1'b0;
+  HLT = 1'b0;
+  end
+  6'b100101: begin//load from hd
+  writeDataSelection = 1'b1;
+  writeRegister = 1'b1;
+  aluSelection = 4'b0000;
+  extenderSelection = 2'bxx;
+  immediateSelection = 1'b0;
+  tripleMuxSelection = 2'b01;
+  lastMuxSel = 1'b0;
+  writeEnable = 1'b0;
+  IO_RAMwrite = 1'b0;
+  enable = 1'b0;
+  mainAddress = 10'b0;
+  jump = 1'b0;
+  flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b1;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -605,6 +657,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  hd_mux_selection = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
