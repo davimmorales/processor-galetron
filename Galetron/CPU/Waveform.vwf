@@ -1563,6 +1563,16 @@ SIGNAL("hd_output[0]")
 	PARENT = "hd_output";
 }
 
+SIGNAL("selector")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("outputI[31]")
 {
 	NODE
@@ -2020,13 +2030,17 @@ TRANSITION_LIST("UserClock")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 310.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 170.0;
-		LEVEL 1 FOR 30.0;
-		LEVEL 0 FOR 270.0;
+		LEVEL 0 FOR 352.5;
+		LEVEL 1 FOR 22.5;
+		NODE
+		{
+			REPEAT = 12;
+			LEVEL 0 FOR 22.5;
+			LEVEL 1 FOR 22.5;
+		}
+		LEVEL 0 FOR 22.5;
+		LEVEL 1 FOR 2.5;
+		LEVEL 0 FOR 60.0;
 	}
 }
 
@@ -2846,6 +2860,15 @@ TRANSITION_LIST("hd_output[1]")
 }
 
 TRANSITION_LIST("hd_output[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("selector")
 {
 	NODE
 	{
@@ -4378,6 +4401,15 @@ DISPLAY_LINE
 	TREE_INDEX = 152;
 	TREE_LEVEL = 1;
 	PARENT = 120;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "selector";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 153;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

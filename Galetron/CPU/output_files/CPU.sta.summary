@@ -2,112 +2,112 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -40.318
-TNS   : -80904.445
-
 Type  : Slow 1200mV 85C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -28.375
-TNS   : -70646.865
+Slack : -163.888
+TNS   : -176842.605
+
+Type  : Slow 1200mV 85C Model Setup 'frequencyDivider:inst16|ClkOut'
+Slack : -55.593
+TNS   : -215819.542
 
 Type  : Slow 1200mV 85C Model Setup 'machineClock'
-Slack : -2.142
-TNS   : -20.738
+Slack : -2.305
+TNS   : -21.345
 
 Type  : Slow 1200mV 85C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -8.866
-TNS   : -20377.133
+Slack : -15.633
+TNS   : -65063.138
 
 Type  : Slow 1200mV 85C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -4.469
-TNS   : -2500.257
+Slack : -1.614
+TNS   : -254.918
 
 Type  : Slow 1200mV 85C Model Hold 'machineClock'
-Slack : 0.404
+Slack : 0.402
 TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -8.419
+TNS   : -269018.781
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
 TNS   : -22.275
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -2.459
-TNS   : -47193.170
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
 Slack : -1.285
-TNS   : -5193.970
-
-Type  : Slow 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -36.917
-TNS   : -73442.467
+TNS   : -7591.780
 
 Type  : Slow 1200mV 0C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -26.031
-TNS   : -64395.435
+Slack : -148.378
+TNS   : -163031.952
+
+Type  : Slow 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
+Slack : -50.748
+TNS   : -198355.636
 
 Type  : Slow 1200mV 0C Model Setup 'machineClock'
-Slack : -1.820
-TNS   : -17.158
+Slack : -2.014
+TNS   : -17.762
 
 Type  : Slow 1200mV 0C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -8.110
-TNS   : -18698.626
+Slack : -14.301
+TNS   : -59893.287
 
 Type  : Slow 1200mV 0C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -4.068
-TNS   : -2283.700
+Slack : -1.394
+TNS   : -190.474
 
 Type  : Slow 1200mV 0C Model Hold 'machineClock'
-Slack : 0.356
+Slack : 0.353
 TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -7.728
+TNS   : -247282.188
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
 TNS   : -22.275
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -2.283
-TNS   : -43307.227
-
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
 Slack : -1.285
-TNS   : -5193.970
-
-Type  : Fast 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -19.993
-TNS   : -38643.961
+TNS   : -7591.780
 
 Type  : Fast 1200mV 0C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -14.458
-TNS   : -34514.087
+Slack : -81.848
+TNS   : -90867.639
+
+Type  : Fast 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
+Slack : -27.747
+TNS   : -110485.417
 
 Type  : Fast 1200mV 0C Model Setup 'machineClock'
-Slack : -0.534
-TNS   : -3.246
+Slack : -0.597
+TNS   : -3.408
 
 Type  : Fast 1200mV 0C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -4.368
-TNS   : -10353.393
+Slack : -7.891
+TNS   : -32953.232
 
 Type  : Fast 1200mV 0C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -2.296
-TNS   : -1735.586
+Slack : -0.928
+TNS   : -202.643
 
 Type  : Fast 1200mV 0C Model Hold 'machineClock'
-Slack : 0.183
+Slack : 0.181
 TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -4.209
+TNS   : -130750.467
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -18.915
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -1.244
-TNS   : -21999.517
+TNS   : -18.900
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
 Slack : -1.000
-TNS   : -4042.000
+TNS   : -5908.000
 
 ------------------------------------------------------------
