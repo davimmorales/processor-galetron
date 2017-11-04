@@ -9,13 +9,13 @@ z2
 cModel Technology
 d/home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/CPU/simulation/qsim
 vCPU
-Z0 !s110 1509736246
+Z0 !s110 1509802146
 !i10b 1
-!s100 ZOIdE;`McVN>M=4S0hjKL2
-IkRzbRC3]aI_eBGjmYiARP3
+!s100 jBaUmo4@JW[_d]<RR:cVJ1
+IOaRnNl=6:[[bcRomm=6T83
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 d/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/simulation/qsim
-w1509736244
+w1509802143
 8CPU.vo
 FCPU.vo
 L0 32
@@ -23,7 +23,7 @@ Z3 OV;L;10.4b;61
 r1
 !s85 0
 31
-!s108 1509736245.000000
+!s108 1509802144.000000
 !s107 CPU.vo|
 !s90 -work|work|CPU.vo|
 !i113 1
@@ -32,11 +32,11 @@ n@c@p@u
 vCPU_vlg_vec_tst
 R0
 !i10b 1
-!s100 PNhW4KjU6YUz^[j4`Vh6f3
-IgzIZkOIXFzO9mWn1<LiWo0
+!s100 =J7Tb_OfK24YU_e=`^onN3
+IlQ]g2:_9JFg1aDGW8G:F[3
 R1
 R2
-w1509736235
+w1509802135
 8Waveform.vwf.vt
 FWaveform.vwf.vt
 L0 30
@@ -44,7 +44,7 @@ R3
 r1
 !s85 0
 31
-!s108 1509736246.000000
+!s108 1509802146.000000
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1

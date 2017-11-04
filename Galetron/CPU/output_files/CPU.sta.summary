@@ -3,111 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -163.888
-TNS   : -176842.605
+Slack : -155.058
+TNS   : -116343.835
 
 Type  : Slow 1200mV 85C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -55.593
-TNS   : -215819.542
+Slack : -50.900
+TNS   : -141329.905
 
 Type  : Slow 1200mV 85C Model Setup 'machineClock'
-Slack : -2.305
-TNS   : -21.345
+Slack : -2.594
+TNS   : -22.664
 
 Type  : Slow 1200mV 85C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -15.633
-TNS   : -65063.138
+Slack : -10.998
+TNS   : -29513.512
 
 Type  : Slow 1200mV 85C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -1.614
-TNS   : -254.918
+Slack : -2.699
+TNS   : -221.903
 
 Type  : Slow 1200mV 85C Model Hold 'machineClock'
 Slack : 0.402
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -8.419
-TNS   : -269018.781
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
 TNS   : -22.275
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -2.984
+TNS   : -69862.478
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
-Slack : -1.285
-TNS   : -7591.780
+Slack : -2.693
+TNS   : -6377.947
 
 Type  : Slow 1200mV 0C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -148.378
-TNS   : -163031.952
+Slack : -140.230
+TNS   : -106699.601
 
 Type  : Slow 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -50.748
-TNS   : -198355.636
+Slack : -46.648
+TNS   : -129665.942
 
 Type  : Slow 1200mV 0C Model Setup 'machineClock'
-Slack : -2.014
-TNS   : -17.762
+Slack : -2.257
+TNS   : -19.053
 
 Type  : Slow 1200mV 0C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -14.301
-TNS   : -59893.287
+Slack : -9.799
+TNS   : -26548.121
 
 Type  : Slow 1200mV 0C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -1.394
-TNS   : -190.474
+Slack : -2.404
+TNS   : -195.525
 
 Type  : Slow 1200mV 0C Model Hold 'machineClock'
-Slack : 0.353
+Slack : 0.354
 TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -7.728
-TNS   : -247282.188
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
 TNS   : -22.275
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -2.756
+TNS   : -63153.364
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
-Slack : -1.285
-TNS   : -7591.780
+Slack : -2.649
+TNS   : -6377.771
 
 Type  : Fast 1200mV 0C Model Setup 'PC:inst12|programCounter[0]'
-Slack : -81.848
-TNS   : -90867.639
+Slack : -77.265
+TNS   : -59829.378
 
 Type  : Fast 1200mV 0C Model Setup 'frequencyDivider:inst16|ClkOut'
-Slack : -27.747
-TNS   : -110485.417
+Slack : -25.768
+TNS   : -72038.428
 
 Type  : Fast 1200mV 0C Model Setup 'machineClock'
-Slack : -0.597
-TNS   : -3.408
+Slack : -0.753
+TNS   : -4.118
 
 Type  : Fast 1200mV 0C Model Hold 'PC:inst12|programCounter[0]'
-Slack : -7.891
-TNS   : -32953.232
+Slack : -6.077
+TNS   : -15583.696
 
 Type  : Fast 1200mV 0C Model Hold 'frequencyDivider:inst16|ClkOut'
-Slack : -0.928
-TNS   : -202.643
+Slack : -1.514
+TNS   : -130.778
 
 Type  : Fast 1200mV 0C Model Hold 'machineClock'
-Slack : 0.181
+Slack : 0.182
 TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
-Slack : -4.209
-TNS   : -130750.467
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -18.900
+TNS   : -18.960
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst12|programCounter[0]'
+Slack : -1.458
+TNS   : -29760.563
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequencyDivider:inst16|ClkOut'
 Slack : -1.000
-TNS   : -5908.000
+TNS   : -4959.000
 
 ------------------------------------------------------------

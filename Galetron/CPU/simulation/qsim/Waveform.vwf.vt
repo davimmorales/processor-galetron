@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "11/03/2017 17:10:35"
+// Generated on "11/04/2017 11:28:55"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          CPU
 // 
@@ -39,12 +39,13 @@ wire [6:0] gazillions;
 wire [31:0] hd_output;
 wire [6:0] hundreds;
 wire inLED;
+wire [31:0] instruction;
+wire [9:0] lmoutput;
 wire [6:0] millions;
 wire negLED;
 wire [22:0] offLEDS;
 wire [6:0] ones;
 wire outLED;
-wire selector;
 wire [6:0] tens;
 wire [6:0] thousands;
 wire [6:0] trillions;
@@ -57,13 +58,14 @@ CPU i1 (
 	.hd_output(hd_output),
 	.hundreds(hundreds),
 	.inLED(inLED),
+	.instruction(instruction),
+	.lmoutput(lmoutput),
 	.machineClock(machineClock),
 	.millions(millions),
 	.negLED(negLED),
 	.offLEDS(offLEDS),
 	.ones(ones),
 	.outLED(outLED),
-	.selector(selector),
 	.switches(switches),
 	.tens(tens),
 	.thousands(thousands),
@@ -168,7 +170,6 @@ end
 initial
 begin
 	switches[4] = 1'b0;
-	switches[4] = #30000 1'b1;
 end 
 // switches[ 3 ]
 initial
@@ -179,7 +180,6 @@ end
 initial
 begin
 	switches[2] = 1'b0;
-	switches[2] = #30000 1'b1;
 end 
 // switches[ 1 ]
 initial

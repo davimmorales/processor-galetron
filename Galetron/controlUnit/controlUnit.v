@@ -724,7 +724,6 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   hd_mux_selection = 1'b0;
   flag_write_i_ram = 1'b1;
-  selector_address = 1'b1;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
