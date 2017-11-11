@@ -2292,18 +2292,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "lastMuxOutput[20..14]" (rect 1080 896 1253 907)(font "Liberation Sans" ))
-	(pt 1144 912)
-	(pt 1080 912)
-	(bus)
-)
-(connector
-	(text "lastMuxOutput[13..0]" (rect 1080 912 1245 923)(font "Liberation Sans" ))
-	(pt 1144 928)
-	(pt 1080 928)
-	(bus)
-)
-(connector
 	(text "clock" (rect 1090 928 1131 939)(font "Liberation Sans" ))
 	(pt 1144 944)
 	(pt 1080 944)
@@ -2589,6 +2577,18 @@ agreement for further details.
 	(text "output_bios[31..0]" (rect 104 -88 252 -77)(font "Liberation Sans" ))
 	(pt 104 -72)
 	(pt 208 -72)
+	(bus)
+)
+(connector
+	(text "lastMuxOutput[20..14]" (rect 1080 896 1253 907)(font "Liberation Sans" ))
+	(pt 1144 912)
+	(pt 1080 912)
+	(bus)
+)
+(connector
+	(text "lastMuxOutput[13..0]" (rect 1080 912 1245 923)(font "Liberation Sans" ))
+	(pt 1144 928)
+	(pt 1080 928)
 	(bus)
 )
 (junction (pt -272 456))

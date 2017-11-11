@@ -1,5 +1,5 @@
 EDA Netlist Writer report for CPU
-Sat Nov  4 12:03:55 2017
+Sat Nov 11 20:41:45 2017
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Nov  4 12:03:55 2017 ;
+; EDA Netlist Writer Status ; Successful - Sat Nov 11 20:41:45 2017 ;
 ; Revision Name             ; CPU                                   ;
 ; Top-level Entity Name     ; CPU                                   ;
 ; Family                    ; Cyclone IV E                          ;
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Sat Nov  4 12:03:42 2017
+    Info: Processing started: Sat Nov 11 20:41:19 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off CPU -c CPU
 Info (204019): Generated file CPU_7_1200mv_85c_slow.vho in folder "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file CPU_7_1200mv_0c_slow.vho in folder "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/simulation/modelsim/" for EDA simulation tool
@@ -100,9 +100,9 @@ Info (204019): Generated file CPU_7_1200mv_0c_vhd_slow.sdo in folder "/home/mora
 Info (204019): Generated file CPU_min_1200mv_0c_vhd_fast.sdo in folder "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file CPU_vhd.sdo in folder "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1460 megabytes
-    Info: Processing ended: Sat Nov  4 12:03:55 2017
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 1563 megabytes
+    Info: Processing ended: Sat Nov 11 20:41:45 2017
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:26
 
 

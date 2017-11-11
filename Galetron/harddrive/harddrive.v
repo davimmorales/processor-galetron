@@ -8,7 +8,7 @@ module harddrive(data_write, track, sector, clock, output_hard_drive, flag_write
   integer firstClock = 0;
 
 	// Declare the hard drive variable
-	reg [31:0] HD[6:0][13:0];
+	reg [31:0] HD[2:0][150:0];
 
 	always @ (posedge clock) begin
 	//load instructions
@@ -23,6 +23,10 @@ module harddrive(data_write, track, sector, clock, output_hard_drive, flag_write
       HD[0][7] <= 32'b00000000000000000000000000000011;//Output r[5]
       HD[0][8] <= 32'b00000000000000000000000000000100;//Hlt
       HD[0][9] <= 32'b01110000000000000000000000000000;//Hlt
+		HD[1][0] <= 32'b00000000000000000000000000001000;
+		HD[1][32] <= 32'b00000000000000000000000000001010;
+		HD[1][64] <= 32'b00000000000000000000000000000001;
+		HD[1][96] <= 32'b00000000000000000000000000000000;
 			firstClock <= 1;
 		end
 	// Write
