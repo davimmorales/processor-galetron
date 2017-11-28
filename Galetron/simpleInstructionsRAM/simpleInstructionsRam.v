@@ -5,14 +5,406 @@ module simpleInstructionsRam(clock, address, i_ram_writing_address, iRAMOutput, 
 	 input clock;
 	 input flag_write_i_ram;
 	 output [31:0] iRAMOutput;
+	   integer firstClock = 0;
 
 	 // Declare the RAM variable
-	 reg [31:0] instructionsRAM[30:0];
+	 reg [31:0] instructionsRAM[650:0];
 
 	 // Variable to hold the registered read address
 	 reg [9:0] address_register;
 
 	 always @ ( posedge clock ) begin
+	 	   if (firstClock==0) begin
+	 	 instructionsRAM[256] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[257] <= 32'b01110110101000000000000000000000;//Input to r[21]
+	 	 instructionsRAM[258] <= 32'b01101010110000000000000000000000;//Loadi #0 to r[22]
+	 	 instructionsRAM[259] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[260] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[261] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[262] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[263] <= 32'b01001100000000000000000000010011;//Branch on Zero #19
+	 	 instructionsRAM[264] <= 32'b01101010110000000000000000000001;//Loadi #1 to r[22]
+	 	 instructionsRAM[265] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[266] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[267] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[268] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[269] <= 32'b01001100000000000000000000010000;//Branch on Zero #16
+	 	 instructionsRAM[270] <= 32'b01101010110000000000000000000010;//Loadi #2 to r[22]
+	 	 instructionsRAM[271] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[272] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[273] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[274] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[275] <= 32'b01001100000000000000000000010111;//Branch on Zero #23
+	 	 instructionsRAM[276] <= 32'b01101010110000000000000000000011;//Loadi #3 to r[22]
+	 	 instructionsRAM[277] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[278] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[279] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[280] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[281] <= 32'b01001100000000000000000000001010;//Branch on Zero #10
+	 	 instructionsRAM[282] <= 32'b01010100000000000000000100100111;//Jump to #295
+	 	 instructionsRAM[283] <= 32'b01101010110000000000000000000000;//Loadi #0 to r[22]
+	 	 instructionsRAM[284] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[285] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[286] <= 32'b01101010101000000000000000000000;//Loadi #0 to r[21]
+	 	 instructionsRAM[287] <= 32'b01101010110000000000000001000000;//Loadi #64 to r[22]
+	 	 instructionsRAM[288] <= 32'b10000110111101100000000000000000;//Loadr m[r[22]] to r[23]
+	 	 instructionsRAM[289] <= 32'b01011111000101011011100000000000;//SLT if r[21] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[290] <= 32'b01011111001101111010100000000000;//SLT if r[23] < r[21], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[291] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[292] <= 32'b00110111001110010000000000000000;//NOT r[25] to r[25]
+	 	 instructionsRAM[293] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[294] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[295] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[296] <= 32'b10000010111000000000000000000000;//Output r[23]
+	 	 instructionsRAM[297] <= 32'b00000110110101100000000000000010;//ADDi r[22], #2 to r[22]
+	 	 instructionsRAM[298] <= 32'b01010100000000000000000100100000;//Jump to #288
+	 	 instructionsRAM[299] <= 32'b01110110101000000000000000000000;//Input to r[21]
+	 	 instructionsRAM[300] <= 32'b01101010110000000000000000000000;//Loadi #0 to r[22]
+	 	 instructionsRAM[301] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[302] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[303] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[304] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[305] <= 32'b01001100000000000000000000001101;//Branch on Zero #13
+	 	 instructionsRAM[306] <= 32'b01101010110000000000000000000001;//Loadi #1 to r[22]
+	 	 instructionsRAM[307] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[308] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[309] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[310] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[311] <= 32'b01001100000000000000000000001011;//Branch on Zero #11
+	 	 instructionsRAM[312] <= 32'b01101010110000000000000000000010;//Loadi #2 to r[22]
+	 	 instructionsRAM[313] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[314] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[315] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[316] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[317] <= 32'b01001100000000000000000000000100;//Branch on Zero #4
+	 	 instructionsRAM[318] <= 32'b01010100000000000000000101010111;//Jump to #343
+	 	 instructionsRAM[319] <= 32'b01101010110000000000000000000001;//Loadi #1 to r[22]
+	 	 instructionsRAM[320] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[321] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[322] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[323] <= 32'b01101010101000000000000000000000;//Loadi #0 to r[21]
+	 	 instructionsRAM[324] <= 32'b01101010110000000100000000000000;//Loadi #1, #0 to r[22]
+	 	 instructionsRAM[325] <= 32'b10010110111101100000000000000000;//LoadHD m[r[22]] to r[23]
+	 	 instructionsRAM[326] <= 32'b01011111000101011011100000000000;//SLT if r[21] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[327] <= 32'b01011111001101111010100000000000;//SLT if r[23] < r[21], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[328] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[329] <= 32'b00110111001110010000000000000000;//NOT r[25] to r[25]
+	 	 instructionsRAM[330] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[331] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[332] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[333] <= 32'b01101010101000000000000000000001;//Loadi #1 to r[21]
+	 	 instructionsRAM[334] <= 32'b01011111000101011011100000000000;//SLT if r[21] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[335] <= 32'b01011111001101111010100000000000;//SLT if r[23] < r[21], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[336] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[337] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[338] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[339] <= 32'b10000010111000000000000000000000;//Output r[23]
+	 	 instructionsRAM[340] <= 32'b00000110110101100000000000100000;//ADDi r[22], #32 to r[22]
+	 	 instructionsRAM[341] <= 32'b01101010101000000000000000000000;//Loadi #0 to r[21]
+	 	 instructionsRAM[342] <= 32'b01010100000000000000000101000101;//Jump to #325
+	 	 instructionsRAM[343] <= 32'b01101010110000000000000000000011;//Loadi #3 to r[22]
+	 	 instructionsRAM[344] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[345] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[346] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[347] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[348] <= 32'b01001100000000000000000000000000;//Branch on Zero #0
+	 	 instructionsRAM[349] <= 32'b01101000000000000000000000000000;//Loadi #0 to r[0]
+	 	 instructionsRAM[350] <= 32'b01101010110000000000000001000000;//Loadi #64 to r[22]
+	 	 instructionsRAM[351] <= 32'b10000110111101100000000000000000;//Loadr m[r[22]] to r[23]
+	 	 instructionsRAM[352] <= 32'b01011111000000001011100000000000;//SLT if r[0] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[353] <= 32'b01011111001101110000000000000000;//SLT if r[23] < r[0], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[354] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[355] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[356] <= 32'b01001100000000000000000000001001;//Branch on Zero #9
+	 	 instructionsRAM[357] <= 32'b01011111000101011011100000000000;//SLT if r[21] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[358] <= 32'b01011111001101111010100000000000;//SLT if r[23] < r[21], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[359] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[360] <= 32'b00110111001110010000000000000000;//NOT r[25] to r[25]
+	 	 instructionsRAM[361] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[362] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[363] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[364] <= 32'b00000110110101100000000000000010;//ADDi r[22], #2 to r[22]
+	 	 instructionsRAM[365] <= 32'b01010100000000000000000101011111;//Jump to #351
+	 	 instructionsRAM[366] <= 32'b01101010110000000100000000000000;//Loadi #1, #0 to r[22]
+	 	 instructionsRAM[367] <= 32'b10010110111101100000000000000000;//LoadHD m[r[22]] to r[23]
+	 	 instructionsRAM[368] <= 32'b01011111000000001011100000000000;//SLT if r[0] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[369] <= 32'b01011111001101110000000000000000;//SLT if r[23] < r[0], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[370] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[371] <= 32'b00110111001110010000000000000000;//NOT r[25] to r[25]
+	 	 instructionsRAM[372] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[373] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[374] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[375] <= 32'b01011111000101011011100000000000;//SLT if r[21] < r[23], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[376] <= 32'b01011111001101111010100000000000;//SLT if r[23] < r[21], r[25] = 1 else r[25] = 0
+	 	 instructionsRAM[377] <= 32'b00100111001110001100100000000000;//OR r[24],r[25] to r[25]
+	 	 instructionsRAM[378] <= 32'b01111100000110010000000000000000;//Pre Branch r[25]
+	 	 instructionsRAM[379] <= 32'b01001100000000000000000000000010;//Branch on Zero #2
+	 	 instructionsRAM[380] <= 32'b00000110110101100000000000100000;//ADDi r[22], #32 to r[22]
+	 	 instructionsRAM[381] <= 32'b01010100000000000000000101101111;//Jump to #367
+	 	 instructionsRAM[382] <= 32'b01100110101000000000000001101010;//Store r[21] in m[#106]
+	 	 instructionsRAM[383] <= 32'b01110110101000000000000000000000;//Input to r[21]
+	 	 instructionsRAM[384] <= 32'b01101000000000000000000000000000;//Loadi #0 to r[0]
+	 	 instructionsRAM[385] <= 32'b01011110111101010000000000000000;//SLT if r[21] < r[0], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[386] <= 32'b01011111000000001010100000000000;//SLT if r[0] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[387] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[388] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[389] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[390] <= 32'b01001100000000000000000000000011;//Branch on Zero #3
+	 	 instructionsRAM[391] <= 32'b01100010110000000000000001101010;//Load m[#106] to r[22]
+	 	 instructionsRAM[392] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[393] <= 32'b01010100000000000000000101111111;//Jump to #383
+	 	 instructionsRAM[394] <= 32'b01101010110000000000000000000010;//Loadi #2 to r[22]
+	 	 instructionsRAM[395] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[396] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[397] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[398] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[399] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[400] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[401] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[402] <= 32'b01010100000000000000000000000000;//Jump to #0
+	 	 instructionsRAM[403] <= 32'b01101011011000000000001001000110;//Loadi #582 to r[27]
+	 	 instructionsRAM[404] <= 32'b01010100000000000000000110010110;//Jump to #406
+	 	 instructionsRAM[405] <= 32'b01101000000000000000000000000000;//Loadi #0 to r[0]
+	 	 instructionsRAM[406] <= 32'b01100100000000000000000001100001;//Store r[0] in m[#97]
+	 	 instructionsRAM[407] <= 32'b01100100000000000000000001100010;//Store r[0] in m[#98]
+	 	 instructionsRAM[408] <= 32'b01100100000000000000000001100011;//Store r[0] in m[#99]
+	 	 instructionsRAM[409] <= 32'b01101010101000000000000001000000;//Loadi #64 to r[21]
+	 	 instructionsRAM[410] <= 32'b01100110101000000000000001100011;//Store r[21] in m[#99]
+	 	 instructionsRAM[411] <= 32'b01100010101000000000000001100011;//Load m[#99] to r[21]
+	 	 instructionsRAM[412] <= 32'b01011110110000001010100000000000;//SLT if r[0] < r[21], r[22] = 1 else r[22] = 0
+	 	 instructionsRAM[413] <= 32'b01011110111101010000000000000000;//SLT if r[21] < r[0], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[414] <= 32'b00100110110101101011100000000000;//OR r[22],r[23] to r[22]
+	 	 instructionsRAM[415] <= 32'b01111100000101100000000000000000;//Pre Branch r[22]
+	 	 instructionsRAM[416] <= 32'b01001100000000000000000000010110;//Branch on Zero #22
+	 	 instructionsRAM[417] <= 32'b01101011000000000000000000000001;//Loadi #1 to r[24]
+	 	 instructionsRAM[418] <= 32'b01100010101000000000000001100011;//Load m[#99] to r[21]
+	 	 instructionsRAM[419] <= 32'b01011110110101011100000000000000;//SLT if r[21] < r[24], r[22] = 1 else r[22] = 0
+	 	 instructionsRAM[420] <= 32'b01011110111110001011000000000000;//SLT if r[24] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[421] <= 32'b00100110110101101011100000000000;//OR r[22],r[23] to r[22]
+	 	 instructionsRAM[422] <= 32'b01111100000101100000000000000000;//Pre Branch r[22]
+	 	 instructionsRAM[423] <= 32'b01001100000000000000000000001111;//Branch on Zero #15
+	 	 instructionsRAM[424] <= 32'b01100010101000000000000001100011;//Load m[#99] to r[21]
+	 	 instructionsRAM[425] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[426] <= 32'b01100010110000000000000001100001;//Load m[#97] to r[22]
+	 	 instructionsRAM[427] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[428] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[429] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[430] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[431] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[432] <= 32'b01001100000000000000000000000011;//Branch on Zero #3
+	 	 instructionsRAM[433] <= 32'b01100010101000000000000001100010;//Load m[#98] to r[21]
+	 	 instructionsRAM[434] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[435] <= 32'b01100110101000000000000001100010;//Store r[21] in m[#98]
+	 	 instructionsRAM[436] <= 32'b01100010101000000000000001100011;//Load m[#99] to r[21]
+	 	 instructionsRAM[437] <= 32'b00000110101101010000000000000010;//ADDi r[21], #2 to r[21]
+	 	 instructionsRAM[438] <= 32'b01010100000000000000000110011011;//Jump to #411
+	 	 instructionsRAM[439] <= 32'b01100010101000000000000001100010;//Load m[#98] to r[21]
+	 	 instructionsRAM[440] <= 32'b01101010110000000000000000000010;//Loadi #2 to r[22]
+	 	 instructionsRAM[441] <= 32'b01011110111101101010100000000000;//SLT if r[22] < r[21], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[442] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[443] <= 32'b01001100000000000000000000000011;//Branch on Zero #3
+	 	 instructionsRAM[444] <= 32'b01100010101000000000000001100001;//Load m[#97] to r[21]
+	 	 instructionsRAM[445] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[446] <= 32'b01100110101000000000000001100001;//Store r[21] in m[#97]
+	 	 instructionsRAM[447] <= 32'b01100010101000000000000001100001;//Load m[#97] to r[21]
+	 	 instructionsRAM[448] <= 32'b01100110101000000000000001100000;//Store r[21] in m[#96]
+	 	 instructionsRAM[449] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[450] <= 32'b01100010101000000000000001100000;//Load m[#96] to r[21]
+	 	 instructionsRAM[451] <= 32'b10000010101000000000000000000000;//Output r[21]
+	 	 instructionsRAM[452] <= 32'b01101011011000000000000111110000;//Loadi #496 to r[27]
+	 	 instructionsRAM[453] <= 32'b01100010101000000000000001101010;//Load m[#106] to r[21]
+	 	 instructionsRAM[454] <= 32'b01100110101000000000000001100100;//Store r[21] in m[#100]
+	 	 instructionsRAM[455] <= 32'b01100100000000000000000001100101;//Store r[0] in m[#101]
+	 	 instructionsRAM[456] <= 32'b01100100000000000000000001100110;//Store r[0] in m[#102]
+	 	 instructionsRAM[457] <= 32'b01101010101000000000000000000001;//Loadi #1 to r[21]
+	 	 instructionsRAM[458] <= 32'b01100110101000000000000001100111;//Store r[21] in m[#103]
+	 	 instructionsRAM[459] <= 32'b01100100000000000000000001101000;//Store r[0] in m[#104]
+	 	 instructionsRAM[460] <= 32'b01010100000000000000000111001101;//Jump to #461
+	 	 instructionsRAM[461] <= 32'b01101010101000000000000000000001;//Loadi #1 to r[21]
+	 	 instructionsRAM[462] <= 32'b01101010101001010100000000000000;//Loadi #21, #0 to r[21]
+	 	 instructionsRAM[463] <= 32'b01100110101000000000000001101001;//Store r[21] in m[#105]
+	 	 instructionsRAM[464] <= 32'b01101010110000000000000000010110;//Loadi #22 to r[22]
+	 	 instructionsRAM[465] <= 32'b01100010101000000000000001101001;//Load m[#105] to r[21]
+	 	 instructionsRAM[466] <= 32'b10010110110101010000000000000000;//LoadHD m[r[21]] to r[22]
+	 	 instructionsRAM[467] <= 32'b01011110111101100000000000000000;//SLT if r[22] < r[0], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[468] <= 32'b01011111000000001011000000000000;//SLT if r[0] < r[22], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[469] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[470] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[471] <= 32'b01001100000000000000000000010110;//Branch on Zero #22
+	 	 instructionsRAM[472] <= 32'b01101010101000000000000001100100;//Loadi #100 to r[21]
+	 	 instructionsRAM[473] <= 32'b01011110111101101010100000000000;//SLT if r[22] < r[21], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[474] <= 32'b01011111000101011011000000000000;//SLT if r[21] < r[22], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[475] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[476] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[477] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[478] <= 32'b01001100000000000000000000001101;//Branch on Zero #13
+	 	 instructionsRAM[479] <= 32'b01101010101000000000000001101001;//Loadi #105 to r[21]
+	 	 instructionsRAM[480] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[481] <= 32'b01100010110000000000000001100101;//Load m[#101] to r[22]
+	 	 instructionsRAM[482] <= 32'b10010010110101010000000000000000;//hdStore r[22] in m[r[21]] 
+	 	 instructionsRAM[483] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[484] <= 32'b01100010110000000000000001100110;//Load m[#102] to r[22]
+	 	 instructionsRAM[485] <= 32'b10010010110101010000000000000000;//hdStore r[22] in m[r[21]] 
+	 	 instructionsRAM[486] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[487] <= 32'b01100010110000000000000001100111;//Load m[#103] to r[22]
+	 	 instructionsRAM[488] <= 32'b10010010110101010000000000000000;//hdStore r[22] in m[r[21]] 
+	 	 instructionsRAM[489] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[490] <= 32'b01100010110000000000000001101000;//Load m[#104] to r[22]
+	 	 instructionsRAM[491] <= 32'b10010010110101010000000000000000;//hdStore r[22] in m[r[21]] 
+	 	 instructionsRAM[492] <= 32'b01101010101000000000000001101001;//Loadi #105 to r[21]
+	 	 instructionsRAM[493] <= 32'b00000110101101010000000000100000;//ADDi r[21], #32 to r[21]
+	 	 instructionsRAM[494] <= 32'b01010100000000000000000111010000;//Jump to #464
+	 	 instructionsRAM[495] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[496] <= 32'b01101011011000000000001000001110;//Loadi #526 to r[27]
+	 	 instructionsRAM[497] <= 32'b01100010101000000000000001101010;//Load m[#106] to r[21]
+	 	 instructionsRAM[498] <= 32'b01100110101000000000000001101011;//Store r[21] in m[#107]
+	 	 instructionsRAM[499] <= 32'b01100100000000000000000001101100;//Store r[0] in m[#108]
+	 	 instructionsRAM[500] <= 32'b01010100000000000000000111110101;//Jump to #501
+	 	 instructionsRAM[501] <= 32'b01101010101000000000000001000000;//Loadi #64 to r[21]
+	 	 instructionsRAM[502] <= 32'b01100110101000000000000001101101;//Store r[21] in m[#109]
+	 	 instructionsRAM[503] <= 32'b01100010101000000000000001101101;//Load m[#109] to r[21]
+	 	 instructionsRAM[504] <= 32'b10000110110101010000000000000000;//Loadr m[r[21]] to r[22]
+	 	 instructionsRAM[505] <= 32'b01011110111000001011000000000000;//SLT if r[0] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[506] <= 32'b01011111000101100000000000000000;//SLT if r[22] < r[0], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[507] <= 32'b00100110111110001011100000000000;//OR r[24],r[23] to r[23]
+	 	 instructionsRAM[508] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[509] <= 32'b01001100000000000000000000001001;//Branch on Zero #9
+	 	 instructionsRAM[510] <= 32'b01101011000000000000000000000001;//Loadi #1 to r[24]
+	 	 instructionsRAM[511] <= 32'b01011110101101101100000000000000;//SLT if r[22] < r[24], r[21] = 1 else r[21] = 0
+	 	 instructionsRAM[512] <= 32'b01011110111110001011000000000000;//SLT if r[24] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[513] <= 32'b00100110101101011011100000000000;//OR r[21],r[23] to r[21]
+	 	 instructionsRAM[514] <= 32'b01111100000101010000000000000000;//Pre Branch r[21]
+	 	 instructionsRAM[515] <= 32'b01001100000000000000000000000011;//Branch on Zero #3
+	 	 instructionsRAM[516] <= 32'b01100010101000000000000001101101;//Load m[#109] to r[21]
+	 	 instructionsRAM[517] <= 32'b00000110101101010000000000000010;//ADDi r[21], #2 to r[21]
+	 	 instructionsRAM[518] <= 32'b01010100000000000000000111110110;//Jump to #502
+	 	 instructionsRAM[519] <= 32'b01100010101000000000000001101101;//Load m[#109] to r[21]
+	 	 instructionsRAM[520] <= 32'b01100010110000000000000001101011;//Load m[#107] to r[22]
+	 	 instructionsRAM[521] <= 32'b10001010110101010000000000000000;//rStore r[22] in m[r[21]] 
+	 	 instructionsRAM[522] <= 32'b00000110101101010000000000000001;//ADDi r[21], #1 to r[21]
+	 	 instructionsRAM[523] <= 32'b01100010110000000000000001101100;//Load m[#108] to r[22]
+	 	 instructionsRAM[524] <= 32'b10001010110101010000000000000000;//rStore r[22] in m[r[21]] 
+	 	 instructionsRAM[525] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[526] <= 32'b01100010101000000000000001101010;//Load m[#106] to r[21]
+	 	 instructionsRAM[527] <= 32'b01100110101000000000000001110001;//Store r[21] in m[#113]
+	 	 instructionsRAM[528] <= 32'b01101011011000000000001000101011;//Loadi #555 to r[27]
+	 	 instructionsRAM[529] <= 32'b01101010101000000000000000000001;//Loadi #1 to r[21]
+	 	 instructionsRAM[530] <= 32'b01101010110001010100000000000000;//Loadi #21, #0 to r[22]
+	 	 instructionsRAM[531] <= 32'b01100110110000000000000001110011;//Store r[22] in m[#115]
+	 	 instructionsRAM[532] <= 32'b01100010101000000000000001110011;//Load m[#115] to r[21]
+	 	 instructionsRAM[533] <= 32'b10010110110101010000000000000000;//LoadHD m[r[21]] to r[22]
+	 	 instructionsRAM[534] <= 32'b01011110111000001011000000000000;//SLT if r[0] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[535] <= 32'b01011111000101100000000000000000;//SLT if r[22] < r[0], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[536] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[537] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[538] <= 32'b01001100000000000000000000001110;//Branch on Zero #14
+	 	 instructionsRAM[539] <= 32'b01100011001000000000000001110001;//Load m[#113] to r[25]
+	 	 instructionsRAM[540] <= 32'b01011110111101101100100000000000;//SLT if r[22] < r[25], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[541] <= 32'b01011111000110011011000000000000;//SLT if r[25] < r[22], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[542] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[543] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[544] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[545] <= 32'b01001100000000000000000000000100;//Branch on Zero #4
+	 	 instructionsRAM[546] <= 32'b00000110110101010000000000000101;//ADDi r[21], #5 to r[22]
+	 	 instructionsRAM[547] <= 32'b10010110110101100000000000000000;//LoadHD m[r[22]] to r[22]
+	 	 instructionsRAM[548] <= 32'b01100110110000000000000001110010;//Store r[22] in m[#114]
+	 	 instructionsRAM[549] <= 32'b01010100000000000000001000101010;//Jump to #554
+	 	 instructionsRAM[550] <= 32'b00000110101101010000000000100000;//ADDi r[21], #32 to r[21]
+	 	 instructionsRAM[551] <= 32'b01100110101000000000000001110011;//Store r[21] in m[#115]
+	 	 instructionsRAM[552] <= 32'b01010100000000000000001000010100;//Jump to #532
+	 	 instructionsRAM[553] <= 32'b01100100000000000000000001110010;//Store r[0] in m[#114]
+	 	 instructionsRAM[554] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[555] <= 32'b01100010101000000000000001110010;//Load m[#114] to r[21]
+	 	 instructionsRAM[556] <= 32'b01100110101000000000000001101110;//Store r[21] in m[#110]
+	 	 instructionsRAM[557] <= 32'b01101011011000000000001001000101;//Loadi #581 to r[27]
+	 	 instructionsRAM[558] <= 32'b01010100000000000000001000101111;//Jump to #559
+	 	 instructionsRAM[559] <= 32'b01101010101000000000000000000000;//Loadi #0 to r[21]
+	 	 instructionsRAM[560] <= 32'b01100110101000000000000001101111;//Store r[21] in m[#111]
+	 	 instructionsRAM[561] <= 32'b01100010101000000000000001101110;//Load m[#110] to r[21]
+	 	 instructionsRAM[562] <= 32'b01101010110000000000000001000000;//Loadi #64 to r[22]
+	 	 instructionsRAM[563] <= 32'b00010010101101011011000000000000;//TIMES r[21],r[22] to r[21]
+	 	 instructionsRAM[564] <= 32'b01101010111000000000000000000010;//Loadi #2 to r[23]
+	 	 instructionsRAM[565] <= 32'b01101010111001011100000000000000;//Loadi #23, #0 to r[23]
+	 	 instructionsRAM[566] <= 32'b00000010101101111010100000000000;//ADD r[23],r[21] to r[21]
+	 	 instructionsRAM[567] <= 32'b01100010110000000000000001101111;//Load m[#111] to r[22]
+	 	 instructionsRAM[568] <= 32'b00000010101101011011000000000000;//ADD r[21],r[22] to r[21]
+	 	 instructionsRAM[569] <= 32'b10010110110101010000000000000000;//LoadHD m[r[21]] to r[22]
+	 	 instructionsRAM[570] <= 32'b01011110111000001011000000000000;//SLT if r[0] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[571] <= 32'b01011111000101100000000000000000;//SLT if r[22] < r[0], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[572] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[573] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[574] <= 32'b01001100000000000000000000000101;//Branch on Zero #5
+	 	 instructionsRAM[575] <= 32'b01100010111000000000000001101111;//Load m[#111] to r[23]
+	 	 instructionsRAM[576] <= 32'b10011010110101110000000000000000;//rStore r[22] in m[r[23]] 
+	 	 instructionsRAM[577] <= 32'b00000110111101110000000000000001;//ADDi r[23], #1 to r[23]
+	 	 instructionsRAM[578] <= 32'b01100110111000000000000001101111;//Store r[23] in m[#111]
+	 	 instructionsRAM[579] <= 32'b01010100000000000000001000110001;//Jump to #561
+	 	 instructionsRAM[580] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[581] <= 32'b01010100000000000000000000000000;//Jump to #0
+	 	 instructionsRAM[582] <= 32'b01101011011000000000001001010110;//Loadi #598 to r[27]
+	 	 instructionsRAM[583] <= 32'b01010100000000000000001001001000;//Jump to #584
+	 	 instructionsRAM[584] <= 32'b01101010101000000000000001000000;//Loadi #64 to r[21]
+	 	 instructionsRAM[585] <= 32'b01100110101000000000000001110101;//Store r[21] in m[#117]
+	 	 instructionsRAM[586] <= 32'b01100010101000000000000001110101;//Load m[#117] to r[21]
+	 	 instructionsRAM[587] <= 32'b10000110110101010000000000000000;//Loadr m[r[21]] to r[22]
+	 	 instructionsRAM[588] <= 32'b01011110111101100000000000000000;//SLT if r[22] < r[0], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[589] <= 32'b01011111000000001011000000000000;//SLT if r[0] < r[22], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[590] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[591] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[592] <= 32'b01001100000000000000000000000011;//Branch on Zero #3
+	 	 instructionsRAM[593] <= 32'b00000100000101010000000000000010;//ADDi r[21], #2 to r[0]
+	 	 instructionsRAM[594] <= 32'b01100110101000000000000001110101;//Store r[21] in m[#117]
+	 	 instructionsRAM[595] <= 32'b01010100000000000000001001001010;//Jump to #586
+	 	 instructionsRAM[596] <= 32'b01100110110000000000000001110100;//Store r[22] in m[#116]
+	 	 instructionsRAM[597] <= 32'b10001100000110110000000000000000;//Jump to r[27]
+	 	 instructionsRAM[598] <= 32'b01100010101000000000000001110100;//Load m[#116] to r[21]
+	 	 instructionsRAM[599] <= 32'b01011110110101010000000000000000;//SLT if r[21] < r[0], r[22] = 1 else r[22] = 0
+	 	 instructionsRAM[600] <= 32'b01011110111000001010100000000000;//SLT if r[0] < r[21], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[601] <= 32'b00100110110101101011100000000000;//OR r[22],r[23] to r[22]
+	 	 instructionsRAM[602] <= 32'b00110110110101100000000000000000;//NOT r[22] to r[22]
+	 	 instructionsRAM[603] <= 32'b01111100000101100000000000000000;//Pre Branch r[22]
+	 	 instructionsRAM[604] <= 32'b01001100000000000000000000011011;//Branch on Zero #27
+	 	 instructionsRAM[605] <= 32'b01010100000000000000000111000100;//Jump to #452
+	 	 instructionsRAM[606] <= 32'b01101010110000000000000000000001;//Loadi #1 to r[22]
+	 	 instructionsRAM[607] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[608] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[609] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[610] <= 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
+	 	 instructionsRAM[611] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[612] <= 32'b01001100000000000000000000000001;//Branch on Zero #1
+	 	 instructionsRAM[613] <= 32'b01010100000000000000001001000110;//Jump to #582
+	 	 instructionsRAM[614] <= 32'b01101010110000000000000000000011;//Loadi #3 to r[22]
+	 	 instructionsRAM[615] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[616] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[617] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[618] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[619] <= 32'b01001100000000000000000000000000;//Branch on Zero #0
+	 	 instructionsRAM[620] <= 32'b01101010110000000000000000000100;//Loadi #4 to r[22]
+	 	 instructionsRAM[621] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[622] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[623] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[624] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[625] <= 32'b01001100000000000000000000000000;//Branch on Zero #0
+	 	 instructionsRAM[626] <= 32'b01101010110000000000000000000101;//Loadi #5 to r[22]
+	 	 instructionsRAM[627] <= 32'b01011110111101011011000000000000;//SLT if r[21] < r[22], r[23] = 1 else r[23] = 0
+	 	 instructionsRAM[628] <= 32'b01011111000101101010100000000000;//SLT if r[22] < r[21], r[24] = 1 else r[24] = 0
+	 	 instructionsRAM[629] <= 32'b00100110111101111100000000000000;//OR r[23],r[24] to r[23]
+	 	 instructionsRAM[630] <= 32'b01111100000101110000000000000000;//Pre Branch r[23]
+	 	 instructionsRAM[631] <= 32'b01001100000000000000000000000000;//Branch on Zero #0
+	 	 instructionsRAM[632] <= 32'b01101011111000000010000100110100;//Loadi #8500 to r[31]
+	 	 instructionsRAM[633] <= 32'b10000011111000000000000000000000;//Output r[31]
+	 	 instructionsRAM[634] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[635] <= 32'b01101010110000000000000111000010;//Loadi #450 to r[22]
+	 	 instructionsRAM[636] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[637] <= 32'b01010100000000000000000100101011;//Jump to #299
+	 	 instructionsRAM[638] <= 32'b01101010110000000000000000000011;//Loadi #3 to r[22]
+	 	 instructionsRAM[639] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[640] <= 32'b01010100000000000000000100000001;//Jump to #257
+	 	 instructionsRAM[641] <= 32'b01101010110000000000000111000010;//Loadi #450 to r[22]
+	 	 instructionsRAM[642] <= 32'b10000010110000000000000000000000;//Output r[22]
+	 	 instructionsRAM[643] <= 32'b01010100000000000000000100000001;//Jump to #257
+		 firstClock <= 1;
+		end
 //write
 		 	if (flag_write_i_ram) begin
 		 		instructionsRAM[i_ram_writing_address] <= i_ram_input;
