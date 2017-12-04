@@ -29,6 +29,7 @@ module harddrive(data_write, track, sector, clock, output_hard_drive, flag_write
 		HD[2][9] <= 32'b00000000000000000000000000000000;
 
 
+
 			firstClock <= 1;
 		end
 	// Write

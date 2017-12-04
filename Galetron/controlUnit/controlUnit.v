@@ -402,7 +402,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   extenderSelection = 2'b01;//xx
   immediateSelection = 1'bx;
   tripleMuxSelection = 2'bxx;
-  lastMuxSel = 1'bx;
+  lastMuxSel = 1'b1;
   writeEnable = 1'b0;
   IO_RAMwrite = 1'b0;
   enable = 1'b0;//vai que

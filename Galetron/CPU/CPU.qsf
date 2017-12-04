@@ -192,7 +192,6 @@ set_global_assignment -name VERILOG_FILE outputController.v
 set_global_assignment -name VERILOG_FILE ../Output/Output.v
 set_global_assignment -name VERILOG_FILE clockMultiplexer.v
 set_global_assignment -name VERILOG_FILE ../controlUnit/controlUnit.v
-set_global_assignment -name SOURCE_FILE ../simpleInstructionsRAM/controlOne.list
 set_global_assignment -name VERILOG_FILE ../galetronCPU/tripleMux.v
 set_global_assignment -name VERILOG_FILE ../galetronCPU/qFlipflop.v
 set_global_assignment -name VERILOG_FILE ../galetronCPU/multiplexer.v
