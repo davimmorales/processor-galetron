@@ -348,7 +348,6 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   hd_mux_selection = 1'b0;
   flag_write_i_ram = 1'b0;
-
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -360,7 +359,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   extenderSelection = 2'b01;//01
   immediateSelection = 1'bx;
   tripleMuxSelection = 2'bxx;
-  lastMuxSel = 1'bx;
+  lastMuxSel = 1'b1;
   writeEnable = 1'b0;
   IO_RAMwrite = 1'b0;
   enable = 1'b0;//importante para testes
@@ -369,7 +368,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   hd_mux_selection = 1'b0;
   flag_write_i_ram = 1'b0;
-
+  
   bzero = 1'b1;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -563,16 +562,16 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   bnegative = 1'b0;
   HLT = 1'b0;
   end
-  6'b011110: begin//pre-out
+  6'b011110: begin//pre-io
   writeDataSelection = 1'bx;
   writeRegister = 1'b0;
   aluSelection = 4'bxxxx;
-  extenderSelection = 2'b01;
+  extenderSelection = 2'bxx;
   immediateSelection = 1'bx;
   tripleMuxSelection = 2'bxx;
-  lastMuxSel = 1'b1;
+  lastMuxSel = 1'bx;
   writeEnable = 1'b0;
-  IO_RAMwrite = 1'b1;
+  IO_RAMwrite = 1'b0;
   enable = 1'b0;
   mainAddress = 10'b0;
   jump = 1'b0;
