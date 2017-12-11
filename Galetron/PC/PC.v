@@ -32,7 +32,7 @@
 
   always @ ( posedge clock ) begin
 	if(resetCPU) begin
-		programCounter <= 256;
+		programCounter <= 0;
 	end
    else if(HLT) begin
 	end
