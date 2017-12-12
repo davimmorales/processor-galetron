@@ -1,16 +1,16 @@
-Fitter Status : Successful - Mon Dec 11 20:53:38 2017
+Fitter Status : Successful - Tue Dec 12 11:12:27 2017
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 Revision Name : CPU
 Top-level Entity Name : CPU
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 30,173 / 114,480 ( 26 % )
-    Total combinational functions : 24,133 / 114,480 ( 21 % )
-    Dedicated logic registers : 18,966 / 114,480 ( 17 % )
-Total registers : 18966
+Total logic elements : 64,373 / 114,480 ( 56 % )
+    Total combinational functions : 49,801 / 114,480 ( 44 % )
+    Dedicated logic registers : 44,088 / 114,480 ( 39 % )
+Total registers : 44088
 Total pins : 134 / 529 ( 25 % )
 Total virtual pins : 0
-Total memory bits : 12,960 / 3,981,312 ( < 1 % )
+Total memory bits : 19,712 / 3,981,312 ( < 1 % )
 Embedded Multiplier 9-bit elements : 6 / 532 ( 1 % )
 Total PLLs : 0 / 4 ( 0 % )
