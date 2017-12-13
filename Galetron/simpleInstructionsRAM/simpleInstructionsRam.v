@@ -8,14 +8,14 @@ module simpleInstructionsRam(clock, address, i_ram_writing_address, iRAMOutput, 
 	   integer firstClock = 0;
 
 	 // Declare the RAM variable
-	 reg [31:0] instructionsRAM[615:0];
+	 reg [31:0] instructionsRAM[871:0];
 
 	 // Variable to hold the registered read address
 	 reg [9:0] address_register;
 
 	 always @ ( posedge clock ) begin
 	 	   if (firstClock==0) begin
-
+			
 		 firstClock <= 1;
 		end
 //write
