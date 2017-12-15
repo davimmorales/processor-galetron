@@ -34,6 +34,7 @@ module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegist
 		if(program_counter < 256) RF[28] <= {22'h0000 ,program_counter};
 	end
 
+	
 	assign dataA = RF[writeAddress];
 	assign dataB = RF[readAddress1];
 	assign dataC = RF[readAddress2];

@@ -368,11 +368,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[1]",
+					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
 					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
 					"strict" : false
 				},
 				{
@@ -384,23 +392,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
 					"name" : "switches[0]",
 					"strict" : false
 				},
 				{
-					"name" : "switches[9]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[7]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[6]",
+					"name" : "switches[1]",
 					"strict" : false
 				},
 				{
@@ -408,11 +404,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[14]",
+					"name" : "switches[9]",
 					"strict" : false
 				},
 				{
 					"name" : "switches[15]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[14]",
 					"strict" : false
 				},
 				{
