@@ -368,19 +368,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "machineClock",
+					"strict" : false
+				},
+				{
+					"name" : "switches[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[17]",
+					"strict" : false
+				},
+				{
 					"name" : "switches[2]",
 					"strict" : false
 				},
 				{
 					"name" : "switches[3]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[6]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[7]",
 					"strict" : false
 				},
 				{
@@ -392,19 +400,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "switches[0]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[1]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[8]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[9]",
+					"name" : "switches[16]",
 					"strict" : false
 				},
 				{
@@ -413,14 +409,6 @@
 				},
 				{
 					"name" : "switches[14]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[17]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[16]",
 					"strict" : false
 				},
 				{
@@ -440,7 +428,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "machineClock",
+					"name" : "switches[9]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[8]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[7]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[6]",
 					"strict" : false
 				},
 				{
