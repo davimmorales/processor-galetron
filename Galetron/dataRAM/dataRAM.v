@@ -5,7 +5,7 @@ module dataRAM(dataC, address, writeEnable, clock, read_clock, dataRAMOutput);
   output reg [31:0] dataRAMOutput;
 
 	// Declare the RAM variable
-	reg [31:0] RAM[270:0];
+	reg [31:0] RAM[300:0];
 
 	// Variable to hold the registered read address
 	reg [9:0] addressRegister;

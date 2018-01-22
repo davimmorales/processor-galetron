@@ -372,6 +372,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "switches[3]",
+					"strict" : false
+				},
+				{
+					"name" : "switches[2]",
+					"strict" : false
+				},
+				{
 					"name" : "switches[1]",
 					"strict" : false
 				},
@@ -381,14 +389,6 @@
 				},
 				{
 					"name" : "switches[17]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[3]",
 					"strict" : false
 				},
 				{

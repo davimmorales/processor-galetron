@@ -1,0 +1,126 @@
+module tucanos_watchdog(
+clock                  ,   // System Clock for Write Operation (Input)
+opcode                  ,   // Instruction opcode (Input)
+program_counter         ,   // Program Counter (Input)
+mux_system_instruction  ,   // Multiplexer for System Instruction (Input)
+state_register          ,   // State Register (Output)
+jump_enabler                 // Enable Operating System Jump Operation (Output)
+);
+
+parameter opcode_WIDTH = 6;
+parameter ADDR_WIDTH = 11;
+parameter DATA_WIDTH = 32;
+
+//--------------Input Ports----------------------------
+input                       clock;
+input   [opcode_WIDTH-1:0]  opcode;
+input   [ADDR_WIDTH-1:0]    program_counter;
+input                       mux_system_instruction;
+
+//--------------Output Ports---------------------------
+output reg  [DATA_WIDTH-1:0]    state_register = {DATA_WIDTH{1'b0}};
+output wire                     jump_enabler;
+
+//--------------Internal variables---------------------
+localparam STATE_WIDTH = 3;
+localparam COUNTER_WIDTH = 4;
+localparam MAX_QUANTUM = 7;
+
+localparam  [opcode_WIDTH-1:0]  HLT = 6'b010111;
+localparam  [opcode_WIDTH-1:0]  PREIO = 6'b011100;
+
+localparam  [ADDR_WIDTH-1:0]    OPERATING_SYSTEM_BEGIN_ADDR = 10'd256;
+
+localparam  BIOS = 1'b0;
+
+localparam  [DATA_WIDTH-1:0] INDEX_ONE = 32'd1;
+localparam  [DATA_WIDTH-1:0] INDEX_TWO = 32'd2;
+localparam  [DATA_WIDTH-1:0] INDEX_THREE = 32'd3;
+localparam  [DATA_WIDTH-1:0] WAIT_ENABLE = 32'd4;
+localparam  [DATA_WIDTH-1:0] HALT_ENABLE = 32'd5;
+
+reg  [DATA_WIDTH-1:0] PROCESS_INDEX = 32'd0;
+
+localparam  [STATE_WIDTH-1:0]   INITIAL     = 3'b000;
+localparam  [STATE_WIDTH-1:0]   COUNTING    = 3'b001;
+localparam  [STATE_WIDTH-1:0]   WAIT        = 3'b010;
+localparam  [STATE_WIDTH-1:0]   HALT        = 3'b011;
+localparam  [STATE_WIDTH-1:0]   CHANGE      = 3'b100;
+
+reg         [STATE_WIDTH-1:0]   STATE = 3'b000;
+reg         [COUNTER_WIDTH-1:0] COUNTER = {COUNTER_WIDTH{1'b0}};
+
+//-------------Processing Starts Here------------------
+
+always @ (posedge clock) begin
+    if (mux_system_instruction == BIOS || program_counter >= OPERATING_SYSTEM_BEGIN_ADDR) begin
+        STATE <= INITIAL;
+        COUNTER <= {COUNTER_WIDTH{1'b0}};
+        state_register <= state_register;
+        PROCESS_INDEX <= PROCESS_INDEX;
+    end else begin
+        case (STATE)
+            INITIAL: begin
+                STATE <= COUNTING;
+                COUNTER <= 4'd1;
+                state_register <= state_register;
+                PROCESS_INDEX <= PROCESS_INDEX;
+            end
+            COUNTING: begin
+                case (opcode)
+                    PREIO: begin
+                        STATE <= WAIT;
+                        COUNTER <= {COUNTER_WIDTH{1'b0}};
+                        state_register <= WAIT_ENABLE;
+                        PROCESS_INDEX <= PROCESS_INDEX;
+                    end
+                    HLT: begin
+                        STATE <= HALT;
+                        COUNTER <= {COUNTER_WIDTH{1'b0}};
+                        state_register <= HALT_ENABLE;
+                        PROCESS_INDEX <= PROCESS_INDEX;
+                    end
+                    default: begin
+                        if (COUNTER > MAX_QUANTUM) begin
+                            STATE <= CHANGE;
+                            COUNTER <= {COUNTER_WIDTH{1'b0}};
+                            case (PROCESS_INDEX)
+                                INDEX_ONE: begin
+                                    state_register <= INDEX_TWO;
+                                    PROCESS_INDEX <= INDEX_TWO;
+                                end
+                                INDEX_TWO: begin
+                                    state_register <= INDEX_THREE;
+                                    PROCESS_INDEX <= INDEX_THREE;
+                                end
+                                INDEX_THREE: begin
+                                    state_register <= INDEX_ONE;
+                                    PROCESS_INDEX <= INDEX_ONE;
+                                end
+                                default: begin
+                                    state_register <= INDEX_ONE;
+                                    PROCESS_INDEX <= INDEX_ONE;
+                                end
+                            endcase
+                        end else begin
+                            STATE <= COUNTING;
+                            COUNTER <= COUNTER + 1'b1;
+                            state_register <= {DATA_WIDTH{1'b0}};
+                            PROCESS_INDEX <= PROCESS_INDEX;
+                        end
+                    end
+                endcase
+            end
+            default: begin
+                STATE <= INITIAL;
+                COUNTER <= {COUNTER_WIDTH{1'b0}};
+                state_register <= state_register;
+                PROCESS_INDEX <= PROCESS_INDEX;
+            end
+        endcase
+    end
+end
+
+assign jump_enabler = (STATE == WAIT || STATE == HALT || STATE == CHANGE) ? 1'b1 : 1'b0;
+
+endmodule

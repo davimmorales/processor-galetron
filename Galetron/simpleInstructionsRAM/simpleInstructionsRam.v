@@ -1,7 +1,7 @@
 module simpleInstructionsRam(read_clock, clock, address, i_ram_writing_address, iRAMOutput, i_ram_input, flag_write_i_ram);
 	 input [31:0] i_ram_input;
-	 input [9:0] address;
-	 input [9:0] i_ram_writing_address;
+	 input [11:0] address;
+	 input [11:0] i_ram_writing_address;
 	 input clock;
 	 input read_clock;
 	 input flag_write_i_ram;
@@ -9,10 +9,10 @@ module simpleInstructionsRam(read_clock, clock, address, i_ram_writing_address, 
 
 
 	 // Declare the RAM variable
-	 reg [31:0] instructionsRAM[1100:0];
+	 reg [31:0] instructionsRAM[1500:0];
 
 	 // Variable to hold the registered read address
-	 reg [9:0] address_register;
+	 reg [11:0] address_register;
 
 	 always @ ( negedge clock ) begin
 //write

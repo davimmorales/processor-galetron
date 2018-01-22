@@ -3,7 +3,7 @@ inLED <= outputController:inst15.inLED
 machineClock => write_frequency_divider:inst26.IN_50Mhz
 machineClock => dataRAM:inst29.read_clock
 machineClock => harddrive:inst34.clock
-machineClock => simpleInstructionsRam:inst27.read_clock
+machineClock => simpleInstructionsRam:inst11.read_clock
 UserClock => DeBounce:inst5.button_in
 switches[0] => Extender:inst10.inputC[0]
 switches[0] => outputController:inst15.switches[0]
@@ -880,7 +880,7 @@ button_in => DFF1.DATAA
 DB_out <= DB_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|BIOS:inst28
+|CPU|BIOS:inst6
 address[0] => bios.RADDR
 address[1] => bios.RADDR1
 address[2] => bios.RADDR2
@@ -891,6 +891,8 @@ address[6] => ~NO_FANOUT~
 address[7] => ~NO_FANOUT~
 address[8] => ~NO_FANOUT~
 address[9] => ~NO_FANOUT~
+address[10] => ~NO_FANOUT~
+address[11] => ~NO_FANOUT~
 output_bios[0] <= bios.DATAOUT
 output_bios[1] <= bios.DATAOUT1
 output_bios[2] <= bios.DATAOUT2
@@ -925,7 +927,7 @@ output_bios[30] <= bios.DATAOUT30
 output_bios[31] <= bios.DATAOUT31
 
 
-|CPU|PC:inst12
+|CPU|PC:inst1
 clock => programCounter[0]~reg0.CLK
 clock => programCounter[1]~reg0.CLK
 clock => programCounter[2]~reg0.CLK
@@ -936,30 +938,38 @@ clock => programCounter[6]~reg0.CLK
 clock => programCounter[7]~reg0.CLK
 clock => programCounter[8]~reg0.CLK
 clock => programCounter[9]~reg0.CLK
+clock => programCounter[10]~reg0.CLK
+clock => programCounter[11]~reg0.CLK
 address[0] => newPc[0].DATAB
-address[0] => Add1.IN20
+address[0] => Add1.IN24
 address[1] => newPc[1].DATAB
-address[1] => Add1.IN19
+address[1] => Add1.IN23
 address[2] => newPc[2].DATAB
-address[2] => Add1.IN18
+address[2] => Add1.IN22
 address[3] => newPc[3].DATAB
-address[3] => Add1.IN17
+address[3] => Add1.IN21
 address[4] => newPc[4].DATAB
-address[4] => Add1.IN16
+address[4] => Add1.IN20
 address[5] => newPc[5].DATAB
-address[5] => Add1.IN15
+address[5] => Add1.IN19
 address[6] => newPc[6].DATAB
-address[6] => Add1.IN14
+address[6] => Add1.IN18
 address[7] => newPc[7].DATAB
-address[7] => Add1.IN13
+address[7] => Add1.IN17
 address[8] => newPc[8].DATAB
-address[8] => Add1.IN12
+address[8] => Add1.IN16
 address[9] => newPc[9].DATAB
-address[9] => Add1.IN11
+address[9] => Add1.IN15
+address[10] => newPc[10].DATAB
+address[10] => Add1.IN14
+address[11] => newPc[11].DATAB
+address[11] => Add1.IN13
 zero => select.IN0
 negative => select.IN0
 bzero => select.IN1
 bnegative => select.IN1
+jump => newPc[11].OUTPUTSELECT
+jump => newPc[10].OUTPUTSELECT
 jump => newPc[9].OUTPUTSELECT
 jump => newPc[8].OUTPUTSELECT
 jump => newPc[7].OUTPUTSELECT
@@ -980,6 +990,8 @@ programCounter[6] <= programCounter[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 programCounter[7] <= programCounter[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 programCounter[8] <= programCounter[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 programCounter[9] <= programCounter[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+programCounter[10] <= programCounter[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+programCounter[11] <= programCounter[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 HLT => programCounter.OUTPUTSELECT
 HLT => programCounter.OUTPUTSELECT
 HLT => programCounter.OUTPUTSELECT
@@ -990,6 +1002,10 @@ HLT => programCounter.OUTPUTSELECT
 HLT => programCounter.OUTPUTSELECT
 HLT => programCounter.OUTPUTSELECT
 HLT => programCounter.OUTPUTSELECT
+HLT => programCounter.OUTPUTSELECT
+HLT => programCounter.OUTPUTSELECT
+resetCPU => programCounter.OUTPUTSELECT
+resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
@@ -1892,7 +1908,7 @@ shamt[4] => ShiftLeft0.IN1
 shamt[4] => ShiftRight0.IN1
 
 
-|CPU|registerFile:inst2
+|CPU|registerFile:inst12
 writeAddress[0] => Decoder0.IN4
 writeAddress[0] => Mux0.IN4
 writeAddress[0] => Mux1.IN4
@@ -5546,26 +5562,30 @@ dataC[28] <= Mux67.DB_MAX_OUTPUT_PORT_TYPE
 dataC[29] <= Mux66.DB_MAX_OUTPUT_PORT_TYPE
 dataC[30] <= Mux65.DB_MAX_OUTPUT_PORT_TYPE
 dataC[31] <= Mux64.DB_MAX_OUTPUT_PORT_TYPE
-program_counter[0] => LessThan0.IN20
+program_counter[0] => LessThan0.IN24
 program_counter[0] => RF.DATAB
-program_counter[1] => LessThan0.IN19
+program_counter[1] => LessThan0.IN23
 program_counter[1] => RF.DATAB
-program_counter[2] => LessThan0.IN18
+program_counter[2] => LessThan0.IN22
 program_counter[2] => RF.DATAB
-program_counter[3] => LessThan0.IN17
+program_counter[3] => LessThan0.IN21
 program_counter[3] => RF.DATAB
-program_counter[4] => LessThan0.IN16
+program_counter[4] => LessThan0.IN20
 program_counter[4] => RF.DATAB
-program_counter[5] => LessThan0.IN15
+program_counter[5] => LessThan0.IN19
 program_counter[5] => RF.DATAB
-program_counter[6] => LessThan0.IN14
+program_counter[6] => LessThan0.IN18
 program_counter[6] => RF.DATAB
-program_counter[7] => LessThan0.IN13
+program_counter[7] => LessThan0.IN17
 program_counter[7] => RF.DATAB
-program_counter[8] => LessThan0.IN12
+program_counter[8] => LessThan0.IN16
 program_counter[8] => RF.DATAB
-program_counter[9] => LessThan0.IN11
+program_counter[9] => LessThan0.IN15
 program_counter[9] => RF.DATAB
+program_counter[10] => LessThan0.IN14
+program_counter[10] => RF.DATAB
+program_counter[11] => LessThan0.IN13
+program_counter[11] => RF.DATAB
 
 
 |CPU|multiplexer:writeDataSelectorMux
@@ -6605,7 +6625,7 @@ lastSwitch => Selector0.IN5
 resetCPU <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|simpleInstructionsRam:inst27
+|CPU|simpleInstructionsRam:inst11
 read_clock => iRAMOutput[0]~reg0.CLK
 read_clock => iRAMOutput[1]~reg0.CLK
 read_clock => iRAMOutput[2]~reg0.CLK
@@ -6693,6 +6713,8 @@ address[6] => instructionsRAM.RADDR6
 address[7] => instructionsRAM.RADDR7
 address[8] => instructionsRAM.RADDR8
 address[9] => instructionsRAM.RADDR9
+address[10] => instructionsRAM.RADDR10
+address[11] => ~NO_FANOUT~
 i_ram_writing_address[0] => instructionsRAM.waddr_a[0].DATAIN
 i_ram_writing_address[0] => instructionsRAM.WADDR
 i_ram_writing_address[1] => instructionsRAM.waddr_a[1].DATAIN
@@ -6713,6 +6735,9 @@ i_ram_writing_address[8] => instructionsRAM.waddr_a[8].DATAIN
 i_ram_writing_address[8] => instructionsRAM.WADDR8
 i_ram_writing_address[9] => instructionsRAM.waddr_a[9].DATAIN
 i_ram_writing_address[9] => instructionsRAM.WADDR9
+i_ram_writing_address[10] => instructionsRAM.waddr_a[10].DATAIN
+i_ram_writing_address[10] => instructionsRAM.WADDR10
+i_ram_writing_address[11] => ~NO_FANOUT~
 iRAMOutput[0] <= iRAMOutput[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 iRAMOutput[1] <= iRAMOutput[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 iRAMOutput[2] <= iRAMOutput[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

@@ -4,23 +4,24 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 256 224)
+	(rect 16 16 264 224)
 	(text "PC" (rect 5 0 17 12)(font "Arial" ))
 	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
@@ -33,8 +34,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "address[9..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "address[9..0]" (rect 21 43 72 55)(font "Arial" ))
+		(text "address[11..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "address[11..0]" (rect 21 43 75 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -87,13 +88,13 @@ applicable agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
-		(pt 240 32)
+		(pt 248 32)
 		(output)
-		(text "programCounter[9..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "programCounter[9..0]" (rect 133 27 219 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
+		(text "programCounter[11..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "programCounter[11..0]" (rect 139 27 227 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 224 192)(line_width 1))
+		(rectangle (rect 16 16 232 192)(line_width 1))
 	)
 )

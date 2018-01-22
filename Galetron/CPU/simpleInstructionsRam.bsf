@@ -41,15 +41,15 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "address[9..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "address[9..0]" (rect 21 59 72 71)(font "Arial" ))
+		(text "address[11..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "address[11..0]" (rect 21 59 75 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
 		(pt 0 80)
 		(input)
-		(text "i_ram_writing_address[9..0]" (rect 0 0 110 12)(font "Arial" ))
-		(text "i_ram_writing_address[9..0]" (rect 21 75 131 87)(font "Arial" ))
+		(text "i_ram_writing_address[11..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "i_ram_writing_address[11..0]" (rect 21 75 134 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port

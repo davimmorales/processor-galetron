@@ -69,8 +69,8 @@ agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-		(text "program_counter[9..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "program_counter[9..0]" (rect 21 123 110 135)(font "Arial" ))
+		(text "program_counter[11..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "program_counter[11..0]" (rect 21 123 113 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port

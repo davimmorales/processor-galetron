@@ -2,7 +2,7 @@ module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegist
   input [4:0] readAddress1, readAddress2, writeAddress;
   input clock, writeRegister;
   input  [31:0] writeData;
-  input [9:0] program_counter;
+  input [11:0] program_counter;
   output [31:0] dataA, dataB, dataC;
 	// integer  firstClock = 1;
 
@@ -31,7 +31,7 @@ module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegist
 //RF[19] <= 31'b00000000000000000000000000000111;
 //RF[28] <= 31'b000000000000000000000000000100001;
 		if(writeRegister == 1) RF[writeAddress] <= writeData;
-		if(program_counter < 256) RF[28] <= {22'h0000 ,program_counter};
+		if(program_counter < 256) RF[28] <= {20'h0000 ,program_counter};
 	end
 
 	

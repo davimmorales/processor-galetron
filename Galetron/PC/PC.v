@@ -1,11 +1,11 @@
  module PC(clock, address, zero, negative, bzero, bnegative, jump, programCounter, HLT, resetCPU);//, branch);
   input clock, zero, negative, jump, bzero, bnegative, HLT, resetCPU;//, branch;
-  input [9:0] address;
-  reg[9:0] programCounter, newPc, muxA;
-  wire[9:0] pcInc, branchAdd, jumpAdd;
+  input [11:0] address;
+  reg[11:0] programCounter, newPc, muxA;
+  wire[11:0] pcInc, branchAdd, jumpAdd;
   // wire[20:0] address, branchA;
   wire select;
-  output [9:0] programCounter;
+  output [11:0] programCounter;
 
 
   assign select = (bzero & zero) | (bnegative & negative);
