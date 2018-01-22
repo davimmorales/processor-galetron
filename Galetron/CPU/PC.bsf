@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 264 224)
+	(rect 16 16 304 224)
 	(text "PC" (rect 5 0 17 12)(font "Arial" ))
 	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
@@ -88,13 +88,20 @@ agreement for further details.
 		(line (pt 0 160)(pt 16 160)(line_width 1))
 	)
 	(port
-		(pt 248 32)
+		(pt 0 176)
+		(input)
+		(text "jump_context_exchange" (rect 0 0 96 12)(font "Arial" ))
+		(text "jump_context_exchange" (rect 21 171 117 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
+	)
+	(port
+		(pt 288 32)
 		(output)
 		(text "programCounter[11..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "programCounter[11..0]" (rect 139 27 227 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
+		(text "programCounter[11..0]" (rect 179 27 267 39)(font "Arial" ))
+		(line (pt 288 32)(pt 272 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 232 192)(line_width 1))
+		(rectangle (rect 16 16 272 192)(line_width 1))
 	)
 )

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Mon Jan 22 19:53:24 2018
+Mon Jan 22 21:24:08 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -15,27 +15,32 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
- 10. User-Specified and Inferred Latches
- 11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated
- 15. Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated
- 16. Source assignments for dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated
- 17. Parameter Settings for User Entity Instance: instruction_source_selector:inst19
- 18. Parameter Settings for User Entity Instance: write_frequency_divider:inst26
- 19. Parameter Settings for User Entity Instance: DeBounce:inst5
- 20. Parameter Settings for Inferred Entity Instance: harddrive:inst34|altsyncram:HD_rtl_0
- 21. Parameter Settings for Inferred Entity Instance: simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0
- 22. Parameter Settings for Inferred Entity Instance: dataRAM:inst29|altsyncram:RAM_rtl_0
- 23. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Div0
- 24. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_mult:Mult0
- 25. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Mod0
- 26. altsyncram Parameter Settings by Entity Instance
- 27. lpm_mult Parameter Settings by Entity Instance
- 28. Post-Synthesis Netlist Statistics for Top Partition
- 29. Elapsed Time Per Partition
- 30. Analysis & Synthesis Messages
+ 10. State Machine - |CPU|tucanos_watchdog:inst16|PROCESS_INDEX
+ 11. State Machine - |CPU|tucanos_watchdog:inst16|STATE
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Registers Packed Into Inferred Megafunctions
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated
+ 19. Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated
+ 20. Source assignments for dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated
+ 21. Parameter Settings for User Entity Instance: instruction_source_selector:inst19
+ 22. Parameter Settings for User Entity Instance: write_frequency_divider:inst26
+ 23. Parameter Settings for User Entity Instance: DeBounce:inst5
+ 24. Parameter Settings for User Entity Instance: tucanos_watchdog:inst16
+ 25. Parameter Settings for Inferred Entity Instance: harddrive:inst34|altsyncram:HD_rtl_0
+ 26. Parameter Settings for Inferred Entity Instance: simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0
+ 27. Parameter Settings for Inferred Entity Instance: dataRAM:inst29|altsyncram:RAM_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Div0
+ 29. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_mult:Mult0
+ 30. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Mod0
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. lpm_mult Parameter Settings by Entity Instance
+ 33. Post-Synthesis Netlist Statistics for Top Partition
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
 
 
 
@@ -62,15 +67,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 22 19:53:24 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 22 21:24:07 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7,404                                       ;
-;     Total combinational functions  ; 6,402                                       ;
-;     Dedicated logic registers      ; 1,149                                       ;
-; Total registers                    ; 1149                                        ;
+; Total logic elements               ; 7,284                                       ;
+;     Total combinational functions  ; 6,314                                       ;
+;     Dedicated logic registers      ; 1,117                                       ;
+; Total registers                    ; 1117                                        ;
 ; Total pins                         ; 134                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 441,696                                     ;
@@ -182,6 +187,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                     ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                               ; Library ;
 +------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
+; ../tucanos_watchdog/tucanos_watchdog.v               ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v               ;         ;
 ; ../write_frequency_divider/write_frequency_divider.v ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v ;         ;
 ; ../instruction_source_selector.v                     ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v                     ;         ;
 ; ../harddrive/harddrive.v                             ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v                             ;         ;
@@ -245,20 +251,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------+
 ; Resource                                    ; Usage                         ;
 +---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 7,404                         ;
+; Estimated Total logic elements              ; 7,284                         ;
 ;                                             ;                               ;
-; Total combinational functions               ; 6402                          ;
+; Total combinational functions               ; 6314                          ;
 ; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 4379                          ;
-;     -- 3 input functions                    ; 1733                          ;
-;     -- <=2 input functions                  ; 290                           ;
+;     -- 4 input functions                    ; 4303                          ;
+;     -- 3 input functions                    ; 1727                          ;
+;     -- <=2 input functions                  ; 284                           ;
 ;                                             ;                               ;
 ; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 5103                          ;
+;     -- normal mode                          ; 5015                          ;
 ;     -- arithmetic mode                      ; 1299                          ;
 ;                                             ;                               ;
-; Total registers                             ; 1149                          ;
-;     -- Dedicated logic registers            ; 1149                          ;
+; Total registers                             ; 1117                          ;
+;     -- Dedicated logic registers            ; 1117                          ;
 ;     -- I/O registers                        ; 0                             ;
 ;                                             ;                               ;
 ; I/O pins                                    ; 134                           ;
@@ -267,9 +273,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 6                             ;
 ;                                             ;                               ;
 ; Maximum fan-out node                        ; clockMultiplexer:inst13|clock ;
-; Maximum fan-out                             ; 1103                          ;
-; Total fan-out                               ; 29144                         ;
-; Average fan-out                             ; 3.66                          ;
+; Maximum fan-out                             ; 1071                          ;
+; Total fan-out                               ; 28714                         ;
+; Average fan-out                             ; 3.67                          ;
 +---------------------------------------------+-------------------------------+
 
 
@@ -278,12 +284,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                      ; 6402 (0)          ; 1149 (0)     ; 441696      ; 6            ; 0       ; 3         ; 134  ; 0            ; |CPU                                                                                                                                ; work         ;
-;    |ALU:inst|                             ; 3051 (827)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
-;       |lpm_divide:Div0|                   ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
-;          |lpm_divide_hkm:auto_generated|  ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
-;             |sign_div_unsign_9nh:divider| ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
-;                |alt_u_div_6af:divider|    ; 1112 (1111)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
+; |CPU                                      ; 6314 (0)          ; 1117 (0)     ; 441696      ; 6            ; 0       ; 3         ; 134  ; 0            ; |CPU                                                                                                                                ; work         ;
+;    |ALU:inst|                             ; 3048 (823)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                   ; 1113 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_hkm:auto_generated|  ; 1113 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 1113 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;                |alt_u_div_6af:divider|    ; 1113 (1112)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
 ;                   |add_sub_8pc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; work         ;
 ;       |lpm_divide:Mod0|                   ; 1084 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Mod0                                                                                                       ; work         ;
 ;          |lpm_divide_kcm:auto_generated|  ; 1084 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                                         ; work         ;
@@ -291,18 +297,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |alt_u_div_6af:divider|    ; 1084 (1084)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Mod0|lpm_divide_kcm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
 ;       |lpm_mult:Mult0|                    ; 28 (0)            ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst|lpm_mult:Mult0                                                                                                        ; work         ;
 ;          |mult_7dt:auto_generated|        ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; work         ;
-;    |BIOS:inst6|                           ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|BIOS:inst6                                                                                                                     ; work         ;
+;    |BIOS:inst6|                           ; 61 (61)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|BIOS:inst6                                                                                                                     ; work         ;
 ;    |DeBounce:inst5|                       ; 13 (13)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|DeBounce:inst5                                                                                                                 ; work         ;
-;    |Extender:inst10|                      ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst10                                                                                                                ; work         ;
-;    |PC:inst1|                             ; 65 (65)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst1                                                                                                                       ; work         ;
+;    |Extender:inst10|                      ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst10                                                                                                                ; work         ;
+;    |PC:inst24|                            ; 65 (65)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst24                                                                                                                      ; work         ;
 ;    |clockMultiplexer:inst13|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|clockMultiplexer:inst13                                                                                                        ; work         ;
-;    |controlUnit:inst25|                   ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst25                                                                                                             ; work         ;
+;    |controlUnit:inst25|                   ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst25                                                                                                             ; work         ;
 ;    |dataOutput:inst7|                     ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataOutput:inst7                                                                                                               ; work         ;
 ;    |dataRAM:inst29|                       ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29                                                                                                                 ; work         ;
 ;       |altsyncram:RAM_rtl_0|              ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0                                                                                            ; work         ;
 ;          |altsyncram_q2d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated                                                             ; work         ;
-;    |finalOutput:inst18|                   ; 641 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
-;       |BCD:converter|                     ; 585 (585)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
+;    |finalOutput:inst18|                   ; 634 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
+;       |BCD:converter|                     ; 578 (578)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayA|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayA                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayB|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayB                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayC|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayC                                                                               ; work         ;
@@ -318,13 +324,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;             |mux_gob:mux2|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|mux_gob:mux2                                               ; work         ;
 ;    |instruction_source_selector:inst19|   ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|instruction_source_selector:inst19                                                                                             ; work         ;
 ;    |instructions_multiplexer:inst22|      ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|instructions_multiplexer:inst22                                                                                                ; work         ;
-;    |multiplexer:immediateSelectorMux|     ; 696 (696)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:immediateSelectorMux                                                                                               ; work         ;
+;    |multiplexer:immediateSelectorMux|     ; 677 (677)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:immediateSelectorMux                                                                                               ; work         ;
 ;    |multiplexer:lastMux|                  ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:lastMux                                                                                                            ; work         ;
 ;    |multiplexer:writeDataSelectorMux|     ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:writeDataSelectorMux                                                                                               ; work         ;
-;    |outputController:inst15|              ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|outputController:inst15                                                                                                        ; work         ;
+;    |outputController:inst15|              ; 98 (98)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|outputController:inst15                                                                                                        ; work         ;
 ;    |qFlipflop:inst3|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst3                                                                                                                ; work         ;
 ;    |qFlipflop:inst4|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst4                                                                                                                ; work         ;
-;    |registerFile:inst12|                  ; 1418 (1418)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst12                                                                                                            ; work         ;
+;    |registerFile:inst23|                  ; 1363 (1363)       ; 992 (992)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst23                                                                                                            ; work         ;
 ;    |resetMultiplexer:inst20|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|resetMultiplexer:inst20                                                                                                        ; work         ;
 ;    |simpleInstructionsRam:inst11|         ; 0 (0)             ; 32 (32)      ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11                                                                                                   ; work         ;
 ;       |altsyncram:instructionsRAM_rtl_0|  ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0                                                                  ; work         ;
@@ -362,6 +368,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Dedicated Input Shift Register Chains ; 0           ;
 +---------------------------------------+-------------+
 Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CPU|tucanos_watchdog:inst16|PROCESS_INDEX                                                                                                                      ;
++------------------------------------------------+---------------------------+-------------------------+-------------------------+------------------------------------------------+
+; Name                                           ; PROCESS_INDEX.INDEX_THREE ; PROCESS_INDEX.INDEX_TWO ; PROCESS_INDEX.INDEX_ONE ; PROCESS_INDEX.00000000000000000000000000000000 ;
++------------------------------------------------+---------------------------+-------------------------+-------------------------+------------------------------------------------+
+; PROCESS_INDEX.00000000000000000000000000000000 ; 0                         ; 0                       ; 0                       ; 0                                              ;
+; PROCESS_INDEX.INDEX_ONE                        ; 0                         ; 0                       ; 1                       ; 1                                              ;
+; PROCESS_INDEX.INDEX_TWO                        ; 0                         ; 1                       ; 0                       ; 1                                              ;
+; PROCESS_INDEX.INDEX_THREE                      ; 1                         ; 0                       ; 0                       ; 1                                              ;
++------------------------------------------------+---------------------------+-------------------------+-------------------------+------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------+
+; State Machine - |CPU|tucanos_watchdog:inst16|STATE                                   ;
++----------------+------------+------------+----------------+-----------+--------------+
+; Name           ; STATE.HALT ; STATE.WAIT ; STATE.COUNTING ; STATE.000 ; STATE.CHANGE ;
++----------------+------------+------------+----------------+-----------+--------------+
+; STATE.000      ; 0          ; 0          ; 0              ; 0         ; 0            ;
+; STATE.COUNTING ; 0          ; 0          ; 1              ; 1         ; 0            ;
+; STATE.WAIT     ; 0          ; 1          ; 0              ; 1         ; 0            ;
+; STATE.HALT     ; 1          ; 0          ; 0              ; 1         ; 0            ;
+; STATE.CHANGE   ; 0          ; 0          ; 0              ; 1         ; 1            ;
++----------------+------------+------------+----------------+-----------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -471,17 +504,178 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
++----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                   ;
++------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                          ; Reason for Removal                          ;
++------------------------------------------------------------------------+---------------------------------------------+
+; tucanos_watchdog:inst16|state_register[3..31]                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][3]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][4]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][5]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][6]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][7]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][8]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][9]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][10]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][11]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][12]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][13]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][14]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][15]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][16]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][17]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][18]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][19]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][20]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][21]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][22]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][23]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][24]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][25]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][26]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][27]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][28]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][29]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][30]                                         ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][31]                                         ; Stuck at GND due to stuck port data_in      ;
+; tucanos_watchdog:inst16|COUNTER[0..3]                                  ; Stuck at GND due to stuck port data_in      ;
+; tucanos_watchdog:inst16|state_register[0..2]                           ; Stuck at GND due to stuck port clock_enable ;
+; registerFile:inst23|RF[29][0]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][1]                                          ; Stuck at GND due to stuck port data_in      ;
+; registerFile:inst23|RF[29][2]                                          ; Stuck at GND due to stuck port data_in      ;
+; tucanos_watchdog:inst16|STATE.000                                      ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE.COUNTING                                 ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE.WAIT                                     ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE.HALT                                     ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE.CHANGE                                   ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~4                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~5                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~6                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~7                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~8                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~9                                ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~10                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~11                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~12                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~13                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~14                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~15                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~16                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~17                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~18                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~19                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~20                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~21                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~22                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~23                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~24                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~25                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~26                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~27                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~28                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~29                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~30                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~31                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~32                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~33                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~34                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~35                               ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE~2                                        ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|STATE~3                                        ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX.00000000000000000000000000000000 ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_ONE                        ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_TWO                        ; Lost fanout                                 ;
+; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE                      ; Lost fanout                                 ;
+; Total Number of Removed Registers = 111                                ;                                             ;
++------------------------------------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                             ;
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------------+
+; Register name                              ; Reason for Removal             ; Registers Removed due to This Register                                    ;
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------------+
+; tucanos_watchdog:inst16|COUNTER[3]         ; Stuck at GND                   ; tucanos_watchdog:inst16|state_register[1],                                ;
+;                                            ; due to stuck port data_in      ; tucanos_watchdog:inst16|state_register[0], registerFile:inst23|RF[29][0], ;
+;                                            ;                                ; registerFile:inst23|RF[29][1]                                             ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~4    ; Lost Fanouts                   ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_ONE,                          ;
+;                                            ;                                ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE                         ;
+; tucanos_watchdog:inst16|state_register[28] ; Stuck at GND                   ; registerFile:inst23|RF[29][28]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[20] ; Stuck at GND                   ; registerFile:inst23|RF[29][20]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[21] ; Stuck at GND                   ; registerFile:inst23|RF[29][21]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[22] ; Stuck at GND                   ; registerFile:inst23|RF[29][22]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[23] ; Stuck at GND                   ; registerFile:inst23|RF[29][23]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[24] ; Stuck at GND                   ; registerFile:inst23|RF[29][24]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[25] ; Stuck at GND                   ; registerFile:inst23|RF[29][25]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[26] ; Stuck at GND                   ; registerFile:inst23|RF[29][26]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[27] ; Stuck at GND                   ; registerFile:inst23|RF[29][27]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[19] ; Stuck at GND                   ; registerFile:inst23|RF[29][19]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[29] ; Stuck at GND                   ; registerFile:inst23|RF[29][29]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[30] ; Stuck at GND                   ; registerFile:inst23|RF[29][30]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[31] ; Stuck at GND                   ; registerFile:inst23|RF[29][31]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[2]  ; Stuck at GND                   ; registerFile:inst23|RF[29][2]                                             ;
+;                                            ; due to stuck port clock_enable ;                                                                           ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~5    ; Lost Fanouts                   ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_TWO                           ;
+; tucanos_watchdog:inst16|state_register[3]  ; Stuck at GND                   ; registerFile:inst23|RF[29][3]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[18] ; Stuck at GND                   ; registerFile:inst23|RF[29][18]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[17] ; Stuck at GND                   ; registerFile:inst23|RF[29][17]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[16] ; Stuck at GND                   ; registerFile:inst23|RF[29][16]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[15] ; Stuck at GND                   ; registerFile:inst23|RF[29][15]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[14] ; Stuck at GND                   ; registerFile:inst23|RF[29][14]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[13] ; Stuck at GND                   ; registerFile:inst23|RF[29][13]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[12] ; Stuck at GND                   ; registerFile:inst23|RF[29][12]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[11] ; Stuck at GND                   ; registerFile:inst23|RF[29][11]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[10] ; Stuck at GND                   ; registerFile:inst23|RF[29][10]                                            ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[9]  ; Stuck at GND                   ; registerFile:inst23|RF[29][9]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[8]  ; Stuck at GND                   ; registerFile:inst23|RF[29][8]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[7]  ; Stuck at GND                   ; registerFile:inst23|RF[29][7]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[6]  ; Stuck at GND                   ; registerFile:inst23|RF[29][6]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[5]  ; Stuck at GND                   ; registerFile:inst23|RF[29][5]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
+; tucanos_watchdog:inst16|state_register[4]  ; Stuck at GND                   ; registerFile:inst23|RF[29][4]                                             ;
+;                                            ; due to stuck port data_in      ;                                                                           ;
++--------------------------------------------+--------------------------------+---------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1149  ;
+; Total registers                              ; 1117  ;
 ; Number of registers using Synchronous Clear  ; 17    ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1026  ;
+; Number of registers using Clock Enable       ; 994   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -501,8 +695,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst12|RF[28][27]                 ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |CPU|registerFile:inst12|RF[28][10]                 ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst23|RF[28][22]                 ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |CPU|registerFile:inst23|RF[28][11]                 ;
 ; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[31] ;
 ; 3:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[3]  ;
 ; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst15|binary[29]             ;
@@ -512,19 +706,19 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux24                          ;
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux14                          ;
 ; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux9                           ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |CPU|PC:inst1|programCounter                        ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst12|Mux28                      ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst12|Mux55                      ;
-; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[24] ;
-; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[5]  ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |CPU|PC:inst24|programCounter                       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |CPU|registerFile:inst23|Mux28                      ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 640 LEs              ; 32 LEs                 ; No         ; |CPU|registerFile:inst23|Mux55                      ;
+; 33:1               ; 11 bits   ; 242 LEs       ; 231 LEs              ; 11 LEs                 ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[22] ;
+; 33:1               ; 21 bits   ; 462 LEs       ; 441 LEs              ; 21 LEs                 ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[7]  ;
 ; 65:1               ; 18 bits   ; 774 LEs       ; 72 LEs               ; 702 LEs                ; No         ; |CPU|outputController:inst15|Selector16             ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux17                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux12                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux24                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux5                                  ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux29                                 ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux3                                  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux30                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux18                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux11                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux27                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux6                                  ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux28                                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux2                                  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux31                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
@@ -582,6 +776,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------+
 ; N              ; 11    ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tucanos_watchdog:inst16 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -917,29 +1121,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 134                         ;
-; cycloneiii_ff         ; 1149                        ;
-;     ENA               ; 1018                        ;
+; cycloneiii_ff         ; 1117                        ;
+;     ENA               ; 986                         ;
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 6                           ;
 ;     SCLR SLD          ; 11                          ;
 ;     SLD               ; 1                           ;
 ;     plain             ; 105                         ;
-; cycloneiii_lcell_comb ; 6459                        ;
+; cycloneiii_lcell_comb ; 6371                        ;
 ;     arith             ; 1299                        ;
 ;         2 data inputs ; 119                         ;
 ;         3 data inputs ; 1180                        ;
-;     normal            ; 5160                        ;
+;     normal            ; 5072                        ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 62                          ;
-;         2 data inputs ; 105                         ;
-;         3 data inputs ; 553                         ;
-;         4 data inputs ; 4379                        ;
+;         2 data inputs ; 99                          ;
+;         3 data inputs ; 547                         ;
+;         4 data inputs ; 4303                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 136.50                      ;
-; Average LUT depth     ; 85.85                       ;
+; Max LUT depth         ; 135.50                      ;
+; Average LUT depth     ; 85.47                       ;
 +-----------------------+-----------------------------+
 
 
@@ -958,9 +1162,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Jan 22 19:52:29 2018
+    Info: Processing started: Mon Jan 22 21:23:25 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v
+    Info (12023): Found entity 1: tucanos_watchdog File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v
     Info (12023): Found entity 1: write_frequency_divider File: /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/read_frequency_divider/read_frequency_divider.v
@@ -1073,7 +1279,7 @@ Info (12128): Elaborating entity "BIOS" for hierarchy "BIOS:inst6"
 Warning (10030): Net "bios.data_a" at BIOS.v(4) has no driver or initial value, using a default initial value '0' File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
 Warning (10030): Net "bios.waddr_a" at BIOS.v(4) has no driver or initial value, using a default initial value '0' File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
 Warning (10030): Net "bios.we_a" at BIOS.v(4) has no driver or initial value, using a default initial value '0' File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
-Info (12128): Elaborating entity "PC" for hierarchy "PC:inst1"
+Info (12128): Elaborating entity "PC" for hierarchy "PC:inst24"
 Warning (10230): Verilog HDL assignment warning at PC.v(12): truncated value with size 32 to match size of target (12) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 12
 Info (12128): Elaborating entity "qFlipflop" for hierarchy "qFlipflop:inst3"
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst"
@@ -1113,7 +1319,11 @@ Info (10041): Inferred latch for "aluOut[28]" at ALU.v(9) File: /home/morales/Do
 Info (10041): Inferred latch for "aluOut[29]" at ALU.v(9) File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
 Info (10041): Inferred latch for "aluOut[30]" at ALU.v(9) File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
 Info (10041): Inferred latch for "aluOut[31]" at ALU.v(9) File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
-Info (12128): Elaborating entity "registerFile" for hierarchy "registerFile:inst12"
+Info (12128): Elaborating entity "registerFile" for hierarchy "registerFile:inst23"
+Info (12128): Elaborating entity "tucanos_watchdog" for hierarchy "tucanos_watchdog:inst16"
+Warning (10230): Verilog HDL assignment warning at tucanos_watchdog.v(31): truncated value with size 10 to match size of target (6) File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 31
+Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(86): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 86
+Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(61): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 61
 Info (12128): Elaborating entity "multiplexer" for hierarchy "multiplexer:writeDataSelectorMux"
 Info (12128): Elaborating entity "tripleMux" for hierarchy "tripleMux:inst8"
 Warning (10270): Verilog HDL Case Statement warning at tripleMux.v(7): incomplete case statement has no default case item File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
@@ -1248,10 +1458,6 @@ Info (12133): Instantiated megafunction "harddrive:inst34|altsyncram:HD_rtl_0" w
     Info (12134): Parameter "INIT_FILE" = "db/CPU.ram0_harddrive_41193179.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9s81.tdf
     Info (12023): Found entity 1: altsyncram_9s81 File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_9s81.tdf Line: 34
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
     Info (12023): Found entity 1: decode_jsa File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_jsa.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c8a.tdf
@@ -1464,7 +1670,7 @@ Warning (13012): Latch ALU:inst|aluOut[28] has unsafe behavior File: /home/moral
 Warning (13012): Latch ALU:inst|aluOut[29] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
     Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[31] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
 Warning (13012): Latch ALU:inst|aluOut[30] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction_source_selector:inst19|CONTROL_STATE File: /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v Line: 25
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[31] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
 Warning (13012): Latch ALU:inst|aluOut[31] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
     Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction_source_selector:inst19|CONTROL_STATE File: /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v Line: 25
 Warning (13012): Latch tripleMux:inst8|tripleMuxOutput[31] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
@@ -1556,18 +1762,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "offLEDS[1]" is stuck at GND
     Warning (13410): Pin "offLEDS[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 43 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7717 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7597 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 114 output pins
-    Info (21061): Implemented 7449 logic cells
+    Info (21061): Implemented 7329 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 279 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 276 warnings
     Info: Peak virtual memory: 1394 megabytes
-    Info: Processing ended: Mon Jan 22 19:53:24 2018
-    Info: Elapsed time: 00:00:55
-    Info: Total CPU time (on all processors): 00:01:12
+    Info: Processing ended: Mon Jan 22 21:24:08 2018
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:03
 
 

@@ -7,13 +7,14 @@ state_register          ,   // State Register (Output)
 jump_enabler                 // Enable Operating System Jump Operation (Output)
 );
 
-
+parameter opcode_WIDTH = 6;
+parameter ADDR_WIDTH = 11;
 parameter DATA_WIDTH = 32;
 
 //--------------Input Ports----------------------------
 input                       clock;
-input   [5:0]  opcode;
-input   [11:0]    program_counter;
+input   [opcode_WIDTH-1:0]  opcode;
+input   [ADDR_WIDTH-1:0]    program_counter;
 input                       mux_system_instruction;
 
 //--------------Output Ports---------------------------
@@ -25,10 +26,10 @@ localparam STATE_WIDTH = 3;
 localparam COUNTER_WIDTH = 4;
 localparam MAX_QUANTUM = 7;
 
-localparam  [5:0]  HLT = 6'b010111;
-localparam  [5:0]  PREIO = 6'b011100;
+localparam  [opcode_WIDTH-1:0]  HLT = 6'b010111;
+localparam  [opcode_WIDTH-1:0]  PREIO = 6'b011100;
 
-localparam  [5:0]    OPERATING_SYSTEM_BEGIN_ADDR = 10'd256;
+localparam  [ADDR_WIDTH-1:0]    OPERATING_SYSTEM_BEGIN_ADDR = 10'd256;
 
 localparam  BIOS = 1'b0;
 
@@ -52,7 +53,7 @@ reg         [COUNTER_WIDTH-1:0] COUNTER = {COUNTER_WIDTH{1'b0}};
 //-------------Processing Starts Here------------------
 
 always @ (posedge clock) begin
-    if ((mux_system_instruction == BIOS) || (program_counter >= OPERATING_SYSTEM_BEGIN_ADDR)) begin
+    if (mux_system_instruction == BIOS || program_counter >= OPERATING_SYSTEM_BEGIN_ADDR) begin
         STATE <= INITIAL;
         COUNTER <= {COUNTER_WIDTH{1'b0}};
         state_register <= state_register;

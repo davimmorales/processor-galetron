@@ -1,5 +1,5 @@
- module PC(clock, address, zero, negative, bzero, bnegative, jump, programCounter, HLT, resetCPU);//, branch);
-  input clock, zero, negative, jump, bzero, bnegative, HLT, resetCPU;//, branch;
+ module PC(clock, address, zero, negative, bzero, bnegative, jump, programCounter, HLT, resetCPU, jump_context_exchange);//, branch);
+  input clock, zero, negative, jump, bzero, bnegative, HLT, resetCPU, jump_context_exchange;//, branch;
   input [11:0] address;
   reg[11:0] programCounter, newPc, muxA;
   wire[11:0] pcInc, branchAdd, jumpAdd;
@@ -35,6 +35,9 @@
 		programCounter <= 256;
 	end
    else if(HLT) begin
+	end
+	else if(jump_context_exchange) begin
+		programCounter <= 1079;
 	end
 	else begin
     programCounter <= newPc;
