@@ -69,16 +69,9 @@ agreement for further details.
 	(port
 		(pt 0 128)
 		(input)
-		(text "tucanos_data[31..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "tucanos_data[31..0]" (rect 21 123 97 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 0 144)
-		(input)
 		(text "program_counter[11..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "program_counter[11..0]" (rect 21 139 113 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
+		(text "program_counter[11..0]" (rect 21 123 113 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 240 32)
