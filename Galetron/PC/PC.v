@@ -37,7 +37,7 @@
    else if(HLT) begin
 	end
 	else if(jump_context_exchange) begin
-		programCounter <= 1079;
+		programCounter <= 1083;
 	end
 	else begin
     programCounter <= newPc;

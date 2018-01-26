@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Tue Jan 23 21:29:49 2018
+Fri Jan 26 19:18:08 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -67,15 +67,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 23 21:29:49 2018       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jan 26 19:18:07 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7,398                                       ;
-;     Total combinational functions  ; 6,396                                       ;
-;     Dedicated logic registers      ; 1,149                                       ;
-; Total registers                    ; 1149                                        ;
+; Total logic elements               ; 7,468                                       ;
+;     Total combinational functions  ; 6,465                                       ;
+;     Dedicated logic registers      ; 1,160                                       ;
+; Total registers                    ; 1160                                        ;
 ; Total pins                         ; 134                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 441,696                                     ;
@@ -251,20 +251,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------+
 ; Resource                                    ; Usage                         ;
 +---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 7,398                         ;
+; Estimated Total logic elements              ; 7,468                         ;
 ;                                             ;                               ;
-; Total combinational functions               ; 6396                          ;
+; Total combinational functions               ; 6465                          ;
 ; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 4379                          ;
-;     -- 3 input functions                    ; 1725                          ;
-;     -- <=2 input functions                  ; 292                           ;
+;     -- 4 input functions                    ; 4394                          ;
+;     -- 3 input functions                    ; 1767                          ;
+;     -- <=2 input functions                  ; 304                           ;
 ;                                             ;                               ;
 ; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 5097                          ;
+;     -- normal mode                          ; 5166                          ;
 ;     -- arithmetic mode                      ; 1299                          ;
 ;                                             ;                               ;
-; Total registers                             ; 1149                          ;
-;     -- Dedicated logic registers            ; 1149                          ;
+; Total registers                             ; 1160                          ;
+;     -- Dedicated logic registers            ; 1160                          ;
 ;     -- I/O registers                        ; 0                             ;
 ;                                             ;                               ;
 ; I/O pins                                    ; 134                           ;
@@ -273,8 +273,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 6                             ;
 ;                                             ;                               ;
 ; Maximum fan-out node                        ; clockMultiplexer:inst13|clock ;
-; Maximum fan-out                             ; 1103                          ;
-; Total fan-out                               ; 29124                         ;
+; Maximum fan-out                             ; 1114                          ;
+; Total fan-out                               ; 29361                         ;
 ; Average fan-out                             ; 3.66                          ;
 +---------------------------------------------+-------------------------------+
 
@@ -284,7 +284,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                      ; 6396 (0)          ; 1149 (0)     ; 441696      ; 6            ; 0       ; 3         ; 134  ; 0            ; |CPU                                                                                                                                ; work         ;
+; |CPU                                      ; 6465 (0)          ; 1160 (0)     ; 441696      ; 6            ; 0       ; 3         ; 134  ; 0            ; |CPU                                                                                                                                ; work         ;
 ;    |ALU:inst|                             ; 3049 (825)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
 ;       |lpm_divide:Div0|                   ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
 ;          |lpm_divide_hkm:auto_generated|  ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
@@ -299,16 +299,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |mult_7dt:auto_generated|        ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; work         ;
 ;    |BIOS:inst6|                           ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|BIOS:inst6                                                                                                                     ; work         ;
 ;    |DeBounce:inst5|                       ; 13 (13)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|DeBounce:inst5                                                                                                                 ; work         ;
-;    |Extender:inst10|                      ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst10                                                                                                                ; work         ;
-;    |PC:inst24|                            ; 65 (65)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst24                                                                                                                      ; work         ;
+;    |Extender:inst10|                      ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst10                                                                                                                ; work         ;
+;    |PC:inst24|                            ; 67 (67)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst24                                                                                                                      ; work         ;
 ;    |clockMultiplexer:inst13|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|clockMultiplexer:inst13                                                                                                        ; work         ;
-;    |controlUnit:inst12|                   ; 39 (39)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst12                                                                                                             ; work         ;
+;    |controlUnit:inst12|                   ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst12                                                                                                             ; work         ;
 ;    |dataOutput:inst7|                     ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataOutput:inst7                                                                                                               ; work         ;
 ;    |dataRAM:inst29|                       ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29                                                                                                                 ; work         ;
 ;       |altsyncram:RAM_rtl_0|              ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0                                                                                            ; work         ;
 ;          |altsyncram_q2d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated                                                             ; work         ;
-;    |finalOutput:inst18|                   ; 637 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
-;       |BCD:converter|                     ; 581 (581)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
+;    |finalOutput:inst18|                   ; 635 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
+;       |BCD:converter|                     ; 579 (579)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayA|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayA                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayB|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayB                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayC|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayC                                                                               ; work         ;
@@ -326,16 +326,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |instructions_multiplexer:inst22|      ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|instructions_multiplexer:inst22                                                                                                ; work         ;
 ;    |multiplexer:immediateSelectorMux|     ; 696 (696)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:immediateSelectorMux                                                                                               ; work         ;
 ;    |multiplexer:lastMux|                  ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:lastMux                                                                                                            ; work         ;
-;    |multiplexer:writeDataSelectorMux|     ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:writeDataSelectorMux                                                                                               ; work         ;
-;    |outputController:inst15|              ; 97 (97)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|outputController:inst15                                                                                                        ; work         ;
+;    |multiplexer:writeDataSelectorMux|     ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:writeDataSelectorMux                                                                                               ; work         ;
+;    |outputController:inst15|              ; 99 (99)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|outputController:inst15                                                                                                        ; work         ;
 ;    |qFlipflop:inst3|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst3                                                                                                                ; work         ;
 ;    |qFlipflop:inst4|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst4                                                                                                                ; work         ;
-;    |registerFile:inst2|                   ; 1418 (1418)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst2                                                                                                             ; work         ;
+;    |registerFile:inst2|                   ; 1416 (1416)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst2                                                                                                             ; work         ;
 ;    |resetMultiplexer:inst20|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|resetMultiplexer:inst20                                                                                                        ; work         ;
 ;    |simpleInstructionsRam:inst11|         ; 0 (0)             ; 32 (32)      ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11                                                                                                   ; work         ;
 ;       |altsyncram:instructionsRAM_rtl_0|  ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0                                                                  ; work         ;
 ;          |altsyncram_i8d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated                                   ; work         ;
+;    |tripleMux:inst1|                      ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tripleMux:inst1                                                                                                                ; work         ;
 ;    |tripleMux:inst8|                      ; 98 (98)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tripleMux:inst8                                                                                                                ; work         ;
+;    |tucanos_watchdog:inst16|              ; 18 (18)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tucanos_watchdog:inst16                                                                                                        ; work         ;
 ;    |write_frequency_divider:inst26|       ; 9 (9)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|write_frequency_divider:inst26                                                                                                 ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -397,111 +399,114 @@ Encoding Type:  One-Hot
 +----------------+------------+------------+----------------+-----------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                 ; Free of Timing Hazards ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
-; dataOutput:inst7|IO_RAMOutput[31]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; ALU:inst|aluOut[0]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[1]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[2]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[3]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[4]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[5]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[29]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[28]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[27]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[26]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[25]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[24]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[23]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[22]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[21]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[20]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[19]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[18]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[17]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[16]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[15]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[14]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[13]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[12]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[11]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[10]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[9]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[8]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[7]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[6]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[5]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[4]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[3]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[2]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[1]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[0]                    ; outputController:inst15|Decoder0    ; yes                    ;
-; dataOutput:inst7|IO_RAMOutput[30]                   ; outputController:inst15|Decoder0    ; yes                    ;
-; ALU:inst|aluOut[13]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[6]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[7]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[8]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[9]                                  ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[10]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[11]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[12]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; controlUnit:inst12|flag_write_i_ram                 ; controlUnit:inst12|flag_write_i_ram ; yes                    ;
-; ALU:inst|aluOut[14]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[15]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[16]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[17]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[18]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[19]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[20]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[21]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[22]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[23]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[24]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[25]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[26]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[27]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[28]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[29]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[30]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; ALU:inst|aluOut[31]                                 ; ALU:inst|Mux32                      ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[31]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[30]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[29]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[28]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[27]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[26]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[25]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[24]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[23]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[22]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[21]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[20]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[19]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[18]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[17]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[16]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[15]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[14]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[13]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[12]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[11]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[10]                 ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[9]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[8]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[7]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[6]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[5]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[4]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[3]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[2]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[1]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; tripleMux:inst8|tripleMuxOutput[0]                  ; tripleMux:inst8|Mux32               ; yes                    ;
-; Number of user-specified and inferred latches = 97  ;                                     ;                        ;
-+-----------------------------------------------------+-------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++---------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                 ;
++------------------------------------------------------+-------------------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal                 ; Free of Timing Hazards ;
++------------------------------------------------------+-------------------------------------+------------------------+
+; dataOutput:inst7|IO_RAMOutput[31]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; ALU:inst|aluOut[0]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[1]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[2]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[3]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[4]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[5]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[29]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[28]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[27]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[26]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[25]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[24]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[23]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[22]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[21]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[20]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[19]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[18]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[17]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[16]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[15]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[14]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[13]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[12]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[11]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[10]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[9]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[8]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[7]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[6]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[5]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[4]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[3]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[2]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[1]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[0]                     ; outputController:inst15|Decoder0    ; yes                    ;
+; dataOutput:inst7|IO_RAMOutput[30]                    ; outputController:inst15|Decoder0    ; yes                    ;
+; ALU:inst|aluOut[13]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[6]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[7]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[8]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[9]                                   ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[10]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[11]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[12]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; controlUnit:inst12|flag_write_i_ram                  ; controlUnit:inst12|flag_write_i_ram ; yes                    ;
+; ALU:inst|aluOut[14]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[15]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[16]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[17]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[18]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[19]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[20]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[21]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[22]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[23]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[24]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[25]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[26]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[27]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[28]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[29]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[30]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; ALU:inst|aluOut[31]                                  ; ALU:inst|Mux32                      ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[31]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[30]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[29]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[28]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[27]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[26]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[25]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[24]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[23]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[22]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[21]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[20]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[19]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[18]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[17]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[16]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[15]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[14]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[13]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[12]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[11]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[10]                  ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[9]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[8]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[7]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[6]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[5]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[4]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[3]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[2]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[1]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst1|tripleMuxOutput[0]                   ; tripleMux:inst1|Mux32               ; yes                    ;
+; tripleMux:inst8|tripleMuxOutput[31]                  ; tripleMux:inst8|Mux32               ; yes                    ;
+; tripleMux:inst8|tripleMuxOutput[30]                  ; tripleMux:inst8|Mux32               ; yes                    ;
+; tripleMux:inst8|tripleMuxOutput[29]                  ; tripleMux:inst8|Mux32               ; yes                    ;
+; Number of user-specified and inferred latches = 129  ;                                     ;                        ;
++------------------------------------------------------+-------------------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -509,10 +514,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------------------------------------------------------------------------+----------------------------------------+
 ; Register name                                                          ; Reason for Removal                     ;
 +------------------------------------------------------------------------+----------------------------------------+
-; tucanos_watchdog:inst16|state_register[0..31]                          ; Lost fanout                            ;
-; tucanos_watchdog:inst16|COUNTER[0..3]                                  ; Stuck at GND due to stuck port data_in ;
-; tucanos_watchdog:inst16|STATE.000                                      ; Lost fanout                            ;
-; tucanos_watchdog:inst16|STATE.COUNTING                                 ; Lost fanout                            ;
+; tucanos_watchdog:inst16|state_register[3..31]                          ; Stuck at GND due to stuck port data_in ;
 ; tucanos_watchdog:inst16|STATE.WAIT                                     ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|STATE.HALT                                     ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|STATE.CHANGE                                   ; Lost fanout                            ;
@@ -551,10 +553,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; tucanos_watchdog:inst16|STATE~2                                        ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|STATE~3                                        ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|PROCESS_INDEX.00000000000000000000000000000000 ; Lost fanout                            ;
-; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_ONE                        ; Lost fanout                            ;
-; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_TWO                        ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE                      ; Lost fanout                            ;
-; Total Number of Removed Registers = 79                                 ;                                        ;
+; Total Number of Removed Registers = 68                                 ;                                        ;
 +------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -563,9 +563,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+--------------------+---------------------------------------------------+
 ; Register name                           ; Reason for Removal ; Registers Removed due to This Register            ;
 +-----------------------------------------+--------------------+---------------------------------------------------+
-; tucanos_watchdog:inst16|PROCESS_INDEX~4 ; Lost Fanouts       ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_ONE,  ;
-;                                         ;                    ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE ;
-; tucanos_watchdog:inst16|PROCESS_INDEX~5 ; Lost Fanouts       ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_TWO   ;
+; tucanos_watchdog:inst16|PROCESS_INDEX~4 ; Lost Fanouts       ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE ;
 +-----------------------------------------+--------------------+---------------------------------------------------+
 
 
@@ -574,12 +572,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1149  ;
+; Total registers                              ; 1160  ;
 ; Number of registers using Synchronous Clear  ; 17    ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1026  ;
+; Number of registers using Clock Enable       ; 1031  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -599,29 +597,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst2|RF[28][22]                  ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |CPU|registerFile:inst2|RF[28][11]                  ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[31] ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[3]  ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst15|binary[29]             ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux0                           ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux14                          ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux10                          ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux24                          ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux14                          ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux9                           ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |CPU|PC:inst24|programCounter                       ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst2|Mux28                       ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst2|Mux55                       ;
-; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[22] ;
-; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[7]  ;
-; 65:1               ; 18 bits   ; 774 LEs       ; 72 LEs               ; 702 LEs                ; No         ; |CPU|outputController:inst15|Selector16             ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux18                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux11                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux27                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux6                                  ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux28                                 ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux2                                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst2|RF[28][27]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |CPU|registerFile:inst2|RF[28][3]                   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |CPU|tucanos_watchdog:inst16|COUNTER[2]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |CPU|tucanos_watchdog:inst16|STATE                  ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst1|Mux17                          ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |CPU|tripleMux:inst1|Mux0                           ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst15|binary[28]             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux1                           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux5                           ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux4                           ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux29                          ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux17                          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst10|Mux7                           ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst2|Mux16                       ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 33 LEs               ; 11 LEs                 ; No         ; |CPU|PC:inst24|programCounter                       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst2|Mux32                       ;
+; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[29] ;
+; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[8]  ;
+; 65:1               ; 18 bits   ; 774 LEs       ; 72 LEs               ; 702 LEs                ; No         ; |CPU|outputController:inst15|Selector6              ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux21                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux10                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux24                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux7                                  ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux29                                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux3                                  ;
 ; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux31                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
@@ -1025,29 +1025,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 134                         ;
-; cycloneiii_ff         ; 1149                        ;
-;     ENA               ; 1018                        ;
+; cycloneiii_ff         ; 1160                        ;
+;     ENA               ; 1023                        ;
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 6                           ;
 ;     SCLR SLD          ; 11                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 105                         ;
-; cycloneiii_lcell_comb ; 6453                        ;
+;     plain             ; 111                         ;
+; cycloneiii_lcell_comb ; 6522                        ;
 ;     arith             ; 1299                        ;
 ;         2 data inputs ; 119                         ;
 ;         3 data inputs ; 1180                        ;
-;     normal            ; 5154                        ;
+;     normal            ; 5223                        ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 62                          ;
-;         2 data inputs ; 107                         ;
-;         3 data inputs ; 545                         ;
-;         4 data inputs ; 4379                        ;
+;         2 data inputs ; 119                         ;
+;         3 data inputs ; 587                         ;
+;         4 data inputs ; 4394                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 136.50                      ;
-; Average LUT depth     ; 85.80                       ;
+; Average LUT depth     ; 84.95                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1056,7 +1056,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:30     ;
+; Top            ; 00:00:24     ;
 +----------------+--------------+
 
 
@@ -1066,7 +1066,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Tue Jan 23 21:29:01 2018
+    Info: Processing started: Fri Jan 26 19:17:28 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v
@@ -1097,7 +1097,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/m
     Info (12023): Found entity 1: Output File: /home/morales/Documentos/Git/processor-galetron/Galetron/Output/Output.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file clockMultiplexer.v
     Info (12023): Found entity 1: clockMultiplexer File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/clockMultiplexer.v Line: 1
-Warning (10229): Verilog HDL Expression warning at controlUnit.v(744): truncated literal to match 1 bits File: /home/morales/Documentos/Git/processor-galetron/Galetron/controlUnit/controlUnit.v Line: 744
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/controlUnit/controlUnit.v
     Info (12023): Found entity 1: controlUnit File: /home/morales/Documentos/Git/processor-galetron/Galetron/controlUnit/controlUnit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v
@@ -1264,7 +1263,6 @@ Info (10041): Inferred latch for "tripleMuxOutput[31]" at tripleMux.v(7) File: /
 Info (12128): Elaborating entity "dataRAM" for hierarchy "dataRAM:inst29"
 Info (12128): Elaborating entity "harddrive" for hierarchy "harddrive:inst34"
 Info (12128): Elaborating entity "tucanos_watchdog" for hierarchy "tucanos_watchdog:inst16"
-Warning (10230): Verilog HDL assignment warning at tucanos_watchdog.v(31): truncated value with size 10 to match size of target (6) File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 31
 Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(86): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 86
 Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(61): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 61
 Info (12128): Elaborating entity "resetMultiplexer" for hierarchy "resetMultiplexer:inst20"
@@ -1288,70 +1286,6 @@ Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer instructions_multiplexer:inst22|instruction[29] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
     Warning (19017): Found clock multiplexer instructions_multiplexer:inst22|instruction[30] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
     Warning (19017): Found clock multiplexer instructions_multiplexer:inst22|instruction[31] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[0]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[1]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[2]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[3]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[4]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[5]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[6]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[7]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[8]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[9]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[10]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[11]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[12]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[13]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[14]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[15]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[16]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[17]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[18]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[19]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[20]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[21]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[22]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[23]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[24]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[25]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[26]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[27]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[28]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[29]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[30]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[31]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[0]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[1]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[2]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[3]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[4]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[5]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[6]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[7]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[8]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[9]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[10]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[11]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[12]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[13]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[14]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[15]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[16]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[17]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[18]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[19]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[20]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[21]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[22]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[23]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[24]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[25]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[26]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[27]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[28]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[29]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[30]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
-Warning (14026): LATCH primitive "tripleMux:inst1|tripleMuxOutput[31]" is permanently enabled File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
 Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12001) in the Memory Initialization File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276021): Created node "harddrive:inst34|HD" as a single-port RAM by generating altsyncram megafunction to implement register logic. Power-up values at the outputs of the RAM are different from the original design. File: /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v Line: 9
@@ -1642,6 +1576,70 @@ Warning (13012): Latch ALU:inst|aluOut[30] has unsafe behavior File: /home/moral
     Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction_source_selector:inst19|CONTROL_STATE File: /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v Line: 25
 Warning (13012): Latch ALU:inst|aluOut[31] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 9
     Warning (13013): Ports D and ENA on the latch are fed by the same signal instruction_source_selector:inst19|CONTROL_STATE File: /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v Line: 25
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[31] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[30] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[29] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[28] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[27] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[26] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[25] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[24] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[23] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[22] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[21] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[20] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[19] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[18] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[17] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[16] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[15] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[14] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[13] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[12] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[11] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[10] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[9] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[8] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[7] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[6] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[5] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[4] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[3] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[2] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[1] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
+Warning (13012): Latch tripleMux:inst1|tripleMuxOutput[0] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[26] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
 Warning (13012): Latch tripleMux:inst8|tripleMuxOutput[31] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
     Warning (13013): Ports D and ENA on the latch are fed by the same signal instructions_multiplexer:inst22|instruction[31] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
 Warning (13012): Latch tripleMux:inst8|tripleMuxOutput[30] has unsafe behavior File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
@@ -1731,19 +1729,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "offLEDS[1]" is stuck at GND
     Warning (13410): Pin "offLEDS[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 75 registers lost all their fanouts during netlist optimizations.
+Info (17049): 39 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7711 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7782 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 114 output pins
-    Info (21061): Implemented 7443 logic cells
+    Info (21061): Implemented 7514 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 341 warnings
-    Info: Peak virtual memory: 1396 megabytes
-    Info: Processing ended: Tue Jan 23 21:29:49 2018
-    Info: Elapsed time: 00:00:48
-    Info: Total CPU time (on all processors): 00:01:05
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 339 warnings
+    Info: Peak virtual memory: 1391 megabytes
+    Info: Processing ended: Fri Jan 26 19:18:08 2018
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:00
 
 

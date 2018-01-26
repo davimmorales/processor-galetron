@@ -702,7 +702,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
-  selection_registers_file = 1'b01;
+  selection_registers_file = 2'b01;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -727,7 +727,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   bnegative = 1'b0;
   HLT = 1'b0;
   end
-  6'b100111: begin//load from tucanos watchdog
+  6'b101000: begin//load from tucanos watchdog
   writeDataSelection = 1'b1;
   writeRegister = 1'b1;
   aluSelection = 4'b0000;
@@ -741,7 +741,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
-  selection_registers_file = 1'b10;
+  selection_registers_file = 2'b10;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;

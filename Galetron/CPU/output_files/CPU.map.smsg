@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at BIOS.v(10): always construct contains both blocking and non-blocking assignments File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 10
+Warning (10268): Verilog HDL information at PC.v(26): always construct contains both blocking and non-blocking assignments File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 26

@@ -25,10 +25,10 @@ localparam STATE_WIDTH = 3;
 localparam COUNTER_WIDTH = 4;
 localparam MAX_QUANTUM = 7;
 
-localparam  [5:0]  HLT = 6'b010111;
-localparam  [5:0]  PREIO = 6'b011100;
+localparam  [5:0]  HLT = 6'b011100;
+localparam  [5:0]  PREIO = 6'b011110;
 
-localparam  [5:0]    OPERATING_SYSTEM_BEGIN_ADDR = 10'd256;
+localparam  [11:0]    OPERATING_SYSTEM_BEGIN_ADDR = 12'd256;
 
 localparam  BIOS = 1'b0;
 

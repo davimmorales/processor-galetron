@@ -3,32 +3,32 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -164.085
-TNS   : -30084.962
+Slack : -166.219
+TNS   : -30130.346
 
 Type  : Slow 1200mV 85C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -55.026
-TNS   : -29997.020
+Slack : -59.539
+TNS   : -33642.654
 
 Type  : Slow 1200mV 85C Model Setup 'machineClock'
-Slack : -32.751
-TNS   : -5069.138
+Slack : -32.922
+TNS   : -4979.966
 
 Type  : Slow 1200mV 85C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -15.191
-TNS   : -12620.335
-
-Type  : Slow 1200mV 85C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -5.793
-TNS   : -879.176
+Slack : -15.235
+TNS   : -13176.184
 
 Type  : Slow 1200mV 85C Model Hold 'machineClock'
-Slack : -2.839
-TNS   : -2.839
+Slack : -2.851
+TNS   : -2.851
+
+Type  : Slow 1200mV 85C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
+Slack : -2.648
+TNS   : -34.018
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -6.978
-TNS   : -62089.349
+Slack : -6.295
+TNS   : -59775.900
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
@@ -36,35 +36,35 @@ TNS   : -447.578
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -2.693
-TNS   : -1527.399
+TNS   : -1541.534
 
 Type  : Slow 1200mV 0C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -148.540
-TNS   : -27490.676
+Slack : -150.259
+TNS   : -27385.349
 
 Type  : Slow 1200mV 0C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -50.480
-TNS   : -27405.674
+Slack : -54.309
+TNS   : -30700.348
 
 Type  : Slow 1200mV 0C Model Setup 'machineClock'
-Slack : -30.027
-TNS   : -4639.909
+Slack : -30.356
+TNS   : -4547.130
 
 Type  : Slow 1200mV 0C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -13.937
-TNS   : -11652.163
-
-Type  : Slow 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -5.346
-TNS   : -850.794
+Slack : -13.907
+TNS   : -12055.743
 
 Type  : Slow 1200mV 0C Model Hold 'machineClock'
-Slack : -2.585
-TNS   : -2.585
+Slack : -2.597
+TNS   : -2.597
+
+Type  : Slow 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
+Slack : -2.395
+TNS   : -30.589
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -6.532
-TNS   : -56439.090
+Slack : -5.774
+TNS   : -54179.946
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
@@ -72,42 +72,42 @@ TNS   : -441.154
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -2.649
-TNS   : -1525.727
+TNS   : -1539.862
 
 Type  : Fast 1200mV 0C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -81.739
-TNS   : -14835.289
+Slack : -83.143
+TNS   : -14800.831
 
 Type  : Fast 1200mV 0C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -27.119
-TNS   : -14774.194
+Slack : -29.679
+TNS   : -16510.706
 
 Type  : Fast 1200mV 0C Model Setup 'machineClock'
-Slack : -16.572
-TNS   : -2506.678
+Slack : -16.635
+TNS   : -2453.509
 
 Type  : Fast 1200mV 0C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -7.605
-TNS   : -6293.335
-
-Type  : Fast 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -2.991
-TNS   : -506.001
+Slack : -7.691
+TNS   : -6545.033
 
 Type  : Fast 1200mV 0C Model Hold 'machineClock'
-Slack : -1.541
-TNS   : -1.541
+Slack : -1.555
+TNS   : -1.555
+
+Type  : Fast 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
+Slack : -1.440
+TNS   : -22.008
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -3.695
-TNS   : -30151.293
+Slack : -3.078
+TNS   : -28339.269
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -209.669
+TNS   : -209.741
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -1.000
-TNS   : -1147.338
+TNS   : -1158.000
 
 ------------------------------------------------------------
