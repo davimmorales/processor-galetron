@@ -51,7 +51,7 @@ reg         [COUNTER_WIDTH-1:0] COUNTER = {COUNTER_WIDTH{1'b0}};
 
 //-------------Processing Starts Here------------------
 
-always @ (posedge clock) begin
+always @ (negedge clock) begin
     if ((mux_system_instruction == BIOS) || (program_counter >= OPERATING_SYSTEM_BEGIN_ADDR)) begin
         STATE <= INITIAL;
         COUNTER <= {COUNTER_WIDTH{1'b0}};

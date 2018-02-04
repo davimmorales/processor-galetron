@@ -777,7 +777,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -864 248 -664 328)
+	(rect -1216 232 -1016 312)
 	(text "resetMultiplexer" (rect 5 0 156 12)(font "Arial" ))
 	(text "inst20" (rect 8 64 64 76)(font "Arial" ))
 	(port
@@ -1229,63 +1229,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -280 976 64 1088)
-	(text "tucanos_watchdog" (rect 5 0 156 12)(font "Arial" ))
-	(text "inst16" (rect 8 96 64 108)(font "Liberation Sans" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 47 12)(font "Arial" ))
-		(text "clock" (rect 21 27 68 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "opcode[5..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "opcode[5..0]" (rect 21 43 134 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "program_counter[11..0]" (rect 0 0 207 12)(font "Arial" ))
-		(text "program_counter[11..0]" (rect 21 59 228 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "mux_system_instruction" (rect 0 0 207 12)(font "Arial" ))
-		(text "mux_system_instruction" (rect 21 75 228 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 344 32)
-		(output)
-		(text "state_register[DATA_WIDTH-1..0]" (rect 0 0 292 12)(font "Arial" ))
-		(text "state_register[DATA_WIDTH-1..0]" (rect 76 27 368 39)(font "Arial" ))
-		(line (pt 344 32)(pt 328 32)(line_width 3))
-	)
-	(port
-		(pt 344 48)
-		(output)
-		(text "jump_enabler" (rect 0 0 113 12)(font "Arial" ))
-		(text "jump_enabler" (rect 228 43 341 55)(font "Arial" ))
-		(line (pt 344 48)(pt 328 48))
-	)
-	(parameter
-		"DATA_WIDTH"
-		"32"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 328 96))
-	)
-	(annotation_block (parameter)(rect 64 936 344 976))
-)
-(symbol
-	(rect -592 120 -304 328)
+	(rect -944 104 -656 312)
 	(text "PC" (rect 5 0 23 12)(font "Arial" ))
 	(text "inst24" (rect 8 192 64 204)(font "Liberation Sans" ))
 	(port
@@ -1410,84 +1354,6 @@ agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 224 96))
-	)
-)
-(symbol
-	(rect 80 152 320 328)
-	(text "registerFile" (rect 5 0 118 12)(font "Arial" ))
-	(text "inst2" (rect 8 160 55 172)(font "Liberation Sans" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "writeAddress[4..0]" (rect 0 0 169 12)(font "Arial" ))
-		(text "writeAddress[4..0]" (rect 21 27 190 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "readAddress1[4..0]" (rect 0 0 169 12)(font "Arial" ))
-		(text "readAddress1[4..0]" (rect 21 43 190 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "readAddress2[4..0]" (rect 0 0 169 12)(font "Arial" ))
-		(text "readAddress2[4..0]" (rect 21 59 190 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "clock" (rect 0 0 47 12)(font "Arial" ))
-		(text "clock" (rect 21 75 68 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "writeRegister" (rect 0 0 122 12)(font "Arial" ))
-		(text "writeRegister" (rect 21 91 143 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "writeData[31..0]" (rect 0 0 151 12)(font "Arial" ))
-		(text "writeData[31..0]" (rect 21 107 172 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "program_counter[11..0]" (rect 0 0 207 12)(font "Arial" ))
-		(text "program_counter[11..0]" (rect 21 123 228 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "dataA[31..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "dataA[31..0]" (rect 124 27 237 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
-	)
-	(port
-		(pt 240 48)
-		(output)
-		(text "dataB[31..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "dataB[31..0]" (rect 124 43 237 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(port
-		(pt 240 64)
-		(output)
-		(text "dataC[31..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "dataC[31..0]" (rect 124 59 237 71)(font "Arial" ))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 224 160))
 	)
 )
 (symbol
@@ -1652,6 +1518,169 @@ agreement for further details.
 		(rectangle (rect 16 16 264 352))
 	)
 )
+(symbol
+	(rect 80 152 320 328)
+	(text "registerFile" (rect 5 0 118 12)(font "Arial" ))
+	(text "inst25" (rect 8 160 64 172)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "writeAddress[4..0]" (rect 0 0 169 12)(font "Arial" ))
+		(text "writeAddress[4..0]" (rect 21 27 190 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "readAddress1[4..0]" (rect 0 0 169 12)(font "Arial" ))
+		(text "readAddress1[4..0]" (rect 21 43 190 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "readAddress2[4..0]" (rect 0 0 169 12)(font "Arial" ))
+		(text "readAddress2[4..0]" (rect 21 59 190 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "clock" (rect 0 0 47 12)(font "Arial" ))
+		(text "clock" (rect 21 75 68 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "writeRegister" (rect 0 0 122 12)(font "Arial" ))
+		(text "writeRegister" (rect 21 91 143 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "writeData[31..0]" (rect 0 0 151 12)(font "Arial" ))
+		(text "writeData[31..0]" (rect 21 107 172 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "program_counter[11..0]" (rect 0 0 207 12)(font "Arial" ))
+		(text "program_counter[11..0]" (rect 21 123 228 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "dataA[31..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "dataA[31..0]" (rect 124 27 237 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "dataB[31..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "dataB[31..0]" (rect 124 43 237 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(port
+		(pt 240 64)
+		(output)
+		(text "dataC[31..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "dataC[31..0]" (rect 124 59 237 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 160))
+	)
+)
+(symbol
+	(rect -248 976 96 1088)
+	(text "tucanos_watchdog" (rect 5 0 156 12)(font "Arial" ))
+	(text "inst16" (rect 8 96 64 108)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 47 12)(font "Arial" ))
+		(text "clock" (rect 21 27 68 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "opcode[5..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "opcode[5..0]" (rect 21 43 134 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "program_counter[11..0]" (rect 0 0 207 12)(font "Arial" ))
+		(text "program_counter[11..0]" (rect 21 59 228 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "mux_system_instruction" (rect 0 0 207 12)(font "Arial" ))
+		(text "mux_system_instruction" (rect 21 75 228 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 344 32)
+		(output)
+		(text "state_register[DATA_WIDTH-1..0]" (rect 0 0 292 12)(font "Arial" ))
+		(text "state_register[DATA_WIDTH-1..0]" (rect 76 27 368 39)(font "Arial" ))
+		(line (pt 344 32)(pt 328 32)(line_width 3))
+	)
+	(port
+		(pt 344 48)
+		(output)
+		(text "jump_enabler" (rect 0 0 113 12)(font "Arial" ))
+		(text "jump_enabler" (rect 228 43 341 55)(font "Arial" ))
+		(line (pt 344 48)(pt 328 48))
+	)
+	(parameter
+		"DATA_WIDTH"
+		"32"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 328 96))
+	)
+	(annotation_block (parameter)(rect 96 936 376 976))
+)
+(symbol
+	(rect -552 168 -208 248)
+	(text "pc_filter" (rect 5 0 89 12)(font "Arial" ))
+	(text "inst2" (rect 8 64 55 76)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "program_counter[11..0]" (rect 0 0 207 12)(font "Arial" ))
+		(text "program_counter[11..0]" (rect 21 27 228 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "operation[5..0]" (rect 0 0 141 12)(font "Arial" ))
+		(text "operation[5..0]" (rect 21 43 162 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 344 32)
+		(output)
+		(text "registers_file_program_counter[11..0]" (rect 0 0 349 12)(font "Arial" ))
+		(text "registers_file_program_counter[11..0]" (rect 28 27 377 39)(font "Arial" ))
+		(line (pt 344 32)(pt 328 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 328 64))
+	)
+)
 (connector
 	(text "clock" (rect 882 -24 929 -12)(font "Liberation Sans" ))
 	(pt 928 -8)
@@ -1725,11 +1754,6 @@ agreement for further details.
 (connector
 	(pt 32 312)
 	(pt 48 312)
-	(bus)
-)
-(connector
-	(pt 48 312)
-	(pt 48 264)
 	(bus)
 )
 (connector
@@ -2112,11 +2136,6 @@ agreement for further details.
 	(pt -376 776)
 )
 (connector
-	(text "inputClock" (rect -550 600 -456 612)(font "Arial" ))
-	(pt -552 616)
-	(pt -336 616)
-)
-(connector
 	(pt 1528 648)
 	(pt 1352 648)
 	(bus)
@@ -2345,39 +2364,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "clock" (rect 58 216 105 228)(font "Liberation Sans" ))
-	(pt 48 232)
-	(pt 80 232)
-)
-(connector
-	(text "instruction[25..21]" (rect 8 168 187 180)(font "Liberation Sans" ))
-	(pt 8 184)
-	(pt 80 184)
-	(bus)
-)
-(connector
-	(text "instruction[20..16]" (rect 8 184 187 196)(font "Liberation Sans" ))
-	(pt 8 200)
-	(pt 80 200)
-	(bus)
-)
-(connector
-	(text "instruction[15..11]" (rect 8 200 187 212)(font "Liberation Sans" ))
-	(pt 8 216)
-	(pt 80 216)
-	(bus)
-)
-(connector
-	(text "writeRegister" (rect 48 232 170 244)(font "Liberation Sans" ))
-	(pt 48 248)
-	(pt 80 248)
-)
-(connector
-	(pt 48 264)
-	(pt 80 264)
-	(bus)
-)
-(connector
 	(pt -1016 688)
 	(pt -784 688)
 )
@@ -2415,23 +2401,6 @@ agreement for further details.
 	(text "read_clock" (rect 1170 216 1264 228)(font "Liberation Sans" ))
 	(pt 1240 232)
 	(pt 1160 232)
-)
-(connector
-	(pt -1232 1080)
-	(pt -1232 688)
-)
-(connector
-	(pt -1256 688)
-	(pt -1232 688)
-)
-(connector
-	(pt -1232 688)
-	(pt -1216 688)
-)
-(connector
-	(text "read_clock" (rect -974 1064 -880 1076)(font "Liberation Sans" ))
-	(pt -1232 1080)
-	(pt -800 1080)
 )
 (connector
 	(text "store[31..0]" (rect 1050 880 1163 892)(font "Liberation Sans" ))
@@ -2474,108 +2443,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "clock" (rect -358 992 -311 1004)(font "Liberation Sans" ))
-	(pt -280 1008)
-	(pt -360 1008)
-)
-(connector
-	(text "instruction[31..26]" (rect -360 1008 -181 1020)(font "Liberation Sans" ))
-	(pt -280 1024)
-	(pt -360 1024)
-	(bus)
-)
-(connector
-	(text "program_counter[11..0]" (rect -360 1024 -153 1036)(font "Liberation Sans" ))
-	(pt -280 1040)
-	(pt -360 1040)
-	(bus)
-)
-(connector
-	(text "instruction_selection" (rect -360 1040 -162 1052)(font "Liberation Sans" ))
-	(pt -280 1056)
-	(pt -360 1056)
-)
-(connector
-	(text "clock" (rect -646 136 -599 148)(font "Liberation Sans" ))
-	(pt -592 152)
-	(pt -648 152)
-)
-(connector
-	(text "zero" (rect -646 168 -609 180)(font "Liberation Sans" ))
-	(pt -592 184)
-	(pt -648 184)
-)
-(connector
-	(text "negative" (rect -646 184 -571 196)(font "Liberation Sans" ))
-	(pt -592 200)
-	(pt -648 200)
-)
-(connector
-	(text "bzero" (rect -646 200 -599 212)(font "Liberation Sans" ))
-	(pt -592 216)
-	(pt -648 216)
-)
-(connector
-	(text "bnegative" (rect -646 216 -562 228)(font "Liberation Sans" ))
-	(pt -592 232)
-	(pt -648 232)
-)
-(connector
-	(text "jump" (rect -646 232 -609 244)(font "Liberation Sans" ))
-	(pt -592 248)
-	(pt -648 248)
-)
-(connector
-	(text "HLT" (rect -646 248 -618 260)(font "Arial" ))
-	(pt -592 264)
-	(pt -648 264)
-)
-(connector
-	(pt -592 280)
-	(pt -664 280)
-)
-(connector
-	(text "instruction[31..26]" (rect -960 264 -781 276)(font "Arial" ))
-	(pt -864 280)
-	(pt -960 280)
-	(bus)
-)
-(connector
-	(text "switches[17]" (rect -960 280 -847 292)(font "Arial" ))
-	(pt -864 296)
-	(pt -960 296)
-)
-(connector
-	(text "lastMuxOutput[11..0]" (rect -680 152 -492 164)(font "Liberation Sans" ))
-	(pt -592 168)
-	(pt -680 168)
-	(bus)
-)
-(connector
-	(text "jump_context_exchange" (rect 64 1008 262 1020)(font "Liberation Sans" ))
-	(pt 64 1024)
-	(pt 192 1024)
-)
-(connector
-	(pt -592 296)
-	(pt -624 296)
-)
-(connector
-	(pt -624 296)
-	(pt -624 376)
-)
-(connector
-	(text "jump_context_exchange" (rect -624 360 -426 372)(font "Liberation Sans" ))
-	(pt -624 376)
-	(pt -480 376)
-)
-(connector
-	(text "program_counter[11..0]" (rect -304 136 -97 148)(font "Liberation Sans" ))
-	(pt -304 152)
-	(pt -208 152)
-	(bus)
-)
-(connector
 	(text "selection_registers_file[1..0]" (rect 568 776 851 788)(font "Liberation Sans" ))
 	(pt 664 792)
 	(pt 568 792)
@@ -2606,19 +2473,12 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "output_watchdog[31..0]" (rect 64 992 271 1004)(font "Liberation Sans" ))
-	(pt 64 1008)
-	(pt 192 1008)
-	(bus)
-)
-(connector
 	(text "output_memory[31..0]" (rect 768 480 956 492)(font "Liberation Sans" ))
 	(pt 768 496)
 	(pt 880 496)
 	(bus)
 )
 (connector
-	(text "<<__$DEF_ALIAS829>>" (rect 904 776 1083 788)(font "Liberation Sans" )(invisible))
 	(pt 904 792)
 	(pt 1048 792)
 	(bus)
@@ -2642,22 +2502,6 @@ agreement for further details.
 	(text "registers_file_input[31..0]" (rect -174 472 80 484)(font "Liberation Sans" ))
 	(pt 536 488)
 	(pt -176 488)
-	(bus)
-)
-(connector
-	(text "program_counter[11..0]" (rect 72 352 279 364)(font "Liberation Sans" ))
-	(pt 200 368)
-	(pt 64 368)
-	(bus)
-)
-(connector
-	(pt 80 280)
-	(pt 64 280)
-	(bus)
-)
-(connector
-	(pt 64 280)
-	(pt 64 368)
 	(bus)
 )
 (connector
@@ -2777,6 +2621,228 @@ agreement for further details.
 	(pt 480 752)
 	(bus)
 )
+(connector
+	(text "instruction[25..21]" (rect -72 168 107 180)(font "Liberation Sans" ))
+	(pt 80 184)
+	(pt -72 184)
+	(bus)
+)
+(connector
+	(text "instruction[20..16]" (rect -64 184 115 196)(font "Liberation Sans" ))
+	(pt -64 200)
+	(pt 80 200)
+	(bus)
+)
+(connector
+	(text "instruction[15..11]" (rect -56 200 123 212)(font "Liberation Sans" ))
+	(pt -56 216)
+	(pt 80 216)
+	(bus)
+)
+(connector
+	(text "clock" (rect -38 216 9 228)(font "Liberation Sans" ))
+	(pt 80 232)
+	(pt -48 232)
+)
+(connector
+	(text "writeRegister" (rect -48 232 74 244)(font "Liberation Sans" ))
+	(pt 80 248)
+	(pt -64 248)
+)
+(connector
+	(pt 48 312)
+	(pt 48 264)
+	(bus)
+)
+(connector
+	(pt 80 264)
+	(pt 48 264)
+	(bus)
+)
+(connector
+	(pt 80 280)
+	(pt 64 280)
+	(bus)
+)
+(connector
+	(text "clock" (rect -358 992 -311 1004)(font "Liberation Sans" ))
+	(pt -248 1008)
+	(pt -360 1008)
+)
+(connector
+	(text "instruction[31..26]" (rect -360 1008 -181 1020)(font "Liberation Sans" ))
+	(pt -248 1024)
+	(pt -360 1024)
+	(bus)
+)
+(connector
+	(text "program_counter[11..0]" (rect -360 1024 -153 1036)(font "Liberation Sans" ))
+	(pt -248 1040)
+	(pt -360 1040)
+	(bus)
+)
+(connector
+	(text "instruction_selection" (rect -360 1040 -162 1052)(font "Liberation Sans" ))
+	(pt -248 1056)
+	(pt -360 1056)
+)
+(connector
+	(text "output_watchdog[31..0]" (rect 152 992 359 1004)(font "Liberation Sans" ))
+	(pt 96 1008)
+	(pt 240 1008)
+	(bus)
+)
+(connector
+	(text "jump_context_exchange" (rect 152 1008 350 1020)(font "Liberation Sans" ))
+	(pt 96 1024)
+	(pt 240 1024)
+)
+(connector
+	(text "clock" (rect -998 120 -951 132)(font "Liberation Sans" ))
+	(pt -944 136)
+	(pt -1000 136)
+)
+(connector
+	(text "zero" (rect -998 152 -961 164)(font "Liberation Sans" ))
+	(pt -944 168)
+	(pt -1000 168)
+)
+(connector
+	(text "negative" (rect -998 168 -923 180)(font "Liberation Sans" ))
+	(pt -944 184)
+	(pt -1000 184)
+)
+(connector
+	(text "bzero" (rect -998 184 -951 196)(font "Liberation Sans" ))
+	(pt -944 200)
+	(pt -1000 200)
+)
+(connector
+	(text "bnegative" (rect -998 200 -914 212)(font "Liberation Sans" ))
+	(pt -944 216)
+	(pt -1000 216)
+)
+(connector
+	(text "jump" (rect -998 216 -961 228)(font "Liberation Sans" ))
+	(pt -944 232)
+	(pt -1000 232)
+)
+(connector
+	(text "HLT" (rect -998 232 -970 244)(font "Arial" ))
+	(pt -944 248)
+	(pt -1000 248)
+)
+(connector
+	(pt -944 264)
+	(pt -1016 264)
+)
+(connector
+	(text "instruction[31..26]" (rect -1312 248 -1133 260)(font "Arial" ))
+	(pt -1216 264)
+	(pt -1312 264)
+	(bus)
+)
+(connector
+	(text "switches[17]" (rect -1312 264 -1199 276)(font "Arial" ))
+	(pt -1216 280)
+	(pt -1312 280)
+)
+(connector
+	(text "lastMuxOutput[11..0]" (rect -1032 136 -844 148)(font "Liberation Sans" ))
+	(pt -944 152)
+	(pt -1032 152)
+	(bus)
+)
+(connector
+	(pt -944 280)
+	(pt -976 280)
+)
+(connector
+	(pt -976 280)
+	(pt -976 360)
+)
+(connector
+	(text "jump_context_exchange" (rect -976 344 -778 356)(font "Liberation Sans" ))
+	(pt -976 360)
+	(pt -832 360)
+)
+(connector
+	(pt -592 136)
+	(pt -592 200)
+	(bus)
+)
+(connector
+	(pt -592 200)
+	(pt -552 200)
+	(bus)
+)
+(connector
+	(pt -656 136)
+	(pt -592 136)
+	(bus)
+)
+(connector
+	(text "program_counter[11..0]" (rect -590 120 -383 132)(font "Liberation Sans" ))
+	(pt -592 136)
+	(pt -120 136)
+	(bus)
+)
+(connector
+	(text "instruction[31..26]" (rect -632 200 -453 212)(font "Liberation Sans" ))
+	(pt -552 216)
+	(pt -632 216)
+	(bus)
+)
+(connector
+	(pt -208 200)
+	(pt -128 200)
+	(bus)
+)
+(connector
+	(pt -128 272)
+	(pt -128 200)
+	(bus)
+)
+(connector
+	(pt 64 272)
+	(pt -128 272)
+	(bus)
+)
+(connector
+	(pt 64 272)
+	(pt 64 280)
+	(bus)
+)
+(connector
+	(pt -1232 688)
+	(pt -1232 928)
+)
+(connector
+	(pt -1256 688)
+	(pt -1232 688)
+)
+(connector
+	(pt -1232 688)
+	(pt -1216 688)
+)
+(connector
+	(text "read_clock" (rect -158 688 -64 700)(font "Liberation Sans" ))
+	(pt -152 928)
+	(pt -1232 928)
+)
+(connector
+	(pt -152 928)
+	(pt -152 704)
+)
+(connector
+	(pt -152 704)
+	(pt -128 704)
+)
+(connector
+	(text "inputClock" (rect -174 592 -80 604)(font "Arial" ))
+	(pt -128 616)
+	(pt -552 616)
+)
 (junction (pt -272 456))
 (junction (pt 328 456))
 (junction (pt 1224 128))
@@ -2788,3 +2854,4 @@ agreement for further details.
 (junction (pt -552 680))
 (junction (pt 1432 896))
 (junction (pt -1232 688))
+(junction (pt -592 136))

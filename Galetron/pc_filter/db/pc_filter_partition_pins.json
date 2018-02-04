@@ -1,0 +1,129 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "registers_file_program_counter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[5]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[6]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[7]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[10]",
+					"strict" : false
+				},
+				{
+					"name" : "registers_file_program_counter[11]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[4]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[5]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[2]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[3]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[1]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[2]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[3]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[4]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[5]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[6]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[7]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[10]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[11]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
