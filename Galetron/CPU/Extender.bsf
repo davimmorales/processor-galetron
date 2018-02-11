@@ -48,8 +48,8 @@ agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "inputC[17..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "inputC[17..0]" (rect 21 75 69 87)(font "Arial" ))
+		(text "inputC[15..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "inputC[15..0]" (rect 21 75 69 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port

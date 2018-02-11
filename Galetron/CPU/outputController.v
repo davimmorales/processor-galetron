@@ -1,6 +1,6 @@
 module outputController (operation, switches, IO_RAMOutput, inLED, outLED, negLED, binary);
   input [5:0] operation;
-  input [17:0] switches;
+  input [15:0] switches;
   input [31:0] IO_RAMOutput;
   output reg [31:0] binary;
   output reg inLED, outLED, negLED;
@@ -12,7 +12,7 @@ module outputController (operation, switches, IO_RAMOutput, inLED, outLED, negLE
     temp = IO_RAMOutput[31];
     case (operation)
       6'b011101: begin
-      binary = {14'h0000, switches};//in
+      binary = {16'h0000, switches};//in
       inLED = 1;
       outLED = 0;
       negLED = 0;

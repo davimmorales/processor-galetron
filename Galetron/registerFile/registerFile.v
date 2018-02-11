@@ -1,9 +1,9 @@
-module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegister, writeData, dataA, dataB, dataC, program_counter);
+module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegister, writeData, dataA, dataB, dataC, dataD, program_counter);
   input [4:0] readAddress1, readAddress2, writeAddress;
   input clock, writeRegister;
   input  [31:0] writeData;
   input [11:0] program_counter;
-  output [31:0] dataA, dataB, dataC;
+  output [31:0] dataA, dataB, dataC, dataD;
 	// integer  firstClock = 1;
 
 	reg[31:0] RF [31:0];
@@ -38,5 +38,6 @@ module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegist
 	assign dataA = RF[writeAddress];
 	assign dataB = RF[readAddress1];
 	assign dataC = RF[readAddress2];
+	assign dataD = RF[30];
 
 endmodule

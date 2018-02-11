@@ -150,12 +150,6 @@ set_location_assignment PIN_N21 -to resetCPU
 set_location_assignment PIN_F19 -to offLEDS[22]
 set_location_assignment PIN_G22 -to offLEDS[21]
 set_location_assignment PIN_G20 -to offLEDS[20]
-set_location_assignment PIN_H21 -to offLEDS[19]
-set_location_assignment PIN_E24 -to offLEDS[18]
-set_location_assignment PIN_E25 -to offLEDS[17]
-set_location_assignment PIN_E22 -to offLEDS[16]
-set_location_assignment PIN_E21 -to offLEDS[15]
-set_location_assignment PIN_G16 -to offLEDS[14]
 set_location_assignment PIN_G15 -to offLEDS[13]
 set_location_assignment PIN_F15 -to offLEDS[12]
 set_location_assignment PIN_H17 -to offLEDS[11]
@@ -188,6 +182,13 @@ set_global_assignment -name PLACEMENT_EFFORT_MULTIPLIER 0.1
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_E21 -to first_digit
+set_location_assignment PIN_E22 -to second_digit
+set_location_assignment PIN_E25 -to third_digit
+set_location_assignment PIN_E24 -to fourth_digit
+set_location_assignment PIN_H21 -to fifth_digit
+set_global_assignment -name VERILOG_FILE ../debug_clock_divider/debug_clock_divider.v
+set_global_assignment -name VERILOG_FILE ../one_bit_multiplexer/one_bit_multiplexer.v
 set_global_assignment -name VERILOG_FILE ../pc_filter/pc_filter.v
 set_global_assignment -name VERILOG_FILE ../tucanos_watchdog/tucanos_watchdog.v
 set_global_assignment -name VERILOG_FILE ../write_frequency_divider/write_frequency_divider.v
@@ -219,4 +220,5 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name VERILOG_FILE ../BIOS.v
 set_global_assignment -name VERILOG_FILE ../instructions_multiplexer.v
+set_location_assignment PIN_G16 -to debug_mode
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

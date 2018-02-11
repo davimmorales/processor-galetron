@@ -122,4 +122,5 @@ end
 
 assign jump_enabler = (STATE == WAIT || STATE == HALT || STATE == CHANGE) ? 1'b1 : 1'b0;
 
+
 endmodule

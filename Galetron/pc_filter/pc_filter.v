@@ -8,8 +8,9 @@ module pc_filter (
   input [5:0] operation;
   output reg [11:0] registers_file_program_counter;
 
-  always @ ( * ) begin
-      if ((operation<6'b010010) || (operation==6'b010111)) begin
+  always @ ( program_counter ) begin
+      if ((operation < 6'b010010) || 
+			(operation == 6'b010111)) begin
         registers_file_program_counter = program_counter + 1;
       end 
 		else begin

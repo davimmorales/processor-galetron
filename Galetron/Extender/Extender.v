@@ -2,7 +2,7 @@ module Extender(extenderSelection, inputA, inputB, inputC, extenderOutput);
 
  input [15:0] inputA;
  input [20:0] inputB;
- input [17:0] inputC;
+ input [15:0] inputC;
  input [1:0] extenderSelection;
  output reg [31:0] extenderOutput;
 
@@ -22,8 +22,8 @@ module Extender(extenderSelection, inputA, inputB, inputC, extenderOutput);
       end
       2'b10: begin
         extenderOutput = inputC;
-        if(inputC[17]==1'b1) begin
-          extenderOutput = {14'h0000, inputC};
+        if(inputC[15]==1'b1) begin
+          extenderOutput = {16'h0000, inputC};
           end
         end
      default: begin

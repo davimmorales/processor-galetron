@@ -94,6 +94,13 @@ agreement for further details.
 		(text "dataC[31..0]" (rect 172 59 219 71)(font "Arial" ))
 		(line (pt 240 64)(pt 224 64)(line_width 3))
 	)
+	(port
+		(pt 240 80)
+		(output)
+		(text "dataD[31..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "dataD[31..0]" (rect 172 75 219 87)(font "Arial" ))
+		(line (pt 240 80)(pt 224 80)(line_width 3))
+	)
 	(drawing
 		(rectangle (rect 16 16 224 160)(line_width 1))
 	)

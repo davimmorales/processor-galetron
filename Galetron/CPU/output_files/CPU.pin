@@ -143,8 +143,8 @@ trillions[3]                 : AB17      : output : 2.5 V             :         
 billions[2]                  : AB18      : output : 2.5 V             :         : 4         : Y              
 millions[0]                  : AB19      : output : 2.5 V             :         : 4         : Y              
 thousands[2]                 : AB20      : output : 2.5 V             :         : 4         : Y              
-hd_output[30]                : AB21      : output : 2.5 V             :         : 4         : N              
-hd_output[28]                : AB22      : output : 2.5 V             :         : 4         : N              
+hd_output[19]                : AB21      : output : 2.5 V             :         : 4         : N              
+hd_output[31]                : AB22      : output : 2.5 V             :         : 4         : N              
 switches[12]                 : AB23      : input  : 2.5 V             :         : 5         : Y              
 switches[11]                 : AB24      : input  : 2.5 V             :         : 5         : Y              
 switches[9]                  : AB25      : input  : 2.5 V             :         : 5         : Y              
@@ -165,14 +165,14 @@ RESERVED_INPUT               : AC11      :        :                   :         
 RESERVED_INPUT               : AC12      :        :                   :         : 3         :                
 GND                          : AC13      : gnd    :                   :         :           :                
 RESERVED_INPUT               : AC14      :        :                   :         : 3         :                
-hd_output[3]                 : AC15      : output : 2.5 V             :         : 4         : N              
+hd_output[8]                 : AC15      : output : 2.5 V             :         : 4         : N              
 GND                          : AC16      : gnd    :                   :         :           :                
 trillions[6]                 : AC17      : output : 2.5 V             :         : 4         : Y              
 billions[1]                  : AC18      : output : 2.5 V             :         : 4         : Y              
-hd_output[0]                 : AC19      : output : 2.5 V             :         : 4         : N              
+hd_output[11]                : AC19      : output : 2.5 V             :         : 4         : N              
 GND                          : AC20      : gnd    :                   :         :           :                
-hd_output[22]                : AC21      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT               : AC22      :        :                   :         : 4         :                
+hd_output[27]                : AC21      : output : 2.5 V             :         : 4         : N              
+hd_output[17]                : AC22      : output : 2.5 V             :         : 4         : N              
 GND                          : AC23      : gnd    :                   :         :           :                
 switches[10]                 : AC24      : input  : 2.5 V             :         : 5         : Y              
 switches[8]                  : AC25      : input  : 2.5 V             :         : 5         : Y              
@@ -183,7 +183,7 @@ RESERVED_INPUT               : AD1       :        :                   :         
 RESERVED_INPUT               : AD2       :        :                   :         : 2         :                
 RESERVED_INPUT               : AD3       :        :                   :         : 2         :                
 RESERVED_INPUT               : AD4       :        :                   :         : 3         :                
-RESERVED_INPUT               : AD5       :        :                   :         : 3         :                
+hd_output[13]                : AD5       : output : 2.5 V             :         : 3         : N              
 VCCIO3                       : AD6       : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT               : AD7       :        :                   :         : 3         :                
 RESERVED_INPUT               : AD8       :        :                   :         : 3         :                
@@ -193,17 +193,17 @@ RESERVED_INPUT               : AD11      :        :                   :         
 RESERVED_INPUT               : AD12      :        :                   :         : 3         :                
 VCCIO3                       : AD13      : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT               : AD14      :        :                   :         : 3         :                
-hd_output[6]                 : AD15      : output : 2.5 V             :         : 4         : N              
+hd_output[5]                 : AD15      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD16      : power  :                   : 2.5V    : 4         :                
 gazillions[0]                : AD17      : output : 2.5 V             :         : 4         : Y              
 billions[0]                  : AD18      : output : 2.5 V             :         : 4         : Y              
-hd_output[2]                 : AD19      : output : 2.5 V             :         : 4         : N              
+hd_output[9]                 : AD19      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD20      : power  :                   : 2.5V    : 4         :                
-hd_output[24]                : AD21      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT               : AD22      :        :                   :         : 4         :                
+hd_output[25]                : AD21      : output : 2.5 V             :         : 4         : N              
+hd_output[16]                : AD22      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AD23      : power  :                   : 2.5V    : 4         :                
 thousands[4]                 : AD24      : output : 2.5 V             :         : 4         : Y              
-hd_output[17]                : AD25      : output : 2.5 V             :         : 4         : N              
+offLEDS[14]                  : AD25      : output : 2.5 V             :         : 4         : N              
 switches[6]                  : AD26      : input  : 2.5 V             :         : 5         : Y              
 switches[3]                  : AD27      : input  : 2.5 V             :         : 5         : Y              
 RESERVED_INPUT               : AD28      :        :                   :         : 5         :                
@@ -221,17 +221,17 @@ RESERVED_INPUT               : AE11      :        :                   :         
 RESERVED_INPUT               : AE12      :        :                   :         : 3         :                
 RESERVED_INPUT               : AE13      :        :                   :         : 3         :                
 RESERVED_INPUT               : AE14      :        :                   :         : 3         :                
-hd_output[9]                 : AE15      : output : 2.5 V             :         : 4         : N              
-hd_output[31]                : AE16      : output : 2.5 V             :         : 4         : N              
+hd_output[12]                : AE15      : output : 2.5 V             :         : 4         : N              
+offLEDS[16]                  : AE16      : output : 2.5 V             :         : 4         : N              
 gazillions[1]                : AE17      : output : 2.5 V             :         : 4         : Y              
 millions[6]                  : AE18      : output : 2.5 V             :         : 4         : Y              
 millions[4]                  : AE19      : output : 2.5 V             :         : 4         : Y              
-hd_output[16]                : AE20      : output : 2.5 V             :         : 4         : N              
-hd_output[21]                : AE21      : output : 2.5 V             :         : 4         : N              
-hd_output[11]                : AE22      : output : 2.5 V             :         : 4         : N              
-hd_output[26]                : AE23      : output : 2.5 V             :         : 4         : N              
-hd_output[20]                : AE24      : output : 2.5 V             :         : 4         : N              
-hd_output[25]                : AE25      : output : 2.5 V             :         : 4         : N              
+offLEDS[15]                  : AE20      : output : 2.5 V             :         : 4         : N              
+hd_output[28]                : AE21      : output : 2.5 V             :         : 4         : N              
+hd_output[0]                 : AE22      : output : 2.5 V             :         : 4         : N              
+hd_output[23]                : AE23      : output : 2.5 V             :         : 4         : N              
+hd_output[29]                : AE24      : output : 2.5 V             :         : 4         : N              
+hd_output[24]                : AE25      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT               : AE26      :        :                   :         : 5         :                
 RESERVED_INPUT               : AE27      :        :                   :         : 5         :                
 RESERVED_INPUT               : AE28      :        :                   :         : 5         :                
@@ -249,18 +249,18 @@ RESERVED_INPUT               : AF11      :        :                   :         
 RESERVED_INPUT               : AF12      :        :                   :         : 3         :                
 RESERVED_INPUT               : AF13      :        :                   :         : 3         :                
 RESERVED_INPUT               : AF14      :        :                   :         : 3         :                
-hd_output[12]                : AF15      : output : 2.5 V             :         : 4         : N              
-hd_output[18]                : AF16      : output : 2.5 V             :         : 4         : N              
+offLEDS[19]                  : AF15      : output : 2.5 V             :         : 4         : N              
+hd_output[21]                : AF16      : output : 2.5 V             :         : 4         : N              
 gazillions[4]                : AF17      : output : 2.5 V             :         : 4         : Y              
 billions[5]                  : AF18      : output : 2.5 V             :         : 4         : Y              
 millions[5]                  : AF19      : output : 2.5 V             :         : 4         : Y              
-hd_output[19]                : AF20      : output : 2.5 V             :         : 4         : N              
-hd_output[23]                : AF21      : output : 2.5 V             :         : 4         : N              
-hd_output[14]                : AF22      : output : 2.5 V             :         : 4         : N              
+hd_output[30]                : AF20      : output : 2.5 V             :         : 4         : N              
+hd_output[26]                : AF21      : output : 2.5 V             :         : 4         : N              
+offLEDS[17]                  : AF22      : output : 2.5 V             :         : 4         : N              
 thousands[5]                 : AF23      : output : 2.5 V             :         : 4         : Y              
-hd_output[10]                : AF24      : output : 2.5 V             :         : 4         : N              
-hd_output[13]                : AF25      : output : 2.5 V             :         : 4         : N              
-hd_output[27]                : AF26      : output : 2.5 V             :         : 4         : N              
+hd_output[1]                 : AF24      : output : 2.5 V             :         : 4         : N              
+offLEDS[18]                  : AF25      : output : 2.5 V             :         : 4         : N              
+hd_output[22]                : AF26      : output : 2.5 V             :         : 4         : N              
 RESERVED_INPUT               : AF27      :        :                   :         : 5         :                
 GND                          : AF28      : gnd    :                   :         :           :                
 VCCIO2                       : AG1       : power  :                   : 2.5V    : 2         :                
@@ -284,11 +284,11 @@ gazillions[5]                : AG18      : output : 2.5 V             :         
 billions[4]                  : AG19      : output : 2.5 V             :         : 4         : Y              
 GND                          : AG20      : gnd    :                   :         :           :                
 millions[2]                  : AG21      : output : 2.5 V             :         : 4         : Y              
-hd_output[15]                : AG22      : output : 2.5 V             :         : 4         : N              
-hd_output[4]                 : AG23      : output : 2.5 V             :         : 4         : N              
+hd_output[2]                 : AG22      : output : 2.5 V             :         : 4         : N              
+hd_output[7]                 : AG23      : output : 2.5 V             :         : 4         : N              
 GND                          : AG24      : gnd    :                   :         :           :                
-hd_output[29]                : AG25      : output : 2.5 V             :         : 4         : N              
-RESERVED_INPUT               : AG26      :        :                   :         : 4         :                
+hd_output[20]                : AG25      : output : 2.5 V             :         : 4         : N              
+hd_output[15]                : AG26      : output : 2.5 V             :         : 4         : N              
 GND                          : AG27      : gnd    :                   :         :           :                
 VCCIO5                       : AG28      : power  :                   : 2.5V    : 5         :                
 VCCIO3                       : AH2       : power  :                   : 2.5V    : 3         :                
@@ -311,11 +311,11 @@ billions[6]                  : AH18      : output : 2.5 V             :         
 billions[3]                  : AH19      : output : 2.5 V             :         : 4         : Y              
 VCCIO4                       : AH20      : power  :                   : 2.5V    : 4         :                
 millions[3]                  : AH21      : output : 2.5 V             :         : 4         : Y              
-hd_output[1]                 : AH22      : output : 2.5 V             :         : 4         : N              
-hd_output[7]                 : AH23      : output : 2.5 V             :         : 4         : N              
+hd_output[10]                : AH22      : output : 2.5 V             :         : 4         : N              
+hd_output[4]                 : AH23      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AH24      : power  :                   : 2.5V    : 4         :                
-RESERVED_INPUT               : AH25      :        :                   :         : 4         :                
-RESERVED_INPUT               : AH26      :        :                   :         : 4         :                
+hd_output[18]                : AH25      : output : 2.5 V             :         : 4         : N              
+hd_output[14]                : AH26      : output : 2.5 V             :         : 4         : N              
 VCCIO4                       : AH27      : power  :                   : 2.5V    : 4         :                
 VCCIO1                       : B1        : power  :                   : 2.5V    : 1         :                
 GND                          : B2        : gnd    :                   :         :           :                
@@ -421,11 +421,11 @@ ones[2]                      : E17       : output : 2.5 V             :         
 offLEDS[3]                   : E18       : output : 2.5 V             :         : 7         : Y              
 offLEDS[0]                   : E19       : output : 2.5 V             :         : 7         : Y              
 VCCIO7                       : E20       : power  :                   : 2.5V    : 7         :                
-offLEDS[15]                  : E21       : output : 2.5 V             :         : 7         : Y              
-offLEDS[16]                  : E22       : output : 2.5 V             :         : 7         : Y              
+first_digit                  : E21       : output : 2.5 V             :         : 7         : Y              
+second_digit                 : E22       : output : 2.5 V             :         : 7         : Y              
 VCCIO7                       : E23       : power  :                   : 2.5V    : 7         :                
-offLEDS[18]                  : E24       : output : 2.5 V             :         : 7         : Y              
-offLEDS[17]                  : E25       : output : 2.5 V             :         : 7         : Y              
+fourth_digit                 : E24       : output : 2.5 V             :         : 7         : Y              
+third_digit                  : E25       : output : 2.5 V             :         : 7         : Y              
 RESERVED_INPUT               : E26       :        :                   :         : 6         :                
 RESERVED_INPUT               : E27       :        :                   :         : 6         :                
 RESERVED_INPUT               : E28       :        :                   :         : 6         :                
@@ -472,7 +472,7 @@ RESERVED_INPUT               : G12       :        :                   :         
 RESERVED_INPUT               : G13       :        :                   :         : 8         :                
 RESERVED_INPUT               : G14       :        :                   :         : 8         :                
 offLEDS[13]                  : G15       : output : 2.5 V             :         : 7         : Y              
-offLEDS[14]                  : G16       : output : 2.5 V             :         : 7         : Y              
+debug_mode                   : G16       : output : 2.5 V             :         : 7         : Y              
 offLEDS[7]                   : G17       : output : 2.5 V             :         : 7         : Y              
 ones[0]                      : G18       : output : 2.5 V             :         : 7         : Y              
 outLED                       : G19       : output : 2.5 V             :         : 7         : Y              
@@ -505,7 +505,7 @@ offLEDS[11]                  : H17       : output : 2.5 V             :         
 VCCIO7                       : H18       : power  :                   : 2.5V    : 7         :                
 offLEDS[5]                   : H19       : output : 2.5 V             :         : 7         : Y              
 GNDA2                        : H20       : gnd    :                   :         :           :                
-offLEDS[19]                  : H21       : output : 2.5 V             :         : 7         : Y              
+fifth_digit                  : H21       : output : 2.5 V             :         : 7         : Y              
 ones[6]                      : H22       : output : 2.5 V             :         : 6         : Y              
 RESERVED_INPUT               : H23       :        :                   :         : 6         :                
 RESERVED_INPUT               : H24       :        :                   :         : 6         :                
@@ -836,8 +836,8 @@ RESERVED_INPUT               : Y12       :        :                   :         
 RESERVED_INPUT               : Y13       :        :                   :         : 3         :                
 RESERVED_INPUT               : Y14       :        :                   :         : 3         :                
 RESERVED_INPUT               : Y15       :        :                   :         : 3         :                
-hd_output[8]                 : Y16       : output : 2.5 V             :         : 4         : N              
-hd_output[5]                 : Y17       : output : 2.5 V             :         : 4         : N              
+hd_output[3]                 : Y16       : output : 2.5 V             :         : 4         : N              
+hd_output[6]                 : Y17       : output : 2.5 V             :         : 4         : N              
 GND                          : Y18       : gnd    :                   :         :           :                
 thousands[6]                 : Y19       : output : 2.5 V             :         : 4         : Y              
 VCCD_PLL4                    : Y20       : power  :                   : 1.2V    :           :                

@@ -16,6 +16,30 @@
 					"strict" : false
 				},
 				{
+					"name" : "first_digit",
+					"strict" : false
+				},
+				{
+					"name" : "second_digit",
+					"strict" : false
+				},
+				{
+					"name" : "third_digit",
+					"strict" : false
+				},
+				{
+					"name" : "fourth_digit",
+					"strict" : false
+				},
+				{
+					"name" : "fifth_digit",
+					"strict" : false
+				},
+				{
+					"name" : "debug_mode",
+					"strict" : false
+				},
+				{
 					"name" : "billions[6]",
 					"strict" : false
 				},
@@ -368,7 +392,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "machineClock",
+					"name" : "switches[16]",
 					"strict" : false
 				},
 				{
@@ -397,10 +421,6 @@
 				},
 				{
 					"name" : "switches[5]",
-					"strict" : false
-				},
-				{
-					"name" : "switches[16]",
 					"strict" : false
 				},
 				{
@@ -441,6 +461,10 @@
 				},
 				{
 					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "machineClock",
 					"strict" : false
 				},
 				{
