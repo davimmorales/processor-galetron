@@ -3,111 +3,111 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -164.059
-TNS   : -29517.645
+Slack : -163.984
+TNS   : -28347.957
 
 Type  : Slow 1200mV 85C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -55.230
-TNS   : -31757.038
+Slack : -54.106
+TNS   : -30899.297
 
 Type  : Slow 1200mV 85C Model Setup 'machineClock'
-Slack : -27.572
-TNS   : -4142.030
+Slack : -34.962
+TNS   : -5015.560
 
 Type  : Slow 1200mV 85C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -14.371
-TNS   : -10225.235
-
-Type  : Slow 1200mV 85C Model Hold 'machineClock'
-Slack : -7.551
-TNS   : -177.702
+Slack : -15.152
+TNS   : -11500.562
 
 Type  : Slow 1200mV 85C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -3.917
-TNS   : -69.260
+Slack : -5.690
+TNS   : -310.559
+
+Type  : Slow 1200mV 85C Model Hold 'machineClock'
+Slack : -2.862
+TNS   : -2.862
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -5.077
-TNS   : -41916.822
+Slack : -7.060
+TNS   : -34883.970
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -471.993
+TNS   : -447.578
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -2.693
 TNS   : -1541.534
 
 Type  : Slow 1200mV 0C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -148.378
-TNS   : -26960.764
+Slack : -148.514
+TNS   : -25947.749
 
 Type  : Slow 1200mV 0C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -50.430
-TNS   : -28982.484
+Slack : -49.554
+TNS   : -28301.244
 
 Type  : Slow 1200mV 0C Model Setup 'machineClock'
-Slack : -25.117
-TNS   : -3766.956
+Slack : -32.197
+TNS   : -4607.942
 
 Type  : Slow 1200mV 0C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -13.112
-TNS   : -9354.027
-
-Type  : Slow 1200mV 0C Model Hold 'machineClock'
-Slack : -6.919
-TNS   : -162.883
+Slack : -13.945
+TNS   : -10620.701
 
 Type  : Slow 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -3.546
-TNS   : -63.627
+Slack : -5.229
+TNS   : -304.486
+
+Type  : Slow 1200mV 0C Model Hold 'machineClock'
+Slack : -2.608
+TNS   : -2.608
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -4.651
-TNS   : -38182.360
+Slack : -6.386
+TNS   : -31611.686
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -465.569
+TNS   : -441.154
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -2.649
 TNS   : -1539.862
 
 Type  : Fast 1200mV 0C Model Setup 'PC:inst24|programCounter[0]'
-Slack : -81.629
-TNS   : -14600.855
+Slack : -81.491
+TNS   : -13993.362
 
 Type  : Fast 1200mV 0C Model Setup 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -27.683
-TNS   : -15823.133
+Slack : -26.729
+TNS   : -15203.609
 
 Type  : Fast 1200mV 0C Model Setup 'machineClock'
-Slack : -14.045
-TNS   : -2045.344
+Slack : -17.695
+TNS   : -2467.487
 
 Type  : Fast 1200mV 0C Model Hold 'PC:inst24|programCounter[0]'
-Slack : -7.270
-TNS   : -5227.481
-
-Type  : Fast 1200mV 0C Model Hold 'machineClock'
-Slack : -3.981
-TNS   : -118.531
+Slack : -7.479
+TNS   : -5687.820
 
 Type  : Fast 1200mV 0C Model Hold 'write_frequency_divider:inst26|OUT_0_7MHz'
-Slack : -2.059
-TNS   : -49.032
+Slack : -2.899
+TNS   : -171.775
+
+Type  : Fast 1200mV 0C Model Hold 'machineClock'
+Slack : -1.570
+TNS   : -1.570
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
+Slack : -3.418
+TNS   : -16496.827
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'machineClock'
 Slack : -3.000
-TNS   : -224.810
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PC:inst24|programCounter[0]'
-Slack : -2.534
-TNS   : -19522.830
+TNS   : -209.773
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'write_frequency_divider:inst26|OUT_0_7MHz'
 Slack : -1.000
-TNS   : -1158.000
+TNS   : -1158.004
 
 ------------------------------------------------------------

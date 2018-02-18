@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "resetCPU",
+					"strict" : false
+				},
+				{
+					"name" : "operation[2]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[5]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[4]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[0]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operation[3]",
+					"strict" : false
+				},
+				{
+					"name" : "system_reset",
+					"strict" : false
+				},
+				{
+					"name" : "resume_os",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[8]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[9]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[10]",
+					"strict" : false
+				},
+				{
+					"name" : "program_counter[11]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

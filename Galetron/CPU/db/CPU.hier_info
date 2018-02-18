@@ -1,5 +1,10 @@
 |CPU
 inLED <= outputController:inst25.inLED
+machineClock => write_frequency_divider:inst26.IN_50Mhz
+machineClock => dataRAM:inst29.read_clock
+machineClock => harddrive:inst34.clock
+machineClock => simpleInstructionsRam:inst11.read_clock
+UserClock => DeBounce:inst5.button_in
 switches[0] => Extender:inst14.inputC[0]
 switches[0] => outputController:inst25.switches[0]
 switches[1] => Extender:inst14.inputC[1]
@@ -32,12 +37,9 @@ switches[14] => Extender:inst14.inputC[14]
 switches[14] => outputController:inst25.switches[14]
 switches[15] => Extender:inst14.inputC[15]
 switches[15] => outputController:inst25.switches[15]
-switches[16] => one_bit_multiplexer:inst27.selector
-switches[16] => inst35.IN1
-switches[17] => resetMultiplexer:inst20.lastSwitch
-machineClock => one_bit_multiplexer:inst27.input_a
-machineClock => debug_clock_divider:inst33.IN_50Mhz
-UserClock => DeBounce:inst5.button_in
+switches[16] => inst15.IN1
+switches[17] => reset_controller:inst10.resume_os
+switches[17] => inst15.IN0
 outLED <= outputController:inst25.outLED
 negLED <= outputController:inst25.negLED
 first_digit <= dataD[0].DB_MAX_OUTPUT_PORT_TYPE
@@ -45,7 +47,7 @@ second_digit <= dataD[1].DB_MAX_OUTPUT_PORT_TYPE
 third_digit <= dataD[2].DB_MAX_OUTPUT_PORT_TYPE
 fourth_digit <= dataD[3].DB_MAX_OUTPUT_PORT_TYPE
 fifth_digit <= dataD[4].DB_MAX_OUTPUT_PORT_TYPE
-debug_mode <= inst35.DB_MAX_OUTPUT_PORT_TYPE
+debug_mode <= <GND>
 billions[0] <= finalOutput:inst18.billions[0]
 billions[1] <= finalOutput:inst18.billions[1]
 billions[2] <= finalOutput:inst18.billions[2]
@@ -843,36 +845,6 @@ IN_50Mhz => COUNTER[5].CLK
 OUT_0_7MHz <= OUT_0_7MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|one_bit_multiplexer:inst27
-selector => Decoder0.IN0
-input_a => one_bit_multiplexer_output.DATAA
-input_b => one_bit_multiplexer_output.DATAB
-one_bit_multiplexer_output <= one_bit_multiplexer_output.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|CPU|debug_clock_divider:inst33
-IN_50Mhz => OUT_1Hz~reg0.CLK
-IN_50Mhz => COUNTER[0].CLK
-IN_50Mhz => COUNTER[1].CLK
-IN_50Mhz => COUNTER[2].CLK
-IN_50Mhz => COUNTER[3].CLK
-IN_50Mhz => COUNTER[4].CLK
-IN_50Mhz => COUNTER[5].CLK
-IN_50Mhz => COUNTER[6].CLK
-IN_50Mhz => COUNTER[7].CLK
-IN_50Mhz => COUNTER[8].CLK
-IN_50Mhz => COUNTER[9].CLK
-IN_50Mhz => COUNTER[10].CLK
-IN_50Mhz => COUNTER[11].CLK
-IN_50Mhz => COUNTER[12].CLK
-IN_50Mhz => COUNTER[13].CLK
-IN_50Mhz => COUNTER[14].CLK
-IN_50Mhz => COUNTER[15].CLK
-IN_50Mhz => COUNTER[16].CLK
-IN_50Mhz => COUNTER[17].CLK
-OUT_1Hz <= OUT_1Hz~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |CPU|DeBounce:inst5
 clk => DB_out~reg0.CLK
 clk => q_reg[0].CLK
@@ -1030,18 +1002,7 @@ resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
-jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => ~NO_FANOUT~
 
 
 |CPU|qFlipflop:inst3
@@ -6919,21 +6880,68 @@ enable => q~reg0.ENA
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|resetMultiplexer:inst20
-operation[0] => Equal0.IN11
-operation[0] => Equal1.IN11
-operation[1] => Equal0.IN10
-operation[1] => Equal1.IN10
-operation[2] => Equal0.IN9
-operation[2] => Equal1.IN9
-operation[3] => Equal0.IN8
-operation[3] => Equal1.IN8
-operation[4] => Equal0.IN7
-operation[4] => Equal1.IN7
-operation[5] => Equal0.IN6
-operation[5] => Equal1.IN6
-lastSwitch => Selector0.IN5
-resetCPU <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+|CPU|reset_controller:inst10
+operation[0] => Decoder0.IN5
+operation[0] => Equal0.IN3
+operation[1] => Decoder0.IN4
+operation[1] => Equal0.IN2
+operation[2] => Decoder0.IN3
+operation[2] => Equal0.IN1
+operation[3] => Decoder0.IN2
+operation[3] => Equal0.IN5
+operation[4] => Decoder0.IN1
+operation[4] => Equal0.IN4
+operation[5] => Decoder0.IN0
+operation[5] => Equal0.IN0
+resume_os => always0.IN1
+system_reset => always0.IN1
+program_counter[0] => LessThan0.IN24
+program_counter[1] => LessThan0.IN23
+program_counter[2] => LessThan0.IN22
+program_counter[3] => LessThan0.IN21
+program_counter[4] => LessThan0.IN20
+program_counter[5] => LessThan0.IN19
+program_counter[6] => LessThan0.IN18
+program_counter[7] => LessThan0.IN17
+program_counter[8] => LessThan0.IN16
+program_counter[9] => LessThan0.IN15
+program_counter[10] => LessThan0.IN14
+program_counter[11] => LessThan0.IN13
+output_watchdog[0] => Equal1.IN31
+output_watchdog[1] => Equal1.IN30
+output_watchdog[2] => Equal1.IN29
+output_watchdog[3] => Equal1.IN28
+output_watchdog[4] => Equal1.IN27
+output_watchdog[5] => Equal1.IN26
+output_watchdog[6] => Equal1.IN25
+output_watchdog[7] => Equal1.IN24
+output_watchdog[8] => Equal1.IN23
+output_watchdog[9] => Equal1.IN22
+output_watchdog[10] => Equal1.IN21
+output_watchdog[11] => Equal1.IN20
+output_watchdog[12] => Equal1.IN19
+output_watchdog[13] => Equal1.IN18
+output_watchdog[14] => Equal1.IN17
+output_watchdog[15] => Equal1.IN16
+output_watchdog[16] => Equal1.IN15
+output_watchdog[17] => Equal1.IN14
+output_watchdog[18] => Equal1.IN13
+output_watchdog[19] => Equal1.IN12
+output_watchdog[20] => Equal1.IN11
+output_watchdog[21] => Equal1.IN10
+output_watchdog[22] => Equal1.IN9
+output_watchdog[23] => Equal1.IN8
+output_watchdog[24] => Equal1.IN7
+output_watchdog[25] => Equal1.IN6
+output_watchdog[26] => Equal1.IN5
+output_watchdog[27] => Equal1.IN4
+output_watchdog[28] => Equal1.IN3
+output_watchdog[29] => Equal1.IN2
+output_watchdog[30] => Equal1.IN1
+output_watchdog[31] => Equal1.IN0
+context_exchange => jump_context_exchange.DATAA
+jump_context_exchange <= jump_context_exchange.DB_MAX_OUTPUT_PORT_TYPE
+resetCPU <= resetCPU.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|simpleInstructionsRam:inst11

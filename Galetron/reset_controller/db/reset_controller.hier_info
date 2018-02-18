@@ -1,0 +1,30 @@
+|reset_controller
+operation[0] => Decoder0.IN5
+operation[0] => Equal0.IN3
+operation[1] => Decoder0.IN4
+operation[1] => Equal0.IN2
+operation[2] => Decoder0.IN3
+operation[2] => Equal0.IN1
+operation[3] => Decoder0.IN2
+operation[3] => Equal0.IN5
+operation[4] => Decoder0.IN1
+operation[4] => Equal0.IN4
+operation[5] => Decoder0.IN0
+operation[5] => Equal0.IN0
+resume_os => always0.IN1
+system_reset => always0.IN1
+program_counter[0] => LessThan0.IN24
+program_counter[1] => LessThan0.IN23
+program_counter[2] => LessThan0.IN22
+program_counter[3] => LessThan0.IN21
+program_counter[4] => LessThan0.IN20
+program_counter[5] => LessThan0.IN19
+program_counter[6] => LessThan0.IN18
+program_counter[7] => LessThan0.IN17
+program_counter[8] => LessThan0.IN16
+program_counter[9] => LessThan0.IN15
+program_counter[10] => LessThan0.IN14
+program_counter[11] => LessThan0.IN13
+resetCPU <= resetCPU.DB_MAX_OUTPUT_PORT_TYPE
+
+

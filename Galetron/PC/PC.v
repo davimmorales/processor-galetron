@@ -34,9 +34,9 @@
 	if(resetCPU) begin
 		programCounter <= 256;
 	end
-	else if(jump_context_exchange) begin
-		programCounter <= 1083;
-	end
+//	else if(jump_context_exchange) begin
+//		programCounter <= 1083;
+//	end
 	else begin
     programCounter <= newPc;
     end

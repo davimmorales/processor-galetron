@@ -1,0 +1,28 @@
+# do reset_controller.do
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:36:38 on Feb 14,2018
+# vlog -work work reset_controller.vo 
+# -- Compiling module reset_controller
+# 
+# Top level modules:
+# 	reset_controller
+# End time: 15:36:38 on Feb 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:36:38 on Feb 14,2018
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module reset_controller_vlg_vec_tst
+# 
+# Top level modules:
+# 	reset_controller_vlg_vec_tst
+# End time: 15:36:38 on Feb 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.reset_controller_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 15:36:38 on Feb 14,2018
+# Loading work.reset_controller_vlg_vec_tst
+# Loading work.reset_controller
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: $finish    : Waveform.vwf.vt(51)
+#    Time: 1 us  Iteration: 0  Instance: /reset_controller_vlg_vec_tst
+# End time: 15:36:39 on Feb 14,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1

@@ -28,6 +28,7 @@ localparam MAX_QUANTUM = 7;
 localparam  [5:0]  HLT = 6'b011100;
 localparam  [5:0]  PREIO = 6'b011110;
 localparam  [5:0]  jump = 6'b010101;
+localparam  [5:0]  loadr = 6'b100001;
 localparam  [5:0]  jumpr = 6'b100011;
 localparam  [5:0]  pbranch = 6'b011111;
 localparam  [5:0]  branchz = 6'b010011;
@@ -79,7 +80,7 @@ always @ (negedge clock) begin
                   state_register <= HALT_ENABLE;
                   PROCESS_INDEX <= PROCESS_INDEX;
                 end
-                jump, jumpr, pbranch, branchz, branchn: begin
+                jump, jumpr, pbranch, branchz, branchn, loadr: begin
                   STATE <= COUNTING;
                   COUNTER <= COUNTER + 0;
                   state_register <= state_register;
