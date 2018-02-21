@@ -1,9 +1,7 @@
 |CPU
 inLED <= outputController:inst25.inLED
 machineClock => write_frequency_divider:inst26.IN_50Mhz
-machineClock => dataRAM:inst29.read_clock
-machineClock => harddrive:inst34.clock
-machineClock => simpleInstructionsRam:inst11.read_clock
+machineClock => read_frequency_divider:inst27.IN_50Mhz
 UserClock => DeBounce:inst5.button_in
 switches[0] => Extender:inst14.inputC[0]
 switches[0] => outputController:inst25.switches[0]
@@ -842,6 +840,12 @@ IN_50Mhz => COUNTER[2].CLK
 IN_50Mhz => COUNTER[3].CLK
 IN_50Mhz => COUNTER[4].CLK
 IN_50Mhz => COUNTER[5].CLK
+IN_50Mhz => COUNTER[6].CLK
+IN_50Mhz => COUNTER[7].CLK
+IN_50Mhz => COUNTER[8].CLK
+IN_50Mhz => COUNTER[9].CLK
+IN_50Mhz => COUNTER[10].CLK
+IN_50Mhz => COUNTER[11].CLK
 OUT_0_7MHz <= OUT_0_7MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -1002,7 +1006,18 @@ resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
-jump_context_exchange => ~NO_FANOUT~
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => programCounter.OUTPUTSELECT
 
 
 |CPU|qFlipflop:inst3
@@ -6354,6 +6369,16 @@ dataRAMOutput[28] <= dataRAMOutput[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataRAMOutput[29] <= dataRAMOutput[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataRAMOutput[30] <= dataRAMOutput[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataRAMOutput[31] <= dataRAMOutput[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CPU|read_frequency_divider:inst27
+IN_50Mhz => OUT_1_5MHz~reg0.CLK
+IN_50Mhz => COUNTER[0].CLK
+IN_50Mhz => COUNTER[1].CLK
+IN_50Mhz => COUNTER[2].CLK
+IN_50Mhz => COUNTER[3].CLK
+IN_50Mhz => COUNTER[4].CLK
+OUT_1_5MHz <= OUT_1_5MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|multiplexer:lastMux

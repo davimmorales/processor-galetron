@@ -1002,34 +1002,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -1216 656 -1016 736)
-	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
-	(text "inst26" (rect 8 64 64 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
-		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 200 32)
-		(output)
-		(text "OUT_0_7MHz" (rect 0 0 94 12)(font "Arial" ))
-		(text "OUT_0_7MHz" (rect 100 27 194 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32))
-	)
-	(parameter
-		"COUNTER_WIDTH"
-		"6"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 184 64))
-	)
-	(annotation_block (parameter)(rect -1016 616 -712 656))
-)
-(symbol
 	(rect 1240 136 1480 280)
 	(text "dataRAM" (rect 5 0 71 12)(font "Arial" ))
 	(text "inst29" (rect 8 128 64 140)(font "Arial" ))
@@ -1873,6 +1845,62 @@ agreement for further details.
 		(line (pt 16 16)(pt 24 8))
 		(line (pt 8 8)(pt 24 8))
 	)
+)
+(symbol
+	(rect -1216 656 -1016 736)
+	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
+	(text "inst26" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
+		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "OUT_0_7MHz" (rect 0 0 94 12)(font "Arial" ))
+		(text "OUT_0_7MHz" (rect 100 27 194 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(parameter
+		"COUNTER_WIDTH"
+		"12"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+	(annotation_block (parameter)(rect -1016 616 -712 656))
+)
+(symbol
+	(rect -736 888 -536 968)
+	(text "read_frequency_divider" (rect 5 0 212 12)(font "Arial" ))
+	(text "inst27" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
+		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "OUT_1_5MHz" (rect 0 0 94 12)(font "Arial" ))
+		(text "OUT_1_5MHz" (rect 100 27 194 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(parameter
+		"COUNTER_WIDTH"
+		"5"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+	(annotation_block (parameter)(rect -536 848 -232 888))
 )
 (connector
 	(text "clock" (rect 882 -24 929 -12)(font "Liberation Sans" ))
@@ -2842,23 +2870,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt -1232 688)
-	(pt -1232 928)
-)
-(connector
-	(text "read_clock" (rect -158 688 -64 700)(font "Liberation Sans" ))
-	(pt -152 928)
-	(pt -1232 928)
-)
-(connector
-	(pt -152 928)
-	(pt -152 704)
-)
-(connector
-	(pt -152 704)
-	(pt -128 704)
-)
-(connector
 	(text "inputClock" (rect -174 592 -80 604)(font "Arial" ))
 	(pt -128 616)
 	(pt -552 616)
@@ -2966,10 +2977,6 @@ agreement for further details.
 	(pt 720 648)
 	(pt 640 648)
 	(bus)
-)
-(connector
-	(pt -1232 688)
-	(pt -1216 688)
 )
 (connector
 	(pt 1656 24)
@@ -3155,16 +3162,41 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt -1552 688)
-	(pt -1232 688)
-)
-(connector
 	(pt 1384 952)
 	(pt 1384 944)
 )
 (connector
 	(pt 1384 944)
 	(pt 1528 944)
+)
+(connector
+	(pt -152 920)
+	(pt -152 704)
+)
+(connector
+	(pt -152 920)
+	(pt -536 920)
+)
+(connector
+	(pt -1232 920)
+	(pt -1232 688)
+)
+(connector
+	(pt -1552 688)
+	(pt -1232 688)
+)
+(connector
+	(pt -1232 688)
+	(pt -1216 688)
+)
+(connector
+	(pt -1232 920)
+	(pt -736 920)
+)
+(connector
+	(text "read_clock" (rect -152 688 -58 700)(font "Liberation Sans" ))
+	(pt -152 704)
+	(pt -128 704)
 )
 (junction (pt -272 456))
 (junction (pt 1224 128))

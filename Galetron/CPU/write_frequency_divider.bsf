@@ -40,7 +40,7 @@ agreement for further details.
 	)
 	(parameter
 		"COUNTER_WIDTH"
-		"6"
+		"12"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

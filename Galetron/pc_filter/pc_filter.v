@@ -9,7 +9,7 @@ module pc_filter (
   output reg [11:0] registers_file_program_counter;
 
   always @ ( * ) begin
-      if ((operation < 6'b010010) || 
+      if ((operation < 6'b010011) || 
 			(operation == 6'b010111)) begin
         registers_file_program_counter = program_counter + 1;
       end 

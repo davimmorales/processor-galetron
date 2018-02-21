@@ -17,9 +17,12 @@ module reset_controller (
   localparam  [5:0]  jump = 6'b010101;
   localparam  [5:0]  jumpr = 6'b100011;
   localparam  [5:0]  loadr = 6'b100001;
+  localparam  [5:0]  storer = 6'b100010;
   localparam  [5:0]  pbranch = 6'b011111;
   localparam  [5:0]  branchz = 6'b010011;
   localparam  [5:0]  branchn = 6'b010100;
+  localparam  [5:0]	 in = 6'b011101;
+  localparam  [5:0]  out = 6'b100000;
   localparam  [5:0]  start_system = 6'b100111;
 
   always @ ( * ) begin
@@ -31,7 +34,7 @@ module reset_controller (
       case (operation)
         jump, jumpr, loadr,
         pbranch, branchz,
-        branchn: begin
+        branchn, storer, in, out: begin
           resetCPU = 0;
         end
         default: resetCPU = 1;
