@@ -1,7 +1,9 @@
 |CPU
 inLED <= outputController:inst25.inLED
-machineClock => write_frequency_divider:inst28.IN_50Mhz
-machineClock => read_frequency_divider:inst32.IN_50Mhz
+machineClock => write_frequency_divider:inst26.IN_50Mhz
+machineClock => dataRAM:inst29.read_clock
+machineClock => harddrive:inst36.clock
+machineClock => simpleInstructionsRam:inst11.read_clock
 UserClock => DeBounce:inst5.button_in
 switches[0] => Extender:inst14.inputC[0]
 switches[0] => outputController:inst25.switches[0]
@@ -832,8 +834,8 @@ inputB => clock.DATAB
 clock <= clock.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|write_frequency_divider:inst28
-IN_50Mhz => OUT_0_7MHz~reg0.CLK
+|CPU|write_frequency_divider:inst26
+IN_50Mhz => OUT_48KHz~reg0.CLK
 IN_50Mhz => COUNTER[0].CLK
 IN_50Mhz => COUNTER[1].CLK
 IN_50Mhz => COUNTER[2].CLK
@@ -844,9 +846,7 @@ IN_50Mhz => COUNTER[6].CLK
 IN_50Mhz => COUNTER[7].CLK
 IN_50Mhz => COUNTER[8].CLK
 IN_50Mhz => COUNTER[9].CLK
-IN_50Mhz => COUNTER[10].CLK
-IN_50Mhz => COUNTER[11].CLK
-OUT_0_7MHz <= OUT_0_7MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
+OUT_48KHz <= OUT_48KHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|DeBounce:inst5
@@ -941,6 +941,22 @@ clock => programCounter[8]~reg0.CLK
 clock => programCounter[9]~reg0.CLK
 clock => programCounter[10]~reg0.CLK
 clock => programCounter[11]~reg0.CLK
+clock => counter[0].CLK
+clock => counter[1].CLK
+clock => counter[2].CLK
+clock => counter[3].CLK
+clock => counter[4].CLK
+clock => counter[5].CLK
+clock => counter[6].CLK
+clock => counter[7].CLK
+clock => counter[8].CLK
+clock => counter[9].CLK
+clock => counter[10].CLK
+clock => counter[11].CLK
+clock => counter[12].CLK
+clock => counter[13].CLK
+clock => counter[14].CLK
+clock => state~2.DATAIN
 address[0] => newPc[0].DATAB
 address[0] => Add1.IN24
 address[1] => newPc[1].DATAB
@@ -1006,6 +1022,8 @@ resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
 resetCPU => programCounter.OUTPUTSELECT
+resetCPU => state.OUTPUTSELECT
+resetCPU => state.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
@@ -1018,6 +1036,8 @@ jump_context_exchange => programCounter.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
 jump_context_exchange => programCounter.OUTPUTSELECT
+jump_context_exchange => state.DATAA
+jump_context_exchange => state.DATAA
 
 
 |CPU|qFlipflop:inst3
@@ -6377,18 +6397,6 @@ dataRAMOutput[30] <= dataRAMOutput[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataRAMOutput[31] <= dataRAMOutput[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|read_frequency_divider:inst32
-IN_50Mhz => OUT_1_5MHz~reg0.CLK
-IN_50Mhz => COUNTER[0].CLK
-IN_50Mhz => COUNTER[1].CLK
-IN_50Mhz => COUNTER[2].CLK
-IN_50Mhz => COUNTER[3].CLK
-IN_50Mhz => COUNTER[4].CLK
-IN_50Mhz => COUNTER[5].CLK
-IN_50Mhz => COUNTER[6].CLK
-OUT_1_5MHz <= OUT_1_5MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |CPU|multiplexer:lastMux
 muxSelection => Decoder0.IN0
 inputA[0] => muxOutput.DATAA
@@ -6489,7 +6497,7 @@ muxOutput[30] <= muxOutput.DB_MAX_OUTPUT_PORT_TYPE
 muxOutput[31] <= muxOutput.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|harddrive:inst34
+|CPU|harddrive:inst36
 data_write[0] => HD.data_a[0].DATAIN
 data_write[0] => HD.DATAIN
 data_write[1] => HD.data_a[1].DATAIN

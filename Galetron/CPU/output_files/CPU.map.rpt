@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Wed Feb 21 22:20:07 2018
+Thu Feb 22 20:30:37 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -17,21 +17,21 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   9. Analysis & Synthesis DSP Block Usage Summary
  10. State Machine - |CPU|tucanos_watchdog:inst16|PROCESS_INDEX
  11. State Machine - |CPU|tucanos_watchdog:inst16|STATE
- 12. User-Specified and Inferred Latches
- 13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Registers Packed Into Inferred Megafunctions
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated
- 19. Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated
- 20. Source assignments for dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated
- 21. Parameter Settings for User Entity Instance: instruction_source_selector:inst19
- 22. Parameter Settings for User Entity Instance: write_frequency_divider:inst28
- 23. Parameter Settings for User Entity Instance: DeBounce:inst5
- 24. Parameter Settings for User Entity Instance: read_frequency_divider:inst32
+ 12. State Machine - |CPU|PC:inst24|state
+ 13. User-Specified and Inferred Latches
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Registers Packed Into Inferred Megafunctions
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated
+ 20. Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_pne1:auto_generated
+ 21. Source assignments for dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated
+ 22. Parameter Settings for User Entity Instance: instruction_source_selector:inst19
+ 23. Parameter Settings for User Entity Instance: write_frequency_divider:inst26
+ 24. Parameter Settings for User Entity Instance: DeBounce:inst5
  25. Parameter Settings for User Entity Instance: tucanos_watchdog:inst16
- 26. Parameter Settings for Inferred Entity Instance: harddrive:inst34|altsyncram:HD_rtl_0
+ 26. Parameter Settings for Inferred Entity Instance: harddrive:inst36|altsyncram:HD_rtl_0
  27. Parameter Settings for Inferred Entity Instance: simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0
  28. Parameter Settings for Inferred Entity Instance: dataRAM:inst29|altsyncram:RAM_rtl_0
  29. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Div0
@@ -68,15 +68,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 21 22:20:07 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 22 20:30:37 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7,499                                       ;
-;     Total combinational functions  ; 6,504                                       ;
-;     Dedicated logic registers      ; 1,172                                       ;
-; Total registers                    ; 1172                                        ;
+; Total logic elements               ; 7,503                                       ;
+;     Total combinational functions  ; 6,508                                       ;
+;     Dedicated logic registers      ; 1,178                                       ;
+; Total registers                    ; 1178                                        ;
 ; Total pins                         ; 140                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 441,696                                     ;
@@ -192,7 +192,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../pc_filter/pc_filter.v                             ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/pc_filter/pc_filter.v                             ;         ;
 ; ../tucanos_watchdog/tucanos_watchdog.v               ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v               ;         ;
 ; ../write_frequency_divider/write_frequency_divider.v ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v ;         ;
-; ../read_frequency_divider/read_frequency_divider.v   ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/read_frequency_divider/read_frequency_divider.v   ;         ;
 ; ../instruction_source_selector.v                     ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v                     ;         ;
 ; ../harddrive/harddrive.v                             ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v                             ;         ;
 ; ../Output/finalOutput.v                              ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/finalOutput.v                              ;         ;
@@ -229,7 +228,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/decode_jsa.tdf                                    ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_jsa.tdf                             ;         ;
 ; db/decode_c8a.tdf                                    ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_c8a.tdf                             ;         ;
 ; db/mux_gob.tdf                                       ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/mux_gob.tdf                                ;         ;
-; db/altsyncram_i8d1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_i8d1.tdf                        ;         ;
+; db/altsyncram_pne1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_pne1.tdf                        ;         ;
 ; db/altsyncram_q2d1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_q2d1.tdf                        ;         ;
 ; lpm_divide.tdf                                       ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_divide.tdf                              ;         ;
 ; abs_divider.inc                                      ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/abs_divider.inc                             ;         ;
@@ -254,20 +253,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------+
 ; Resource                                    ; Usage                         ;
 +---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 7,499                         ;
+; Estimated Total logic elements              ; 7,503                         ;
 ;                                             ;                               ;
-; Total combinational functions               ; 6504                          ;
+; Total combinational functions               ; 6508                          ;
 ; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 4417                          ;
-;     -- 3 input functions                    ; 1784                          ;
-;     -- <=2 input functions                  ; 303                           ;
+;     -- 4 input functions                    ; 4413                          ;
+;     -- 3 input functions                    ; 1788                          ;
+;     -- <=2 input functions                  ; 307                           ;
 ;                                             ;                               ;
 ; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 5182                          ;
-;     -- arithmetic mode                      ; 1322                          ;
+;     -- normal mode                          ; 5180                          ;
+;     -- arithmetic mode                      ; 1328                          ;
 ;                                             ;                               ;
-; Total registers                             ; 1172                          ;
-;     -- Dedicated logic registers            ; 1172                          ;
+; Total registers                             ; 1178                          ;
+;     -- Dedicated logic registers            ; 1178                          ;
 ;     -- I/O registers                        ; 0                             ;
 ;                                             ;                               ;
 ; I/O pins                                    ; 140                           ;
@@ -276,9 +275,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 6                             ;
 ;                                             ;                               ;
 ; Maximum fan-out node                        ; clockMultiplexer:inst13|clock ;
-; Maximum fan-out                             ; 1177                          ;
-; Total fan-out                               ; 29552                         ;
-; Average fan-out                             ; 3.65                          ;
+; Maximum fan-out                             ; 1128                          ;
+; Total fan-out                               ; 29633                         ;
+; Average fan-out                             ; 3.66                          ;
 +---------------------------------------------+-------------------------------+
 
 
@@ -287,8 +286,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                      ; 6504 (0)          ; 1172 (0)     ; 441696      ; 6            ; 0       ; 3         ; 140  ; 0            ; |CPU                                                                                                                                ; work         ;
-;    |ALU:inst|                             ; 3049 (825)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
+; |CPU                                      ; 6508 (0)          ; 1178 (0)     ; 441696      ; 6            ; 0       ; 3         ; 140  ; 0            ; |CPU                                                                                                                                ; work         ;
+;    |ALU:inst|                             ; 3051 (827)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
 ;       |lpm_divide:Div0|                   ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
 ;          |lpm_divide_hkm:auto_generated|  ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
 ;             |sign_div_unsign_9nh:divider| ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
@@ -302,16 +301,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |mult_7dt:auto_generated|        ; 28 (28)           ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst|lpm_mult:Mult0|mult_7dt:auto_generated                                                                                ; work         ;
 ;    |BIOS:inst6|                           ; 63 (63)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|BIOS:inst6                                                                                                                     ; work         ;
 ;    |DeBounce:inst5|                       ; 13 (13)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|DeBounce:inst5                                                                                                                 ; work         ;
-;    |Extender:inst14|                      ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst14                                                                                                                ; work         ;
-;    |PC:inst24|                            ; 59 (59)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst24                                                                                                                      ; work         ;
+;    |Extender:inst14|                      ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|Extender:inst14                                                                                                                ; work         ;
+;    |PC:inst24|                            ; 80 (80)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|PC:inst24                                                                                                                      ; work         ;
 ;    |clockMultiplexer:inst13|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|clockMultiplexer:inst13                                                                                                        ; work         ;
 ;    |controlUnit:inst12|                   ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|controlUnit:inst12                                                                                                             ; work         ;
 ;    |dataOutput:inst7|                     ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataOutput:inst7                                                                                                               ; work         ;
 ;    |dataRAM:inst29|                       ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29                                                                                                                 ; work         ;
 ;       |altsyncram:RAM_rtl_0|              ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0                                                                                            ; work         ;
 ;          |altsyncram_q2d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 9632        ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated                                                             ; work         ;
-;    |finalOutput:inst18|                   ; 643 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
-;       |BCD:converter|                     ; 587 (587)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
+;    |finalOutput:inst18|                   ; 638 (0)           ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18                                                                                                             ; work         ;
+;       |BCD:converter|                     ; 582 (582)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|BCD:converter                                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayA|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayA                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayB|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayB                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayC|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayC                                                                               ; work         ;
@@ -320,11 +319,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |sevenSegmentsDisplay:displayF|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayF                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayG|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayG                                                                               ; work         ;
 ;       |sevenSegmentsDisplay:displayH|     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|finalOutput:inst18|sevenSegmentsDisplay:displayH                                                                               ; work         ;
-;    |harddrive:inst34|                     ; 34 (0)            ; 1 (0)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34                                                                                                               ; work         ;
-;       |altsyncram:HD_rtl_0|               ; 34 (0)            ; 1 (0)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34|altsyncram:HD_rtl_0                                                                                           ; work         ;
-;          |altsyncram_9s81:auto_generated| ; 34 (0)            ; 1 (1)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated                                                            ; work         ;
-;             |decode_jsa:decode3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|decode_jsa:decode3                                         ; work         ;
-;             |mux_gob:mux2|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|mux_gob:mux2                                               ; work         ;
+;    |harddrive:inst36|                     ; 34 (0)            ; 1 (0)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst36                                                                                                               ; work         ;
+;       |altsyncram:HD_rtl_0|               ; 34 (0)            ; 1 (0)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst36|altsyncram:HD_rtl_0                                                                                           ; work         ;
+;          |altsyncram_9s81:auto_generated| ; 34 (0)            ; 1 (1)        ; 384032      ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated                                                            ; work         ;
+;             |decode_jsa:decode3|          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|decode_jsa:decode3                                         ; work         ;
+;             |mux_gob:mux2|                ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|mux_gob:mux2                                               ; work         ;
 ;    |instruction_source_selector:inst19|   ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|instruction_source_selector:inst19                                                                                             ; work         ;
 ;    |instructions_multiplexer:inst22|      ; 45 (45)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|instructions_multiplexer:inst22                                                                                                ; work         ;
 ;    |multiplexer:immediateSelectorMux|     ; 696 (696)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|multiplexer:immediateSelectorMux                                                                                               ; work         ;
@@ -334,16 +333,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |pc_filter:inst2|                      ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|pc_filter:inst2                                                                                                                ; work         ;
 ;    |qFlipflop:inst3|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst3                                                                                                                ; work         ;
 ;    |qFlipflop:inst4|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst4                                                                                                                ; work         ;
-;    |read_frequency_divider:inst32|        ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|read_frequency_divider:inst32                                                                                                  ; work         ;
 ;    |registerFile:inst23|                  ; 1418 (1418)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst23                                                                                                            ; work         ;
 ;    |reset_controller:inst10|              ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|reset_controller:inst10                                                                                                        ; work         ;
 ;    |simpleInstructionsRam:inst11|         ; 0 (0)             ; 32 (32)      ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11                                                                                                   ; work         ;
 ;       |altsyncram:instructionsRAM_rtl_0|  ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0                                                                  ; work         ;
-;          |altsyncram_i8d1:auto_generated| ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated                                   ; work         ;
+;          |altsyncram_pne1:auto_generated| ; 0 (0)             ; 0 (0)        ; 48032       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_pne1:auto_generated                                   ; work         ;
 ;    |tripleMux:inst1|                      ; 68 (68)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tripleMux:inst1                                                                                                                ; work         ;
 ;    |tripleMux:inst8|                      ; 98 (98)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tripleMux:inst8                                                                                                                ; work         ;
 ;    |tucanos_watchdog:inst16|              ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tucanos_watchdog:inst16                                                                                                        ; work         ;
-;    |write_frequency_divider:inst28|       ; 17 (17)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|write_frequency_divider:inst28                                                                                                 ; work         ;
+;    |write_frequency_divider:inst26|       ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|write_frequency_divider:inst26                                                                                                 ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -354,8 +352,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                    ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                                    ;
 +---------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+----------------------------------------+
 ; dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_q2d1:auto_generated|ALTSYNCRAM                           ; AUTO ; Simple Dual Port ; 301          ; 32           ; 301          ; 32           ; 9632   ; None                                   ;
-; harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|ALTSYNCRAM                          ; AUTO ; Single Port      ; 12001        ; 32           ; --           ; --           ; 384032 ; db/CPU.ram0_harddrive_41193179.hdl.mif ;
-; simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1501         ; 32           ; 1501         ; 32           ; 48032  ; None                                   ;
+; harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated|ALTSYNCRAM                          ; AUTO ; Single Port      ; 12001        ; 32           ; --           ; --           ; 384032 ; db/CPU.ram0_harddrive_41193179.hdl.mif ;
+; simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_pne1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1501         ; 32           ; 1501         ; 32           ; 48032  ; None                                   ;
 +---------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+----------------------------------------+
 
 
@@ -401,6 +399,17 @@ Encoding Type:  One-Hot
 ; STATE.HALT     ; 0            ; 1          ; 0          ; 1              ;
 ; STATE.CHANGE   ; 1            ; 0          ; 0          ; 1              ;
 +----------------+--------------+------------+------------+----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------+
+; State Machine - |CPU|PC:inst24|state ;
++----------------------+---------------+
+; Name                 ; state.10      ;
++----------------------+---------------+
+; state.state_counting ; 0             ;
+; state.10             ; 1             ;
++----------------------+---------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------+
@@ -556,10 +565,11 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 ; tucanos_watchdog:inst16|PROCESS_INDEX~35                               ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|STATE~2                                        ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|STATE~3                                        ; Lost fanout                            ;
+; PC:inst24|state~4                                                      ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|PROCESS_INDEX.00000000000000000000000000000000 ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|PROCESS_INDEX.INDEX_THREE                      ; Lost fanout                            ;
 ; tucanos_watchdog:inst16|COUNTER[3]                                     ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 69                                 ;                                        ;
+; Total Number of Removed Registers = 70                                 ;                                        ;
 +------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -577,12 +587,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1172  ;
-; Number of registers using Synchronous Clear  ; 31    ;
+; Total registers                              ; 1178  ;
+; Number of registers using Synchronous Clear  ; 37    ;
 ; Number of registers using Synchronous Load   ; 21    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1031  ;
+; Number of registers using Clock Enable       ; 1058  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -592,7 +602,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +------------------------------------------+---------------------------+------+
 ; Register Name                            ; Megafunction              ; Type ;
 +------------------------------------------+---------------------------+------+
-; harddrive:inst34|hd_local_address[0..13] ; harddrive:inst34|HD_rtl_0 ; RAM  ;
+; harddrive:inst36|hd_local_address[0..13] ; harddrive:inst36|HD_rtl_0 ; RAM  ;
 ; dataRAM:inst29|dataRAMOutput[0..31]      ; dataRAM:inst29|RAM_rtl_0  ; RAM  ;
 +------------------------------------------+---------------------------+------+
 
@@ -602,38 +612,39 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst23|RF[28][18]                 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][11]                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][7]                  ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst23|RF[28][22]                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][8]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][5]                  ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |CPU|tucanos_watchdog:inst16|COUNTER[0]             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |CPU|tucanos_watchdog:inst16|STATE                  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst1|Mux21                          ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst1|Mux10                          ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |CPU|tripleMux:inst1|Mux2                           ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst25|binary[22]             ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst25|binary[20]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|PC:inst24|state                                ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux12                          ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux4                           ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux22                          ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux14                          ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux10                          ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux10                          ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux30                          ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux19                          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux7                           ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|tucanos_watchdog:inst16|STATE                  ;
 ; 5:1                ; 11 bits   ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |CPU|PC:inst24|programCounter                       ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux2                       ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux54                      ;
-; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[24] ;
-; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[0]  ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux47                      ;
+; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[23] ;
+; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[9]  ;
 ; 65:1               ; 16 bits   ; 688 LEs       ; 64 LEs               ; 624 LEs                ; No         ; |CPU|outputController:inst25|Selector14             ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux21                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux14                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux24                                 ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux7                                  ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux23                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux10                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux27                                 ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux6                                  ;
 ; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux28                                 ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux3                                  ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux31                                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux2                                  ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux30                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------+
-; Source assignments for harddrive:inst34|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated ;
+; Source assignments for harddrive:inst36|altsyncram:HD_rtl_0|altsyncram_9s81:auto_generated ;
 +---------------------------------+--------------------+------+------------------------------+
 ; Assignment                      ; Value              ; From ; To                           ;
 +---------------------------------+--------------------+------+------------------------------+
@@ -642,7 +653,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 
 
 +---------------------------------------------------------------------------------------------------------------------+
-; Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_i8d1:auto_generated ;
+; Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_pne1:auto_generated ;
 +---------------------------------+--------------------+------+-------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                    ;
 +---------------------------------+--------------------+------+-------------------------------------------------------+
@@ -670,11 +681,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: write_frequency_divider:inst28 ;
+; Parameter Settings for User Entity Instance: write_frequency_divider:inst26 ;
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
-; COUNTER_WIDTH  ; 12    ; Signed Integer                                     ;
+; COUNTER_WIDTH  ; 10    ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -689,16 +700,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: read_frequency_divider:inst32 ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; COUNTER_WIDTH  ; 7     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: tucanos_watchdog:inst16 ;
 +----------------+-------+---------------------------------------------+
@@ -710,7 +711,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: harddrive:inst34|altsyncram:HD_rtl_0        ;
+; Parameter Settings for Inferred Entity Instance: harddrive:inst36|altsyncram:HD_rtl_0        ;
 +------------------------------------+----------------------------------------+----------------+
 ; Parameter Name                     ; Value                                  ; Type           ;
 +------------------------------------+----------------------------------------+----------------+
@@ -826,7 +827,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                            ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                            ;
 ; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                            ;
-; CBXI_PARAMETER                     ; altsyncram_i8d1      ; Untyped                                            ;
+; CBXI_PARAMETER                     ; altsyncram_pne1      ; Untyped                                            ;
 +------------------------------------+----------------------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -979,7 +980,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Name                                      ; Value                                                         ;
 +-------------------------------------------+---------------------------------------------------------------+
 ; Number of entity instances                ; 3                                                             ;
-; Entity Instance                           ; harddrive:inst34|altsyncram:HD_rtl_0                          ;
+; Entity Instance                           ; harddrive:inst36|altsyncram:HD_rtl_0                          ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                   ;
 ;     -- WIDTH_A                            ; 32                                                            ;
 ;     -- NUMWORDS_A                         ; 12001                                                         ;
@@ -1041,29 +1042,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 140                         ;
-; cycloneiii_ff         ; 1172                        ;
-;     ENA               ; 1023                        ;
+; cycloneiii_ff         ; 1178                        ;
+;     ENA               ; 1034                        ;
+;     ENA SCLR          ; 15                          ;
+;     ENA SCLR SLD      ; 1                           ;
 ;     ENA SLD           ; 8                           ;
-;     SCLR              ; 19                          ;
-;     SCLR SLD          ; 12                          ;
+;     SCLR              ; 10                          ;
+;     SCLR SLD          ; 11                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 109                         ;
-; cycloneiii_lcell_comb ; 6561                        ;
-;     arith             ; 1322                        ;
-;         2 data inputs ; 132                         ;
+;     plain             ; 98                          ;
+; cycloneiii_lcell_comb ; 6565                        ;
+;     arith             ; 1328                        ;
+;         2 data inputs ; 138                         ;
 ;         3 data inputs ; 1190                        ;
-;     normal            ; 5239                        ;
+;     normal            ; 5237                        ;
 ;         0 data inputs ; 61                          ;
 ;         1 data inputs ; 63                          ;
-;         2 data inputs ; 104                         ;
-;         3 data inputs ; 594                         ;
-;         4 data inputs ; 4417                        ;
+;         2 data inputs ; 102                         ;
+;         3 data inputs ; 598                         ;
+;         4 data inputs ; 4413                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 136.50                      ;
-; Average LUT depth     ; 84.47                       ;
+; Average LUT depth     ; 84.28                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1072,7 +1075,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:26     ;
+; Top            ; 00:00:25     ;
 +----------------+--------------+
 
 
@@ -1082,7 +1085,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Wed Feb 21 22:19:25 2018
+    Info: Processing started: Thu Feb 22 20:29:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/reset_controller/reset_controller.v
@@ -1200,7 +1203,7 @@ Info (12128): Elaborating entity "Extender" for hierarchy "Extender:inst14"
 Info (12128): Elaborating entity "instructions_multiplexer" for hierarchy "instructions_multiplexer:inst22"
 Info (12128): Elaborating entity "instruction_source_selector" for hierarchy "instruction_source_selector:inst19"
 Info (12128): Elaborating entity "clockMultiplexer" for hierarchy "clockMultiplexer:inst13"
-Info (12128): Elaborating entity "write_frequency_divider" for hierarchy "write_frequency_divider:inst28"
+Info (12128): Elaborating entity "write_frequency_divider" for hierarchy "write_frequency_divider:inst26"
 Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:inst5"
 Warning (10230): Verilog HDL assignment warning at DeBounce_v.v(54): truncated value with size 32 to match size of target (11) File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/DeBounce_v.v Line: 54
 Info (12128): Elaborating entity "BIOS" for hierarchy "BIOS:inst6"
@@ -1208,7 +1211,9 @@ Warning (10030): Net "bios.data_a" at BIOS.v(4) has no driver or initial value, 
 Warning (10030): Net "bios.waddr_a" at BIOS.v(4) has no driver or initial value, using a default initial value '0' File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
 Warning (10030): Net "bios.we_a" at BIOS.v(4) has no driver or initial value, using a default initial value '0' File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
 Info (12128): Elaborating entity "PC" for hierarchy "PC:inst24"
-Warning (10230): Verilog HDL assignment warning at PC.v(12): truncated value with size 32 to match size of target (12) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 12
+Warning (10230): Verilog HDL assignment warning at PC.v(19): truncated value with size 32 to match size of target (12) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 19
+Warning (10230): Verilog HDL assignment warning at PC.v(44): truncated value with size 32 to match size of target (15) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 44
+Warning (10230): Verilog HDL assignment warning at PC.v(47): truncated value with size 25 to match size of target (15) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 47
 Info (12128): Elaborating entity "qFlipflop" for hierarchy "qFlipflop:inst3"
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:inst"
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(20): variable "shamt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 20
@@ -1288,8 +1293,7 @@ Info (10041): Inferred latch for "tripleMuxOutput[29]" at tripleMux.v(7) File: /
 Info (10041): Inferred latch for "tripleMuxOutput[30]" at tripleMux.v(7) File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
 Info (10041): Inferred latch for "tripleMuxOutput[31]" at tripleMux.v(7) File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
 Info (12128): Elaborating entity "dataRAM" for hierarchy "dataRAM:inst29"
-Info (12128): Elaborating entity "read_frequency_divider" for hierarchy "read_frequency_divider:inst32"
-Info (12128): Elaborating entity "harddrive" for hierarchy "harddrive:inst34"
+Info (12128): Elaborating entity "harddrive" for hierarchy "harddrive:inst36"
 Info (12128): Elaborating entity "tucanos_watchdog" for hierarchy "tucanos_watchdog:inst16"
 Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(84): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 84
 Info (12128): Elaborating entity "reset_controller" for hierarchy "reset_controller:inst10"
@@ -1315,7 +1319,7 @@ Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer instructions_multiplexer:inst22|instruction[31] File: /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v Line: 4
 Critical Warning (127005): Memory depth (16384) in the design file differs from memory depth (12001) in the Memory Initialization File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" -- setting initial value for remaining addresses to 0
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (276021): Created node "harddrive:inst34|HD" as a single-port RAM by generating altsyncram megafunction to implement register logic. Power-up values at the outputs of the RAM are different from the original design. File: /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v Line: 9
+Warning (276021): Created node "harddrive:inst36|HD" as a single-port RAM by generating altsyncram megafunction to implement register logic. Power-up values at the outputs of the RAM are different from the original design. File: /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v Line: 9
 Warning (276027): Inferred dual-clock RAM node "simpleInstructionsRam:inst11|instructionsRAM_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "dataRAM:inst29|RAM_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (37) in the Memory Initialization File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_BIOS_23f85c.hdl.mif" -- setting initial value for remaining addresses to 0
@@ -1329,7 +1333,7 @@ Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer BIOS:inst6|bios~4 File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
     Warning (19017): Found clock multiplexer BIOS:inst6|bios~5 File: /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v Line: 4
 Info (19000): Inferred 3 megafunctions from design logic
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "harddrive:inst34|HD_rtl_0" 
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "harddrive:inst36|HD_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to SINGLE_PORT
         Info (286033): Parameter WIDTH_A set to 32
         Info (286033): Parameter WIDTHAD_A set to 14
@@ -1374,8 +1378,8 @@ Info (278001): Inferred 3 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ALU:inst|Div0" File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 24
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ALU:inst|Mult0" File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 23
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ALU:inst|Mod0" File: /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v Line: 25
-Info (12130): Elaborated megafunction instantiation "harddrive:inst34|altsyncram:HD_rtl_0"
-Info (12133): Instantiated megafunction "harddrive:inst34|altsyncram:HD_rtl_0" with the following parameter:
+Info (12130): Elaborated megafunction instantiation "harddrive:inst36|altsyncram:HD_rtl_0"
+Info (12133): Instantiated megafunction "harddrive:inst36|altsyncram:HD_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "SINGLE_PORT"
     Info (12134): Parameter "WIDTH_A" = "32"
     Info (12134): Parameter "WIDTHAD_A" = "14"
@@ -1410,8 +1414,8 @@ Info (12133): Instantiated megafunction "simpleInstructionsRam:inst11|altsyncram
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i8d1.tdf
-    Info (12023): Found entity 1: altsyncram_i8d1 File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_i8d1.tdf Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pne1.tdf
+    Info (12023): Found entity 1: altsyncram_pne1 File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_pne1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "dataRAM:inst29|altsyncram:RAM_rtl_0"
 Info (12133): Instantiated megafunction "dataRAM:inst29|altsyncram:RAM_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1757,19 +1761,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "offLEDS[1]" is stuck at GND
     Warning (13410): Pin "offLEDS[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 39 registers lost all their fanouts during netlist optimizations.
+Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7820 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7824 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 120 output pins
-    Info (21061): Implemented 7546 logic cells
+    Info (21061): Implemented 7550 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 342 warnings
-    Info: Peak virtual memory: 1394 megabytes
-    Info: Processing ended: Wed Feb 21 22:20:07 2018
-    Info: Elapsed time: 00:00:42
-    Info: Total CPU time (on all processors): 00:01:04
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 344 warnings
+    Info: Peak virtual memory: 1391 megabytes
+    Info: Processing ended: Thu Feb 22 20:30:37 2018
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:01:03
 
 

@@ -34,13 +34,13 @@ agreement for further details.
 	(port
 		(pt 200 32)
 		(output)
-		(text "OUT_0_7MHz" (rect 0 0 60 12)(font "Arial" ))
-		(text "OUT_0_7MHz" (rect 119 27 179 39)(font "Arial" ))
+		(text "OUT_48KHz" (rect 0 0 54 12)(font "Arial" ))
+		(text "OUT_48KHz" (rect 125 27 179 39)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32)(line_width 1))
 	)
 	(parameter
 		"COUNTER_WIDTH"
-		"12"
+		"10"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

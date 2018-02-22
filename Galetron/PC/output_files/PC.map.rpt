@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PC
-Mon Jun 20 11:13:00 2016
+Thu Feb 22 20:11:04 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -13,11 +13,13 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. State Machine - |PC|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +46,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jun 20 11:13:00 2016       ;
+; Analysis & Synthesis Status        ; Successful - Thu Feb 22 20:11:04 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; PC                                          ;
 ; Top-level Entity Name              ; PC                                          ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 31                                          ;
-;     Total combinational functions  ; 31                                          ;
-;     Dedicated logic registers      ; 10                                          ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 26                                          ;
+; Total logic elements               ; 65                                          ;
+;     Total combinational functions  ; 65                                          ;
+;     Dedicated logic registers      ; 30                                          ;
+; Total registers                    ; 30                                          ;
+; Total pins                         ; 33                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -158,45 +160,45 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
-; PC.v                             ; yes             ; User Verilog HDL File  ; /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
+; PC.v                             ; yes             ; User Verilog HDL File  ; /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 31     ;
-;                                             ;        ;
-; Total combinational functions               ; 31     ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 1      ;
-;     -- 3 input functions                    ; 19     ;
-;     -- <=2 input functions                  ; 11     ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 13     ;
-;     -- arithmetic mode                      ; 18     ;
-;                                             ;        ;
-; Total registers                             ; 10     ;
-;     -- Dedicated logic registers            ; 10     ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 26     ;
-;                                             ;        ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-;                                             ;        ;
-; Maximum fan-out node                        ; select ;
-; Maximum fan-out                             ; 10     ;
-; Total fan-out                               ; 158    ;
-; Average fan-out                             ; 1.70   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 65       ;
+;                                             ;          ;
+; Total combinational functions               ; 65       ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 2        ;
+;     -- 3 input functions                    ; 30       ;
+;     -- <=2 input functions                  ; 33       ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 27       ;
+;     -- arithmetic mode                      ; 38       ;
+;                                             ;          ;
+; Total registers                             ; 30       ;
+;     -- Dedicated logic registers            ; 30       ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 33       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; state.10 ;
+; Maximum fan-out                             ; 30       ;
+; Total fan-out                               ; 341      ;
+; Average fan-out                             ; 2.12     ;
++---------------------------------------------+----------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -204,9 +206,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |PC                        ; 31 (31)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |PC                 ; work         ;
+; |PC                        ; 65 (65)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |PC                 ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------+
+; State Machine - |PC|state       ;
++----------------------+----------+
+; Name                 ; state.10 ;
++----------------------+----------+
+; state.state_counting ; 0        ;
+; state.10             ; 1        ;
++----------------------+----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; counter[0..8]                          ; Stuck at GND due to stuck port data_in ;
+; state~4                                ; Lost fanout                            ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -214,23 +238,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 10    ;
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 22    ;
+; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |PC|programCounter[0]~reg0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |PC|programCounter[11]~reg0 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |PC|state                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
 +-----------------------------------------------------+
@@ -238,21 +263,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 26                          ;
-; cycloneiii_ff         ; 10                          ;
-;     SLD               ; 10                          ;
-; cycloneiii_lcell_comb ; 31                          ;
-;     arith             ; 18                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 9                           ;
-;     normal            ; 13                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 1                           ;
+; boundary_port         ; 33                          ;
+; cycloneiii_ff         ; 30                          ;
+;     ENA               ; 1                           ;
+;     ENA SCLR          ; 17                          ;
+;     ENA SCLR SLD      ; 5                           ;
+;     ENA SLD           ; 6                           ;
+;     SLD               ; 1                           ;
+; cycloneiii_lcell_comb ; 65                          ;
+;     arith             ; 38                          ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 11                          ;
+;     normal            ; 27                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.90                        ;
-; Average LUT depth     ; 3.30                        ;
+; Max LUT depth         ; 5.80                        ;
+; Average LUT depth     ; 3.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,24 +300,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Jun 20 11:12:43 2016
+    Info: Processing started: Thu Feb 22 20:10:49 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PC -c PC
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file PC.v
-    Info (12023): Found entity 1: PC File: /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v Line: 1
+    Info (12023): Found entity 1: PC File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 1
 Info (12127): Elaborating entity "PC" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at PC.v(12): truncated value with size 32 to match size of target (10) File: /home/davi/Dropbox/UNIFESP/Unifesp/Lab AOC/Atividades/Checagens 2 e 3/PC/PC.v Line: 12
+Warning (10230): Verilog HDL assignment warning at PC.v(19): truncated value with size 32 to match size of target (12) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 19
+Warning (10230): Verilog HDL assignment warning at PC.v(44): truncated value with size 32 to match size of target (26) File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 44
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 16 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 31 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1175 megabytes
-    Info: Processing ended: Mon Jun 20 11:13:00 2016
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:36
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "HLT" File: /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v Line: 2
+Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 1289 megabytes
+    Info: Processing ended: Thu Feb 22 20:11:04 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:37
 
 

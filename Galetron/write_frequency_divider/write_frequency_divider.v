@@ -2,20 +2,20 @@
 //-----------------------------------------------------
 module write_frequency_divider(
 IN_50Mhz    ,   // Input 50Mhz Clock (Input)
-OUT_0_7MHz      // Output 0.78125MHz Clock (Output)
+OUT_48KHz      // Output 0.78125MHz Clock (Output)
 );
 
-parameter COUNTER_WIDTH = 12;
+parameter COUNTER_WIDTH = 10;
 
 //--------------Input Ports----------------------------
 input IN_50Mhz;
 
 //--------------Output Ports---------------------------
-output reg OUT_0_7MHz = 1'b0;
+output reg OUT_48KHz = 1'b0;
 
 //--------------Internal variables---------------------
 reg         [COUNTER_WIDTH-1:0] COUNTER = {COUNTER_WIDTH{1'b0}};
-localparam  [COUNTER_WIDTH-1:0] MAXVALUE = 12'd4095;
+localparam  [COUNTER_WIDTH-1:0] MAXVALUE = 10'd1023;
 
 //-------------Processing Starts Here------------------
 
@@ -25,7 +25,7 @@ always @ (posedge IN_50Mhz) begin
         COUNTER <= COUNTER + 1'b1;
     end else begin
         COUNTER <= {COUNTER_WIDTH{1'b0}};
-        OUT_0_7MHz <= ~OUT_0_7MHz;
+        OUT_48KHz <= ~OUT_48KHz;
     end
 end
 

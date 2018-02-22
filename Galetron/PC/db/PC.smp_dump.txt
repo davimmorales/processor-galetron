@@ -1,0 +1,5 @@
+
+State Machine - |PC|state
+Name state.10 
+state.state_counting 0 
+state.10 1 

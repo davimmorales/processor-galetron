@@ -1,5 +1,5 @@
 Assembler report for PC
-Mon Jun 20 11:13:24 2016
+Thu Feb 22 20:11:23 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jun 20 11:13:24 2016 ;
+; Assembler Status      ; Successful - Thu Feb 22 20:11:23 2018 ;
 ; Revision Name         ; PC                                    ;
 ; Top-level Entity Name ; PC                                    ;
 ; Family                ; Cyclone IV E                          ;
@@ -68,8 +68,8 @@ agreement for further details.
 ; Option         ; Setting         ;
 +----------------+-----------------+
 ; Device         ; EP4CE6E22C6     ;
-; JTAG usercode  ; 0x00098844      ;
-; Checksum       ; 0x00098844      ;
+; JTAG usercode  ; 0x0009D5FF      ;
+; Checksum       ; 0x0009D5FF      ;
 +----------------+-----------------+
 
 
@@ -79,14 +79,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Jun 20 11:13:22 2016
+    Info: Processing started: Thu Feb 22 20:11:22 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PC -c PC
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1004 megabytes
-    Info: Processing ended: Mon Jun 20 11:13:24 2016
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 1109 megabytes
+    Info: Processing ended: Thu Feb 22 20:11:23 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

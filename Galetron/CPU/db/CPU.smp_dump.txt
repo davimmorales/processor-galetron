@@ -12,3 +12,8 @@ STATE.COUNTING 0 0 0 0
 STATE.WAIT 0 0 1 1 
 STATE.HALT 0 1 0 1 
 STATE.CHANGE 1 0 0 1 
+
+State Machine - |CPU|PC:inst24|state
+Name state.10 
+state.state_counting 0 
+state.10 1 

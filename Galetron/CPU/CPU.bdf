@@ -1052,49 +1052,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1360 -8 1632 104)
-	(text "harddrive" (rect 5 0 89 12)(font "Arial" ))
-	(text "inst34" (rect 8 96 64 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "data_write[31..0]" (rect 0 0 160 12)(font "Arial" ))
-		(text "data_write[31..0]" (rect 21 27 181 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "hd_address[20..0]" (rect 0 0 160 12)(font "Arial" ))
-		(text "hd_address[20..0]" (rect 21 43 181 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "clock" (rect 0 0 47 12)(font "Arial" ))
-		(text "clock" (rect 21 59 68 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "flag_write_hd" (rect 0 0 122 12)(font "Arial" ))
-		(text "flag_write_hd" (rect 21 75 143 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 272 32)
-		(output)
-		(text "output_hard_drive[31..0]" (rect 0 0 226 12)(font "Arial" ))
-		(text "output_hard_drive[31..0]" (rect 60 27 286 39)(font "Arial" ))
-		(line (pt 272 32)(pt 256 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 256 96))
-	)
-)
-(symbol
 	(rect -280 -136 -56 -56)
 	(text "BIOS" (rect 5 0 42 12)(font "Arial" ))
 	(text "inst6" (rect 8 64 55 76)(font "Arial" ))
@@ -1847,9 +1804,52 @@ agreement for further details.
 	)
 )
 (symbol
+	(rect 1360 -32 1632 80)
+	(text "harddrive" (rect 5 0 89 12)(font "Arial" ))
+	(text "inst36" (rect 8 96 64 108)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "data_write[31..0]" (rect 0 0 160 12)(font "Arial" ))
+		(text "data_write[31..0]" (rect 21 27 181 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "hd_address[20..0]" (rect 0 0 160 12)(font "Arial" ))
+		(text "hd_address[20..0]" (rect 21 43 181 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "clock" (rect 0 0 47 12)(font "Arial" ))
+		(text "clock" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "flag_write_hd" (rect 0 0 122 12)(font "Arial" ))
+		(text "flag_write_hd" (rect 21 75 143 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 272 32)
+		(output)
+		(text "output_hard_drive[31..0]" (rect 0 0 226 12)(font "Arial" ))
+		(text "output_hard_drive[31..0]" (rect 60 27 286 39)(font "Arial" ))
+		(line (pt 272 32)(pt 256 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 256 96))
+	)
+)
+(symbol
 	(rect -1216 656 -1016 736)
 	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
-	(text "inst28" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(text "inst26" (rect 8 64 64 76)(font "Liberation Sans" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1860,47 +1860,19 @@ agreement for further details.
 	(port
 		(pt 200 32)
 		(output)
-		(text "OUT_0_7MHz" (rect 0 0 94 12)(font "Arial" ))
-		(text "OUT_0_7MHz" (rect 100 27 194 39)(font "Arial" ))
+		(text "OUT_48KHz" (rect 0 0 84 12)(font "Arial" ))
+		(text "OUT_48KHz" (rect 108 27 192 39)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32))
 	)
 	(parameter
 		"COUNTER_WIDTH"
-		"12"
+		"10"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 184 64))
 	)
 	(annotation_block (parameter)(rect -1016 616 -712 656))
-)
-(symbol
-	(rect -864 920 -664 1000)
-	(text "read_frequency_divider" (rect 5 0 212 12)(font "Arial" ))
-	(text "inst32" (rect 8 64 64 76)(font "Liberation Sans" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
-		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 200 32)
-		(output)
-		(text "OUT_1_5MHz" (rect 0 0 94 12)(font "Arial" ))
-		(text "OUT_1_5MHz" (rect 100 27 194 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32))
-	)
-	(parameter
-		"COUNTER_WIDTH"
-		"7"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 184 64))
-	)
-	(annotation_block (parameter)(rect -664 880 -360 920))
 )
 (connector
 	(text "clock" (rect 882 -24 929 -12)(font "Liberation Sans" ))
@@ -2979,36 +2951,9 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(pt 1656 24)
-	(pt 1656 72)
-	(bus)
-)
-(connector
 	(text "output_hard_drive[31..0]" (rect 1656 56 1882 68)(font "Liberation Sans" ))
 	(pt 1656 72)
 	(pt 1736 72)
-	(bus)
-)
-(connector
-	(text "store[31..0]" (rect 1274 8 1387 20)(font "Liberation Sans" ))
-	(pt 1360 24)
-	(pt 1264 24)
-	(bus)
-)
-(connector
-	(text "lastMuxOutput[20..0]" (rect 1264 24 1452 36)(font "Liberation Sans" ))
-	(pt 1360 40)
-	(pt 1264 40)
-	(bus)
-)
-(connector
-	(text "flag_write_hd" (rect 1274 56 1396 68)(font "Liberation Sans" ))
-	(pt 1360 72)
-	(pt 1264 72)
-)
-(connector
-	(pt 1632 24)
-	(pt 1656 24)
 	(bus)
 )
 (connector
@@ -3174,10 +3119,6 @@ agreement for further details.
 	(pt -1232 688)
 )
 (connector
-	(pt -1232 952)
-	(pt -864 952)
-)
-(connector
 	(pt -1552 688)
 	(pt -1232 688)
 )
@@ -3186,17 +3127,49 @@ agreement for further details.
 	(pt -1216 688)
 )
 (connector
-	(pt -664 952)
-	(pt -152 952)
-)
-(connector
 	(pt -152 704)
 	(pt -152 952)
 )
 (connector
-	(text "clock" (rect 1274 40 1321 52)(font "Liberation Sans" ))
-	(pt 1360 56)
-	(pt 1264 56)
+	(text "store[31..0]" (rect 1274 -16 1387 -4)(font "Liberation Sans" ))
+	(pt 1360 0)
+	(pt 1264 0)
+	(bus)
+)
+(connector
+	(text "lastMuxOutput[20..0]" (rect 1264 0 1452 12)(font "Liberation Sans" ))
+	(pt 1360 16)
+	(pt 1264 16)
+	(bus)
+)
+(connector
+	(pt 1656 0)
+	(pt 1632 0)
+	(bus)
+)
+(connector
+	(pt 1656 0)
+	(pt 1656 24)
+	(bus)
+)
+(connector
+	(pt 1656 24)
+	(pt 1656 72)
+	(bus)
+)
+(connector
+	(text "read_clock" (rect 1274 16 1368 28)(font "Liberation Sans" ))
+	(pt 1360 32)
+	(pt 1264 32)
+)
+(connector
+	(pt -1232 952)
+	(pt -152 952)
+)
+(connector
+	(text "flag_write_hd" (rect 1264 32 1386 44)(font "Liberation Sans" ))
+	(pt 1360 48)
+	(pt 1264 48)
 )
 (junction (pt -272 456))
 (junction (pt 1224 128))
@@ -3210,6 +3183,6 @@ agreement for further details.
 (junction (pt -1232 688))
 (junction (pt 1656 24))
 (junction (pt -1616 280))
-(text "MEMORIES" (rect 1360 -40 1444 -25)(font "Liberation Sans" (font_size 8)))
+(text "MEMORIES" (rect 1368 -64 1452 -49)(font "Liberation Sans" (font_size 8)))
 (text "OUTPUTS" (rect 1696 528 1770 543)(font "Liberation Sans" (font_size 8)))
 (text "INPUTS" (rect -1808 560 -1745 575)(font "Liberation Sans" (font_size 8)))

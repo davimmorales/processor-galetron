@@ -7,7 +7,14 @@
   wire select;
   output [11:0] programCounter;
 
+  reg        [1:0] state = 2'b10;
+  reg        [14:0] counter;
 
+  localparam [1:0] state_counting = 2'b01;
+  localparam [1:0] state_running = 2'b10;
+  localparam max_value = 15'd24414;
+
+  
   assign select = (bzero & zero) | (bnegative & negative);
   assign pcInc = programCounter + 1;
   // assign address = instruction[20:0];
@@ -20,7 +27,7 @@
     else
       muxA = pcInc;
   end
-  
+
   assign jumpAdd = ( address );//<< 2);
 
   always @ ( jump or jumpAdd or muxA ) begin
@@ -31,14 +38,30 @@
   end
 
   always @ ( posedge clock ) begin
-	if(resetCPU) begin
-		programCounter <= 256;
-	end
-	else if(jump_context_exchange) begin
-		programCounter <= 1083;
-	end
-	else begin
-    programCounter <= newPc;
+  case (state)
+    state_counting: begin
+      if (counter<max_value) begin
+        counter <= counter + 1;
+        state <= state_counting;
+      end else begin
+        counter <= 25'd0;
+        state <= state_running;
+      end
     end
+    default: begin
+    if(resetCPU) begin
+      programCounter <= 256;
+      state <= state_running;
+    end
+    else if(jump_context_exchange) begin
+      programCounter <= 1083;
+      state <= state_counting;
+    end
+    else begin
+      programCounter <= newPc;
+      state <= state_running;
+      end
+    end
+  endcase
   end
  endmodule
