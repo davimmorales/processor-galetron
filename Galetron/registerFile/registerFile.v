@@ -30,8 +30,12 @@ module registerFile(writeAddress, readAddress1, readAddress2, clock, writeRegist
 //RF[18] <= 31'b00000000000000000000000000000010;
 //RF[19] <= 31'b00000000000000000000000000000111;
 //RF[28] <= 31'b000000000000000000000000000100001;
-		if(writeRegister == 1) RF[writeAddress] <= writeData;
-		if(program_counter < 256) RF[28] <= {20'h0000 ,program_counter};
+		if(writeRegister == 1) begin
+			RF[writeAddress] <= writeData;
+		end
+		if(program_counter < 256) begin
+			RF[28] <= {20'h0000 ,program_counter};
+		end
 	end
 
 

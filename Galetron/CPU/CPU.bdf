@@ -1849,7 +1849,7 @@ agreement for further details.
 (symbol
 	(rect -1216 656 -1016 736)
 	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
-	(text "inst26" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(text "inst28" (rect 8 64 64 76)(font "Liberation Sans" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1875,9 +1875,9 @@ agreement for further details.
 	(annotation_block (parameter)(rect -1016 616 -712 656))
 )
 (symbol
-	(rect -736 888 -536 968)
+	(rect -864 920 -664 1000)
 	(text "read_frequency_divider" (rect 5 0 212 12)(font "Arial" ))
-	(text "inst27" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(text "inst32" (rect 8 64 64 76)(font "Liberation Sans" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1894,13 +1894,13 @@ agreement for further details.
 	)
 	(parameter
 		"COUNTER_WIDTH"
-		"5"
+		"7"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 184 64))
 	)
-	(annotation_block (parameter)(rect -536 848 -232 888))
+	(annotation_block (parameter)(rect -664 880 -360 920))
 )
 (connector
 	(text "clock" (rect 882 -24 929 -12)(font "Liberation Sans" ))
@@ -3002,11 +3002,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "read_clock" (rect 1274 40 1368 52)(font "Liberation Sans" ))
-	(pt 1360 56)
-	(pt 1264 56)
-)
-(connector
 	(text "flag_write_hd" (rect 1274 56 1396 68)(font "Liberation Sans" ))
 	(pt 1360 72)
 	(pt 1264 72)
@@ -3170,16 +3165,17 @@ agreement for further details.
 	(pt 1528 944)
 )
 (connector
-	(pt -152 920)
+	(text "read_clock" (rect -152 688 -58 700)(font "Liberation Sans" ))
 	(pt -152 704)
+	(pt -128 704)
 )
 (connector
-	(pt -152 920)
-	(pt -536 920)
-)
-(connector
-	(pt -1232 920)
+	(pt -1232 952)
 	(pt -1232 688)
+)
+(connector
+	(pt -1232 952)
+	(pt -864 952)
 )
 (connector
 	(pt -1552 688)
@@ -3190,13 +3186,17 @@ agreement for further details.
 	(pt -1216 688)
 )
 (connector
-	(pt -1232 920)
-	(pt -736 920)
+	(pt -664 952)
+	(pt -152 952)
 )
 (connector
-	(text "read_clock" (rect -152 688 -58 700)(font "Liberation Sans" ))
 	(pt -152 704)
-	(pt -128 704)
+	(pt -152 952)
+)
+(connector
+	(text "clock" (rect 1274 40 1321 52)(font "Liberation Sans" ))
+	(pt 1360 56)
+	(pt 1264 56)
 )
 (junction (pt -272 456))
 (junction (pt 1224 128))

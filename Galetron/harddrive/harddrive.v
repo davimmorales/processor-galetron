@@ -980,11 +980,11 @@ module harddrive(data_write, hd_address, clock, output_hard_drive, flag_write_hd
   HD[965] = 32'b00110110111101110000000000000000;//NOT r[23] to r[23]
   HD[966] = 32'b01111100000101110000000000000000;//Pre Branch r[23]
   HD[967] = 32'b01001100000000000000000000000011;//Branch on Zero #3
-  HD[968] = 32'b00000111100111000000000000000001;//ADDi r[28], #1 to r[28]
+  HD[968] = 32'b01101100000000000000000000000000;//Nop
   HD[969] = 32'b10001100000111000000000000000000;//Jump to r[28]
   HD[970] = 32'b01101100000000000000000000000000;//Nop
   HD[971] = 32'b01101100000000000000000000000000;//Nop
-  HD[972] = 32'b00000111100111000000000000000001;//ADDi r[28], #1 to r[28]
+  HD[972] = 32'b01101100000000000000000000000000;//Nop
   HD[973] = 32'b01101011011000000000010011010110;//Loadi #1238 to r[27]
   HD[974] = 32'b01100010101000000000000011110111;//Load m[#247] to r[21]
   HD[975] = 32'b01100110101000000000000011100100;//Store r[21] in m[#228]
@@ -1166,6 +1166,17 @@ module harddrive(data_write, hd_address, clock, output_hard_drive, flag_write_hd
   HD[1151] = 32'b00000000000000000000000000000000;//ADD r[0],r[0] to r[0]
 
 
+//programs index:
+//program 0 [line 4096] - Fibonacci [11]
+//program 1 [line 4288] - Biggest [12]
+//program 2 [line 4480] - Division [13]
+//program 3 [line 4672] - Pow [14]
+//program 4 [line 4864] - Mean [15]
+//program 5 [line 5056] - Smallest [16]
+//program 6 [line 5248] - Sort [17]
+//program 7 [line 5440] - Top Down [18]
+//program 8 [line 5632] - Circle Area [19]
+//program 9 [line 5824] - Multiplication [20]
 
 
 //programs & processess' list of information

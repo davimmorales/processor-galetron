@@ -1,7 +1,7 @@
 |CPU
 inLED <= outputController:inst25.inLED
-machineClock => write_frequency_divider:inst26.IN_50Mhz
-machineClock => read_frequency_divider:inst27.IN_50Mhz
+machineClock => write_frequency_divider:inst28.IN_50Mhz
+machineClock => read_frequency_divider:inst32.IN_50Mhz
 UserClock => DeBounce:inst5.button_in
 switches[0] => Extender:inst14.inputC[0]
 switches[0] => outputController:inst25.switches[0]
@@ -832,7 +832,7 @@ inputB => clock.DATAB
 clock <= clock.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|write_frequency_divider:inst26
+|CPU|write_frequency_divider:inst28
 IN_50Mhz => OUT_0_7MHz~reg0.CLK
 IN_50Mhz => COUNTER[0].CLK
 IN_50Mhz => COUNTER[1].CLK
@@ -5624,53 +5624,59 @@ program_counter[11] => RF.DATAB
 
 |CPU|pc_filter:inst2
 program_counter[0] => Add0.IN24
-program_counter[0] => registers_file_program_counter.DATAA
+program_counter[0] => Add1.IN24
+program_counter[0] => Selector11.IN5
 program_counter[1] => Add0.IN23
-program_counter[1] => registers_file_program_counter.DATAA
+program_counter[1] => Add1.IN23
+program_counter[1] => Selector10.IN5
 program_counter[2] => Add0.IN22
-program_counter[2] => registers_file_program_counter.DATAA
+program_counter[2] => Add1.IN22
+program_counter[2] => Selector9.IN5
 program_counter[3] => Add0.IN21
-program_counter[3] => registers_file_program_counter.DATAA
+program_counter[3] => Add1.IN21
+program_counter[3] => Selector8.IN5
 program_counter[4] => Add0.IN20
-program_counter[4] => registers_file_program_counter.DATAA
+program_counter[4] => Add1.IN20
+program_counter[4] => Selector7.IN5
 program_counter[5] => Add0.IN19
-program_counter[5] => registers_file_program_counter.DATAA
+program_counter[5] => Add1.IN19
+program_counter[5] => Selector6.IN5
 program_counter[6] => Add0.IN18
-program_counter[6] => registers_file_program_counter.DATAA
+program_counter[6] => Add1.IN18
+program_counter[6] => Selector5.IN5
 program_counter[7] => Add0.IN17
-program_counter[7] => registers_file_program_counter.DATAA
+program_counter[7] => Add1.IN17
+program_counter[7] => Selector4.IN5
 program_counter[8] => Add0.IN16
-program_counter[8] => registers_file_program_counter.DATAA
+program_counter[8] => Add1.IN16
+program_counter[8] => Selector3.IN5
 program_counter[9] => Add0.IN15
-program_counter[9] => registers_file_program_counter.DATAA
+program_counter[9] => Add1.IN15
+program_counter[9] => Selector2.IN5
 program_counter[10] => Add0.IN14
-program_counter[10] => registers_file_program_counter.DATAA
+program_counter[10] => Add1.IN14
+program_counter[10] => Selector1.IN5
 program_counter[11] => Add0.IN13
-program_counter[11] => registers_file_program_counter.DATAA
-operation[0] => LessThan0.IN12
-operation[0] => Equal0.IN3
-operation[1] => LessThan0.IN11
-operation[1] => Equal0.IN2
-operation[2] => LessThan0.IN10
-operation[2] => Equal0.IN1
-operation[3] => LessThan0.IN9
-operation[3] => Equal0.IN5
-operation[4] => LessThan0.IN8
-operation[4] => Equal0.IN0
-operation[5] => LessThan0.IN7
-operation[5] => Equal0.IN4
-registers_file_program_counter[0] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[1] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[2] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[3] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[4] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[5] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[6] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[7] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[8] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[9] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[10] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
-registers_file_program_counter[11] <= registers_file_program_counter.DB_MAX_OUTPUT_PORT_TYPE
+program_counter[11] => Add1.IN13
+program_counter[11] => Selector0.IN5
+operation[0] => Decoder0.IN5
+operation[1] => Decoder0.IN4
+operation[2] => Decoder0.IN3
+operation[3] => Decoder0.IN2
+operation[4] => Decoder0.IN1
+operation[5] => Decoder0.IN0
+registers_file_program_counter[0] <= Selector11.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[1] <= Selector10.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[2] <= Selector9.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[3] <= Selector8.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[4] <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[5] <= Selector6.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[6] <= Selector5.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[7] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[8] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[9] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[10] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+registers_file_program_counter[11] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|multiplexer:writeDataSelectorMux
@@ -6371,13 +6377,15 @@ dataRAMOutput[30] <= dataRAMOutput[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 dataRAMOutput[31] <= dataRAMOutput[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU|read_frequency_divider:inst27
+|CPU|read_frequency_divider:inst32
 IN_50Mhz => OUT_1_5MHz~reg0.CLK
 IN_50Mhz => COUNTER[0].CLK
 IN_50Mhz => COUNTER[1].CLK
 IN_50Mhz => COUNTER[2].CLK
 IN_50Mhz => COUNTER[3].CLK
 IN_50Mhz => COUNTER[4].CLK
+IN_50Mhz => COUNTER[5].CLK
+IN_50Mhz => COUNTER[6].CLK
 OUT_1_5MHz <= OUT_1_5MHz~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -6732,22 +6740,16 @@ clock => COUNTER[2].CLK
 clock => COUNTER[3].CLK
 clock => PROCESS_INDEX~3.DATAIN
 clock => STATE~1.DATAIN
-opcode[0] => Decoder0.IN5
 opcode[0] => Equal0.IN11
 opcode[0] => Equal1.IN11
-opcode[1] => Decoder0.IN4
 opcode[1] => Equal0.IN10
 opcode[1] => Equal1.IN10
-opcode[2] => Decoder0.IN3
 opcode[2] => Equal0.IN9
 opcode[2] => Equal1.IN9
-opcode[3] => Decoder0.IN2
 opcode[3] => Equal0.IN8
 opcode[3] => Equal1.IN8
-opcode[4] => Decoder0.IN1
 opcode[4] => Equal0.IN7
 opcode[4] => Equal1.IN7
-opcode[5] => Decoder0.IN0
 opcode[5] => Equal0.IN6
 opcode[5] => Equal1.IN6
 program_counter[0] => LessThan0.IN24
@@ -6906,17 +6908,11 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |CPU|reset_controller:inst10
-operation[0] => Decoder0.IN5
 operation[0] => Equal0.IN3
-operation[1] => Decoder0.IN4
 operation[1] => Equal0.IN2
-operation[2] => Decoder0.IN3
 operation[2] => Equal0.IN1
-operation[3] => Decoder0.IN2
 operation[3] => Equal0.IN5
-operation[4] => Decoder0.IN1
 operation[4] => Equal0.IN4
-operation[5] => Decoder0.IN0
 operation[5] => Equal0.IN0
 resume_os => always0.IN1
 system_reset => always0.IN1
