@@ -2,7 +2,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   writeDataSelection, writeRegister, aluSelection, extenderSelection,
   immediateSelection, tripleMuxSelection, lastMuxSel, writeEnable,
   IO_RAMwrite, enable, flag_write_hd, selection_registers_file, mainAddress, jump, HLT,
-  flag_write_i_ram, selector_address);//, branch);
+  flag_write_i_ram, flag_write_arduino, selector_address);//, branch);
 
   input [5:0] operation;
   input [31:0] srcRegister, immediate;
@@ -13,7 +13,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   output reg [1:0] extenderSelection, tripleMuxSelection, selection_registers_file;
   output reg jump, writeDataSelection, immediateSelection, lastMuxSel,
   writeEnable, IO_RAMwrite, enable, writeRegister,bzero, bnegative, HLT, flag_write_hd,
-  flag_write_i_ram, selector_address;//, branch;
+  flag_write_i_ram, flag_write_arduino, selector_address;//, branch;
 
   always @ ( operation ) begin
   case (operation)
@@ -34,7 +34,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   end
@@ -54,7 +54,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -75,7 +75,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -96,7 +96,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -117,7 +117,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -138,7 +138,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -159,7 +159,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -180,7 +180,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -201,7 +201,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -222,7 +222,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -243,7 +243,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -264,7 +264,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -285,7 +285,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -306,7 +306,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -327,7 +327,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -348,7 +348,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-  bzero = 1'b0;
+  flag_write_arduino = 1'b0;  bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
   end
@@ -368,7 +368,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b1;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -389,7 +389,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b1;
   HLT = 1'b0;
@@ -410,7 +410,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -431,7 +431,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -452,7 +452,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -473,7 +473,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -494,7 +494,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -515,7 +515,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1;
@@ -536,7 +536,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -557,7 +557,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -578,7 +578,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -599,7 +599,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -620,7 +620,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -641,7 +641,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -662,7 +662,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -683,7 +683,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b1;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -702,6 +702,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  flag_write_i_ram = 1'b0;
   selection_registers_file = 2'b01;
   bzero = 1'b0;
   bnegative = 1'b0;
@@ -723,6 +724,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b1;
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -741,7 +743,53 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   mainAddress = 10'b0;
   jump = 1'b0;
   flag_write_hd = 1'b0;
+  flag_write_i_ram = 1'b0;
+  flag_write_arduino = 1'b0;
+
   selection_registers_file = 2'b10;
+  bzero = 1'b0;
+  bnegative = 1'b0;
+  HLT = 1'b0;
+  end
+  6'b101001:  begin//store in arduino_driver
+  writeDataSelection = 1'bx;
+  writeRegister = 1'b0;
+  aluSelection = 4'b0000;
+  extenderSelection = 2'bxx;
+  immediateSelection = 1'b0;
+  tripleMuxSelection = 2'bxx;
+  lastMuxSel = 1'b0;
+  writeEnable = 1'b0;
+  IO_RAMwrite = 1'b0;
+  enable = 1'b0;
+  mainAddress = 10'b0;
+  jump = 1'b0;
+  flag_write_hd = 1'b0;
+  selection_registers_file = 2'b00;
+  flag_write_i_ram = 1'b0;
+  flag_write_arduino = 1'b1;
+  bzero = 1'b0;
+  bnegative = 1'b0;
+  HLT = 1'b0;
+  end
+  6'b101010: begin//load from arduino_driver
+  writeDataSelection = 1'b1;
+  writeRegister = 1'b1;
+  aluSelection = 4'b0000;
+  extenderSelection = 2'bxx;
+  immediateSelection = 1'b0;
+  tripleMuxSelection = 2'b01;
+  lastMuxSel = 1'b0;
+  writeEnable = 1'b0;
+  IO_RAMwrite = 1'b0;
+  enable = 1'b0;
+  mainAddress = 10'b0;
+  jump = 1'b0;
+  flag_write_hd = 1'b0;
+  flag_write_i_ram = 1'b0;
+  flag_write_arduino = 1'b0;
+
+  selection_registers_file = 2'b11;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;
@@ -762,7 +810,7 @@ module controlUnit(operation, srcRegister, immediate, bzero, bnegative,
   flag_write_hd = 1'b0;
   selection_registers_file = 2'b00;
   flag_write_i_ram = 1'b0;
-
+  flag_write_arduino = 1'b0;
   bzero = 1'b0;
   bnegative = 1'b0;
   HLT = 1'b0;

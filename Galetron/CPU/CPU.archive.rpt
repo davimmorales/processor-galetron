@@ -1,0 +1,138 @@
+Archive Project report for CPU
+Thu Mar 15 22:09:51 2018
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Thu Mar 15 22:09:51 2018 ;
+; Revision Name          ; CPU                                   ;
+; Top-level Entity Name  ; CPU                                   ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory /home/morales/Documentos/Git/processor-galetron/Galetron/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive '/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/galetron-processor.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'CPU.archive.rpt'
+Info (23030): Evaluation of Tcl script /home/morales/altera_lite/15.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 1305 megabytes
+    Info: Processing ended: Thu Mar 15 22:09:51 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------------------------------------------------------------------------+
+; Files Archived                                                                                             ;
++------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                  ;
++------------------------------------------------------------------------------------------------------------+
+; ../ALU/ALU.v                                                                                               ;
+; ../BIOS.v                                                                                                  ;
+; ../controlUnit/controlUnit.v                                                                               ;
+; ../dataOutput/dataOutput.v                                                                                 ;
+; ../dataRAM/dataRAM.v                                                                                       ;
+; ../debug_clock_divider/debug_clock_divider.v                                                               ;
+; ../Extender/Extender.v                                                                                     ;
+; ../galetronCPU/multiplexer.v                                                                               ;
+; ../galetronCPU/qFlipflop.v                                                                                 ;
+; ../galetronCPU/tripleMux.v                                                                                 ;
+; ../harddrive/harddrive.v                                                                                   ;
+; ../instruction_source_selector.v                                                                           ;
+; ../instructions_multiplexer.v                                                                              ;
+; ../one_bit_multiplexer/one_bit_multiplexer.v                                                               ;
+; ../Output/BCD.v                                                                                            ;
+; ../Output/finalOutput.v                                                                                    ;
+; ../Output/Output.v                                                                                         ;
+; ../Output/sevenSegmentsDisplay.v                                                                           ;
+; ../PC/PC.v                                                                                                 ;
+; ../pc_filter/pc_filter.v                                                                                   ;
+; ../read_frequency_divider/read_frequency_divider.v                                                         ;
+; ../registerFile/registerFile.v                                                                             ;
+; ../reset_controller/reset_controller.v                                                                     ;
+; ../simpleInstructionsRAM/simpleInstructionsRam.v                                                           ;
+; ../tucanos_watchdog/tucanos_watchdog.v                                                                     ;
+; ../write_frequency_divider/write_frequency_divider.v                                                       ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v                                         ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v                                            ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/controlUnit/controlUnit.v                         ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/dataOutput/dataOutput.v                           ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/dataRAM/dataRAM.v                                 ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/debug_clock_divider/debug_clock_divider.v         ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/Extender/Extender.v                               ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/multiplexer.v                         ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/qFlipflop.v                           ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v                           ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v                             ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v                     ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v                        ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/one_bit_multiplexer/one_bit_multiplexer.v         ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/BCD.v                                      ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/finalOutput.v                              ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/Output.v                                   ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/sevenSegmentsDisplay.v                     ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v                                           ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/pc_filter/pc_filter.v                             ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/read_frequency_divider/read_frequency_divider.v   ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/registerFile/registerFile.v                       ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/reset_controller/reset_controller.v               ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/simpleInstructionsRAM/simpleInstructionsRam.v     ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v               ;
+; /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v ;
+; clockMultiplexer.v                                                                                         ;
+; CPU.bdf                                                                                                    ;
+; CPU.qpf                                                                                                    ;
+; CPU.qsf                                                                                                    ;
+; CPU_assignment_defaults.qdf                                                                                ;
+; DeBounce_v.v                                                                                               ;
+; frequencyDivider.v                                                                                         ;
+; output_files/Chain1.cdf                                                                                    ;
+; outputController.v                                                                                         ;
+; resetMultiplexer.v                                                                                         ;
+; Waveform.vwf                                                                                               ;
++------------------------------------------------------------------------------------------------------------+
+
+

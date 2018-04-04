@@ -188,6 +188,7 @@ set_location_assignment PIN_E25 -to third_digit
 set_location_assignment PIN_E24 -to fourth_digit
 set_location_assignment PIN_H21 -to fifth_digit
 set_location_assignment PIN_G16 -to debug_mode
+set_global_assignment -name VERILOG_FILE ../arduino_driver/arduino_driver.v
 set_global_assignment -name VERILOG_FILE ../reset_controller/reset_controller.v
 set_global_assignment -name VERILOG_FILE ../debug_clock_divider/debug_clock_divider.v
 set_global_assignment -name VERILOG_FILE ../one_bit_multiplexer/one_bit_multiplexer.v
@@ -222,4 +223,5 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name VERILOG_FILE ../BIOS.v
 set_global_assignment -name VERILOG_FILE ../instructions_multiplexer.v
+set_global_assignment -name VERILOG_FILE quadrupleMux.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

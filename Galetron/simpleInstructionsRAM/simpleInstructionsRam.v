@@ -9,7 +9,7 @@ module simpleInstructionsRam(read_clock, clock, address, i_ram_writing_address, 
 
 
 	 // Declare the RAM variable
-	 reg [31:0] instructionsRAM[1500:0];
+	 reg [31:0] instructionsRAM[1700:0];
 
 	 // Variable to hold the registered read address
 	 reg [11:0] address_register;

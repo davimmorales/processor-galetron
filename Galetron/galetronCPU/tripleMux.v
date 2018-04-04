@@ -8,6 +8,7 @@ module tripleMux (selection, inputA, inputB, inputC, tripleMuxOutput);
       2'b00: tripleMuxOutput = inputA;
       2'b01: tripleMuxOutput = inputB;
       2'b10: tripleMuxOutput = inputC;
+		
     endcase
   end
 

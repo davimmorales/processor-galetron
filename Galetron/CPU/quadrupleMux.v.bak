@@ -1,0 +1,16 @@
+module quadrupleMux (selection, inputA, inputB, inputC, quadrupleMuxOutput);
+  input [1:0] selection;
+  input [31:0] inputA, inputB, inputC;
+  output reg [31:0] quadrupleMuxOutput;
+
+  always @ ( * ) begin
+    case (selection[1:0])
+      2'b00: quadrupleMuxOutput = inputA;
+      2'b01: quadrupleMuxOutput = inputB;
+      2'b10: quadrupleMuxOutput = inputC;
+		
+    endcase
+  end
+
+
+endmodule // tripleMux

@@ -1,0 +1,54 @@
+Quartus Prime Archive log --	/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/galetron-processor.qarlog
+
+Archive:	/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/galetron-processor.qar
+Date:		Thu Mar 15 22:09:51 2018
+Quartus Prime		15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/morales/Documentos/Git/processor-galetron/Galetron/ALU/ALU.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/CPU.bdf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/CPU.qpf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/CPU.qsf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/CPU_assignment_defaults.qdf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/DeBounce_v.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/Waveform.vwf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/clockMultiplexer.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/frequencyDivider.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/outputController.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/output_files/Chain1.cdf
+/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/resetMultiplexer.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/Extender/Extender.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/Output/BCD.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/Output/Output.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/Output/finalOutput.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/Output/sevenSegmentsDisplay.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/PC/PC.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/controlUnit/controlUnit.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/dataOutput/dataOutput.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/dataRAM/dataRAM.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/debug_clock_divider/debug_clock_divider.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/multiplexer.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/qFlipflop.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/one_bit_multiplexer/one_bit_multiplexer.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/pc_filter/pc_filter.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/read_frequency_divider/read_frequency_divider.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/registerFile/registerFile.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/reset_controller/reset_controller.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/simpleInstructionsRAM/simpleInstructionsRam.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v
+/home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v
+	======= Total: 37 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Mar 15 22:17:27 2018
+Source archive file:	/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/galetron-processor.qar
+Archive was extracted into	/home/morales/Documentos/Git/galetronis/
+		 - successfully.
