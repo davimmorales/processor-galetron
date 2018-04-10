@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Wed Apr  4 22:08:03 2018
+Mon Apr  9 22:29:54 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr  4 22:08:02 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr  9 22:29:54 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
@@ -1089,7 +1089,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:25     ;
+; Top            ; 00:00:26     ;
 +----------------+--------------+
 
 
@@ -1099,7 +1099,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Wed Apr  4 22:07:20 2018
+    Info: Processing started: Mon Apr  9 22:28:57 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/arduino_driver/arduino_driver.v
@@ -1412,6 +1412,10 @@ Info (12133): Instantiated megafunction "harddrive:inst36|altsyncram:HD_rtl_0" w
     Info (12134): Parameter "INIT_FILE" = "db/CPU.ram0_harddrive_41193179.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9s81.tdf
     Info (12023): Found entity 1: altsyncram_9s81 File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_9s81.tdf Line: 34
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
     Info (12023): Found entity 1: decode_jsa File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_jsa.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c8a.tdf
@@ -1726,10 +1730,10 @@ Info (21057): Implemented 7823 device resources after synthesis - the final reso
     Info (21061): Implemented 7533 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 280 warnings
-    Info: Peak virtual memory: 1390 megabytes
-    Info: Processing ended: Wed Apr  4 22:08:03 2018
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:01:00
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 284 warnings
+    Info: Peak virtual memory: 1396 megabytes
+    Info: Processing ended: Mon Apr  9 22:29:54 2018
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:17
 
 
