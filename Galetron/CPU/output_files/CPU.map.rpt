@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU
-Mon Apr  9 22:29:54 2018
+Sat May  5 17:04:38 2018
 Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
 
 
@@ -28,21 +28,22 @@ Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
  20. Source assignments for simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_tne1:auto_generated
  21. Source assignments for dataRAM:inst29|altsyncram:RAM_rtl_0|altsyncram_43d1:auto_generated
  22. Parameter Settings for User Entity Instance: instruction_source_selector:inst19
- 23. Parameter Settings for User Entity Instance: write_frequency_divider:inst26
+ 23. Parameter Settings for User Entity Instance: write_frequency_divider:inst33
  24. Parameter Settings for User Entity Instance: DeBounce:inst5
- 25. Parameter Settings for User Entity Instance: tucanos_watchdog:inst16
- 26. Parameter Settings for User Entity Instance: arduino_driver:inst27
- 27. Parameter Settings for Inferred Entity Instance: harddrive:inst36|altsyncram:HD_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0
- 29. Parameter Settings for Inferred Entity Instance: dataRAM:inst29|altsyncram:RAM_rtl_0
- 30. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Div0
- 31. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_mult:Mult0
- 32. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Mod0
- 33. altsyncram Parameter Settings by Entity Instance
- 34. lpm_mult Parameter Settings by Entity Instance
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+ 25. Parameter Settings for User Entity Instance: read_frequency_divider:inst31
+ 26. Parameter Settings for User Entity Instance: tucanos_watchdog:inst16
+ 27. Parameter Settings for User Entity Instance: arduino_driver:inst27
+ 28. Parameter Settings for Inferred Entity Instance: harddrive:inst36|altsyncram:HD_rtl_0
+ 29. Parameter Settings for Inferred Entity Instance: simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: dataRAM:inst29|altsyncram:RAM_rtl_0
+ 31. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Div0
+ 32. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_mult:Mult0
+ 33. Parameter Settings for Inferred Entity Instance: ALU:inst|lpm_divide:Mod0
+ 34. altsyncram Parameter Settings by Entity Instance
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -69,15 +70,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr  9 22:29:54 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat May  5 17:04:37 2018       ;
 ; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
 ; Revision Name                      ; CPU                                         ;
 ; Top-level Entity Name              ; CPU                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7,478                                       ;
-;     Total combinational functions  ; 6,475                                       ;
-;     Dedicated logic registers      ; 1,194                                       ;
-; Total registers                    ; 1194                                        ;
+; Total logic elements               ; 7,490                                       ;
+;     Total combinational functions  ; 6,487                                       ;
+;     Dedicated logic registers      ; 1,203                                       ;
+; Total registers                    ; 1203                                        ;
 ; Total pins                         ; 156                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 449,696                                     ;
@@ -194,6 +195,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../pc_filter/pc_filter.v                             ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/pc_filter/pc_filter.v                             ;         ;
 ; ../tucanos_watchdog/tucanos_watchdog.v               ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v               ;         ;
 ; ../write_frequency_divider/write_frequency_divider.v ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/write_frequency_divider/write_frequency_divider.v ;         ;
+; ../read_frequency_divider/read_frequency_divider.v   ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/read_frequency_divider/read_frequency_divider.v   ;         ;
 ; ../instruction_source_selector.v                     ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/instruction_source_selector.v                     ;         ;
 ; ../harddrive/harddrive.v                             ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/harddrive/harddrive.v                             ;         ;
 ; ../Output/finalOutput.v                              ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/Output/finalOutput.v                              ;         ;
@@ -217,15 +219,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; ../BIOS.v                                            ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/BIOS.v                                            ;         ;
 ; ../instructions_multiplexer.v                        ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/instructions_multiplexer.v                        ;         ;
 ; quadrupleMux.v                                       ; yes             ; User Verilog HDL File                                 ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/quadrupleMux.v                                ;         ;
-; altsyncram.tdf                                       ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
-; stratix_ram_block.inc                                ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
-; lpm_mux.inc                                          ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
-; lpm_decode.inc                                       ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
-; aglobal151.inc                                       ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/aglobal151.inc                              ;         ;
-; a_rdenreg.inc                                        ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
-; altrom.inc                                           ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
-; altram.inc                                           ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altram.inc                                  ;         ;
-; altdpram.inc                                         ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
+; altsyncram.tdf                                       ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf         ;         ;
+; stratix_ram_block.inc                                ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/stratix_ram_block.inc  ;         ;
+; lpm_mux.inc                                          ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mux.inc            ;         ;
+; lpm_decode.inc                                       ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/lpm_decode.inc         ;         ;
+; aglobal151.inc                                       ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/aglobal151.inc         ;         ;
+; a_rdenreg.inc                                        ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/a_rdenreg.inc          ;         ;
+; altrom.inc                                           ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/altrom.inc             ;         ;
+; altram.inc                                           ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/altram.inc             ;         ;
+; altdpram.inc                                         ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/altdpram.inc           ;         ;
 ; db/altsyncram_9s81.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_9s81.tdf                        ;         ;
 ; db/CPU.ram0_harddrive_41193179.hdl.mif               ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif        ;         ;
 ; db/decode_jsa.tdf                                    ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_jsa.tdf                             ;         ;
@@ -233,19 +235,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/mux_gob.tdf                                       ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/mux_gob.tdf                                ;         ;
 ; db/altsyncram_tne1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_tne1.tdf                        ;         ;
 ; db/altsyncram_43d1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_43d1.tdf                        ;         ;
-; lpm_divide.tdf                                       ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_divide.tdf                              ;         ;
-; abs_divider.inc                                      ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/abs_divider.inc                             ;         ;
-; sign_div_unsign.inc                                  ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/sign_div_unsign.inc                         ;         ;
+; lpm_divide.tdf                                       ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/lpm_divide.tdf         ;         ;
+; abs_divider.inc                                      ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/abs_divider.inc        ;         ;
+; sign_div_unsign.inc                                  ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/sign_div_unsign.inc    ;         ;
 ; db/lpm_divide_hkm.tdf                                ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/lpm_divide_hkm.tdf                         ;         ;
 ; db/sign_div_unsign_9nh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/sign_div_unsign_9nh.tdf                    ;         ;
 ; db/alt_u_div_6af.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/alt_u_div_6af.tdf                          ;         ;
 ; db/add_sub_7pc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/add_sub_7pc.tdf                            ;         ;
 ; db/add_sub_8pc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/add_sub_8pc.tdf                            ;         ;
-; lpm_mult.tdf                                         ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mult.tdf                                ;         ;
-; lpm_add_sub.inc                                      ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/lpm_add_sub.inc                             ;         ;
-; multcore.inc                                         ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/multcore.inc                                ;         ;
-; bypassff.inc                                         ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/bypassff.inc                                ;         ;
-; altshift.inc                                         ; yes             ; Megafunction                                          ; /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altshift.inc                                ;         ;
+; lpm_mult.tdf                                         ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/lpm_mult.tdf           ;         ;
+; lpm_add_sub.inc                                      ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/lpm_add_sub.inc        ;         ;
+; multcore.inc                                         ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/multcore.inc           ;         ;
+; bypassff.inc                                         ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/bypassff.inc           ;         ;
+; altshift.inc                                         ; yes             ; Megafunction                                          ; /home/morales/Documentos/Programas/altera_lite/15.1/quartus/libraries/megafunctions/altshift.inc           ;         ;
 ; db/mult_7dt.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/mult_7dt.tdf                               ;         ;
 ; db/lpm_divide_kcm.tdf                                ; yes             ; Auto-Generated Megafunction                           ; /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/lpm_divide_kcm.tdf                         ;         ;
 +------------------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+---------+
@@ -256,20 +258,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------------------------------+
 ; Resource                                    ; Usage                         ;
 +---------------------------------------------+-------------------------------+
-; Estimated Total logic elements              ; 7,478                         ;
+; Estimated Total logic elements              ; 7,490                         ;
 ;                                             ;                               ;
-; Total combinational functions               ; 6475                          ;
+; Total combinational functions               ; 6487                          ;
 ; Logic element usage by number of LUT inputs ;                               ;
-;     -- 4 input functions                    ; 4424                          ;
-;     -- 3 input functions                    ; 1742                          ;
-;     -- <=2 input functions                  ; 309                           ;
+;     -- 4 input functions                    ; 4427                          ;
+;     -- 3 input functions                    ; 1743                          ;
+;     -- <=2 input functions                  ; 317                           ;
 ;                                             ;                               ;
 ; Logic elements by mode                      ;                               ;
-;     -- normal mode                          ; 5147                          ;
-;     -- arithmetic mode                      ; 1328                          ;
+;     -- normal mode                          ; 5152                          ;
+;     -- arithmetic mode                      ; 1335                          ;
 ;                                             ;                               ;
-; Total registers                             ; 1194                          ;
-;     -- Dedicated logic registers            ; 1194                          ;
+; Total registers                             ; 1203                          ;
+;     -- Dedicated logic registers            ; 1203                          ;
 ;     -- I/O registers                        ; 0                             ;
 ;                                             ;                               ;
 ; I/O pins                                    ; 156                           ;
@@ -279,7 +281,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                                             ;                               ;
 ; Maximum fan-out node                        ; clockMultiplexer:inst13|clock ;
 ; Maximum fan-out                             ; 1136                          ;
-; Total fan-out                               ; 29607                         ;
+; Total fan-out                               ; 29663                         ;
 ; Average fan-out                             ; 3.65                          ;
 +---------------------------------------------+-------------------------------+
 
@@ -289,12 +291,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                      ; 6475 (0)          ; 1194 (0)     ; 449696      ; 6            ; 0       ; 3         ; 156  ; 0            ; |CPU                                                                                                                                ; work         ;
-;    |ALU:inst|                             ; 3051 (825)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
-;       |lpm_divide:Div0|                   ; 1114 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
-;          |lpm_divide_hkm:auto_generated|  ; 1114 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
-;             |sign_div_unsign_9nh:divider| ; 1114 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
-;                |alt_u_div_6af:divider|    ; 1114 (1113)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
+; |CPU                                      ; 6487 (0)          ; 1203 (0)     ; 449696      ; 6            ; 0       ; 3         ; 156  ; 0            ; |CPU                                                                                                                                ; work         ;
+;    |ALU:inst|                             ; 3051 (827)        ; 0 (0)        ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |CPU|ALU:inst                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                   ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_hkm:auto_generated|  ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_9nh:divider| ; 1112 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider                                             ; work         ;
+;                |alt_u_div_6af:divider|    ; 1112 (1111)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider                       ; work         ;
 ;                   |add_sub_8pc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Div0|lpm_divide_hkm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; work         ;
 ;       |lpm_divide:Mod0|                   ; 1084 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Mod0                                                                                                       ; work         ;
 ;          |lpm_divide_kcm:auto_generated|  ; 1084 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|ALU:inst|lpm_divide:Mod0|lpm_divide_kcm:auto_generated                                                                         ; work         ;
@@ -337,6 +339,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |pc_filter:inst2|                      ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|pc_filter:inst2                                                                                                                ; work         ;
 ;    |qFlipflop:inst3|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst3                                                                                                                ; work         ;
 ;    |qFlipflop:inst4|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|qFlipflop:inst4                                                                                                                ; work         ;
+;    |read_frequency_divider:inst31|        ; 12 (12)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|read_frequency_divider:inst31                                                                                                  ; work         ;
 ;    |registerFile:inst23|                  ; 1419 (1419)       ; 1024 (1024)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|registerFile:inst23                                                                                                            ; work         ;
 ;    |reset_controller:inst10|              ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|reset_controller:inst10                                                                                                        ; work         ;
 ;    |simpleInstructionsRam:inst11|         ; 0 (0)             ; 32 (32)      ; 54432       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11                                                                                                   ; work         ;
@@ -344,7 +347,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |altsyncram_tne1:auto_generated| ; 0 (0)             ; 0 (0)        ; 54432       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|simpleInstructionsRam:inst11|altsyncram:instructionsRAM_rtl_0|altsyncram_tne1:auto_generated                                   ; work         ;
 ;    |tripleMux:inst8|                      ; 98 (98)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tripleMux:inst8                                                                                                                ; work         ;
 ;    |tucanos_watchdog:inst16|              ; 14 (14)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|tucanos_watchdog:inst16                                                                                                        ; work         ;
-;    |write_frequency_divider:inst26|       ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|write_frequency_divider:inst26                                                                                                 ; work         ;
+;    |write_frequency_divider:inst33|       ; 14 (14)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU|write_frequency_divider:inst33                                                                                                 ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -588,8 +591,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1194  ;
-; Number of registers using Synchronous Clear  ; 37    ;
+; Total registers                              ; 1203  ;
+; Number of registers using Synchronous Clear  ; 45    ;
 ; Number of registers using Synchronous Load   ; 21    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -614,33 +617,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |CPU|registerFile:inst23|RF[28][19]                 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][11]                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][1]                  ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |CPU|tucanos_watchdog:inst16|COUNTER[0]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][9]                  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |CPU|registerFile:inst23|RF[28][6]                  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |CPU|tucanos_watchdog:inst16|COUNTER[3]             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |CPU|tucanos_watchdog:inst16|STATE                  ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst25|binary[27]             ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |CPU|outputController:inst25|binary[30]             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|PC:inst24|state                                ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux0                           ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux4                           ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux30                          ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux17                          ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[23] ;
-; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[20] ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[5]  ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[0]  ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux6                           ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux15                          ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux3                           ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux25                          ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |CPU|tripleMux:inst8|Mux20                          ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 22 LEs               ; 11 LEs                 ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[22] ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[13] ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[4]  ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |CPU|multiplexer:writeDataSelectorMux|muxOutput[2]  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|Extender:inst14|Mux5                           ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CPU|tucanos_watchdog:inst16|STATE                  ;
 ; 5:1                ; 11 bits   ; 33 LEs        ; 33 LEs               ; 0 LEs                  ; No         ; |CPU|PC:inst24|programCounter                       ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux0                       ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux1                       ;
 ; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CPU|registerFile:inst23|Mux62                      ;
-; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[22] ;
-; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[1]  ;
-; 65:1               ; 16 bits   ; 688 LEs       ; 64 LEs               ; 624 LEs                ; No         ; |CPU|outputController:inst25|Selector14             ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux19                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux8                                  ;
-; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux27                                 ;
+; 33:1               ; 11 bits   ; 242 LEs       ; 242 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[30] ;
+; 33:1               ; 21 bits   ; 462 LEs       ; 462 LEs              ; 0 LEs                  ; No         ; |CPU|multiplexer:immediateSelectorMux|muxOutput[8]  ;
+; 65:1               ; 16 bits   ; 688 LEs       ; 64 LEs               ; 624 LEs                ; No         ; |CPU|outputController:inst25|Selector3              ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux23                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |CPU|ALU:inst|Mux9                                  ;
+; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux24                                 ;
 ; 19:1               ; 4 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|ALU:inst|Mux7                                  ;
-; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux29                                 ;
+; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux28                                 ;
 ; 20:1               ; 2 bits    ; 26 LEs        ; 24 LEs               ; 2 LEs                  ; No         ; |CPU|ALU:inst|Mux3                                  ;
 ; 21:1               ; 2 bits    ; 28 LEs        ; 22 LEs               ; 6 LEs                  ; No         ; |CPU|ALU:inst|Mux31                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
@@ -684,7 +687,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: write_frequency_divider:inst26 ;
+; Parameter Settings for User Entity Instance: write_frequency_divider:inst33 ;
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
@@ -700,6 +703,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------+
 ; N              ; 11    ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: read_frequency_divider:inst31 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; COUNTER_WIDTH  ; 8     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1056,31 +1069,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 156                         ;
-; cycloneiii_ff         ; 1194                        ;
+; cycloneiii_ff         ; 1203                        ;
 ;     ENA               ; 1042                        ;
 ;     ENA SCLR          ; 15                          ;
 ;     ENA SCLR SLD      ; 1                           ;
 ;     ENA SLD           ; 8                           ;
-;     SCLR              ; 10                          ;
+;     SCLR              ; 18                          ;
 ;     SCLR SLD          ; 11                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 106                         ;
-; cycloneiii_lcell_comb ; 6532                        ;
-;     arith             ; 1328                        ;
-;         2 data inputs ; 138                         ;
+;     plain             ; 107                         ;
+; cycloneiii_lcell_comb ; 6544                        ;
+;     arith             ; 1335                        ;
+;         2 data inputs ; 145                         ;
 ;         3 data inputs ; 1190                        ;
-;     normal            ; 5204                        ;
+;     normal            ; 5209                        ;
 ;         0 data inputs ; 61                          ;
-;         1 data inputs ; 63                          ;
+;         1 data inputs ; 64                          ;
 ;         2 data inputs ; 104                         ;
-;         3 data inputs ; 552                         ;
-;         4 data inputs ; 4424                        ;
+;         3 data inputs ; 553                         ;
+;         4 data inputs ; 4427                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 135.50                      ;
-; Average LUT depth     ; 83.89                       ;
+; Max LUT depth         ; 136.50                      ;
+; Average LUT depth     ; 84.14                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1089,7 +1102,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:26     ;
+; Top            ; 00:00:25     ;
 +----------------+--------------+
 
 
@@ -1099,7 +1112,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
-    Info: Processing started: Mon Apr  9 22:28:57 2018
+    Info: Processing started: Sat May  5 17:03:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /home/morales/Documentos/Git/processor-galetron/Galetron/arduino_driver/arduino_driver.v
@@ -1221,7 +1234,7 @@ Info (12128): Elaborating entity "Extender" for hierarchy "Extender:inst14"
 Info (12128): Elaborating entity "instructions_multiplexer" for hierarchy "instructions_multiplexer:inst22"
 Info (12128): Elaborating entity "instruction_source_selector" for hierarchy "instruction_source_selector:inst19"
 Info (12128): Elaborating entity "clockMultiplexer" for hierarchy "clockMultiplexer:inst13"
-Info (12128): Elaborating entity "write_frequency_divider" for hierarchy "write_frequency_divider:inst26"
+Info (12128): Elaborating entity "write_frequency_divider" for hierarchy "write_frequency_divider:inst33"
 Info (12128): Elaborating entity "DeBounce" for hierarchy "DeBounce:inst5"
 Warning (10230): Verilog HDL assignment warning at DeBounce_v.v(54): truncated value with size 32 to match size of target (11) File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/DeBounce_v.v Line: 54
 Info (12128): Elaborating entity "BIOS" for hierarchy "BIOS:inst6"
@@ -1312,6 +1325,7 @@ Info (10041): Inferred latch for "tripleMuxOutput[29]" at tripleMux.v(7) File: /
 Info (10041): Inferred latch for "tripleMuxOutput[30]" at tripleMux.v(7) File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
 Info (10041): Inferred latch for "tripleMuxOutput[31]" at tripleMux.v(7) File: /home/morales/Documentos/Git/processor-galetron/Galetron/galetronCPU/tripleMux.v Line: 7
 Info (12128): Elaborating entity "dataRAM" for hierarchy "dataRAM:inst29"
+Info (12128): Elaborating entity "read_frequency_divider" for hierarchy "read_frequency_divider:inst31"
 Info (12128): Elaborating entity "harddrive" for hierarchy "harddrive:inst36"
 Info (12128): Elaborating entity "tucanos_watchdog" for hierarchy "tucanos_watchdog:inst16"
 Info (10264): Verilog HDL Case Statement information at tucanos_watchdog.v(84): all case item expressions in this case statement are onehot File: /home/morales/Documentos/Git/processor-galetron/Galetron/tucanos_watchdog/tucanos_watchdog.v Line: 84
@@ -1412,10 +1426,6 @@ Info (12133): Instantiated megafunction "harddrive:inst36|altsyncram:HD_rtl_0" w
     Info (12134): Parameter "INIT_FILE" = "db/CPU.ram0_harddrive_41193179.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9s81.tdf
     Info (12023): Found entity 1: altsyncram_9s81 File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/altsyncram_9s81.tdf Line: 34
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/CPU.ram0_harddrive_41193179.hdl.mif" contains "don't care" values -- overwriting them with 0s File: /home/morales/altera_lite/15.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
     Info (12023): Found entity 1: decode_jsa File: /home/morales/Documentos/Git/processor-galetron/Galetron/CPU/db/decode_jsa.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_c8a.tdf
@@ -1724,16 +1734,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 7823 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 7835 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 28 input pins
     Info (21059): Implemented 128 output pins
-    Info (21061): Implemented 7533 logic cells
+    Info (21061): Implemented 7545 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 284 warnings
-    Info: Peak virtual memory: 1396 megabytes
-    Info: Processing ended: Mon Apr  9 22:29:54 2018
-    Info: Elapsed time: 00:00:57
-    Info: Total CPU time (on all processors): 00:01:17
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 280 warnings
+    Info: Peak virtual memory: 1485 megabytes
+    Info: Processing ended: Sat May  5 17:04:38 2018
+    Info: Elapsed time: 00:00:42
+    Info: Total CPU time (on all processors): 00:01:03
 
 

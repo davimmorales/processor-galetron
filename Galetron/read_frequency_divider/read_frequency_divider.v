@@ -5,7 +5,7 @@ IN_50Mhz    ,   // Input 50Mhz Clock (Input)
 OUT_1_5MHz      // Output 1.5625MHz Clock (Output)
 );
 
-parameter COUNTER_WIDTH = 7;
+parameter COUNTER_WIDTH = 8;
 
 //--------------Input Ports----------------------------
 input IN_50Mhz;
@@ -15,7 +15,7 @@ output reg OUT_1_5MHz = 1'b0;
 
 //--------------Internal variables---------------------
 reg         [COUNTER_WIDTH-1:0] COUNTER = {COUNTER_WIDTH{1'b0}};
-localparam  [COUNTER_WIDTH-1:0] MAXVALUE = 7'd127;
+localparam  [COUNTER_WIDTH-1:0] MAXVALUE = 8'd255;
 
 //-------------Processing Starts Here------------------
 

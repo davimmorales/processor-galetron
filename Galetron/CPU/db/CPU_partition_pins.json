@@ -420,10 +420,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "machineClock",
-					"strict" : false
-				},
-				{
 					"name" : "switches[17]",
 					"strict" : false
 				},
@@ -493,6 +489,10 @@
 				},
 				{
 					"name" : "switches[6]",
+					"strict" : false
+				},
+				{
+					"name" : "machineClock",
 					"strict" : false
 				},
 				{

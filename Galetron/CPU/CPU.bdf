@@ -86,6 +86,7 @@ agreement for further details.
 		(line (pt 229 12)(pt 233 8))
 	)
 	(text "VCC" (rect 248 7 272 18)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -1992 536 -1904 568))
 )
 (pin
 	(output)
@@ -424,6 +425,7 @@ agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect -733 488 -645 520))
 )
 (symbol
 	(rect 928 232 1056 344)
@@ -1674,34 +1676,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -1216 656 -1016 736)
-	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
-	(text "inst26" (rect 8 64 64 76)(font "Liberation Sans" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
-		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 200 32)
-		(output)
-		(text "OUT_48KHz" (rect 0 0 84 12)(font "Arial" ))
-		(text "OUT_48KHz" (rect 108 27 192 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32))
-	)
-	(parameter
-		"COUNTER_WIDTH"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 184 64))
-	)
-	(annotation_block (parameter)(rect -1016 616 -712 656))
-)
-(symbol
 	(rect -1504 448 -1104 592)
 	(text "arduino_driver" (rect 5 0 137 12)(font "Arial" ))
 	(text "inst27" (rect 8 128 64 140)(font "Liberation Sans" ))
@@ -1987,6 +1961,62 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 264 352))
 	)
+)
+(symbol
+	(rect -1008 920 -808 1000)
+	(text "read_frequency_divider" (rect 5 0 212 12)(font "Arial" ))
+	(text "inst31" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
+		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "OUT_1_5MHz" (rect 0 0 94 12)(font "Arial" ))
+		(text "OUT_1_5MHz" (rect 100 27 194 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(parameter
+		"COUNTER_WIDTH"
+		"8"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+	(annotation_block (parameter)(rect -808 880 -504 920))
+)
+(symbol
+	(rect -1216 656 -1016 736)
+	(text "write_frequency_divider" (rect 5 0 222 12)(font "Arial" ))
+	(text "inst33" (rect 8 64 64 76)(font "Liberation Sans" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "IN_50Mhz" (rect 0 0 75 12)(font "Arial" ))
+		(text "IN_50Mhz" (rect 21 27 96 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "OUT_48KHz" (rect 0 0 84 12)(font "Arial" ))
+		(text "OUT_48KHz" (rect 108 27 192 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(parameter
+		"COUNTER_WIDTH"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 184 64))
+	)
+	(annotation_block (parameter)(rect -1016 616 -712 656))
 )
 (connector
 	(text "clock" (rect 882 -24 929 -12)(font "Liberation Sans" ))
@@ -3267,10 +3297,6 @@ agreement for further details.
 	(pt 1264 32)
 )
 (connector
-	(pt -1232 952)
-	(pt -152 952)
-)
-(connector
 	(text "flag_write_hd" (rect 1264 32 1386 44)(font "Liberation Sans" ))
 	(pt 1360 48)
 	(pt 1264 48)
@@ -3352,6 +3378,14 @@ agreement for further details.
 	(pt -1528 560)
 	(pt -1704 560)
 	(bus)
+)
+(connector
+	(pt -1232 952)
+	(pt -1008 952)
+)
+(connector
+	(pt -808 952)
+	(pt -152 952)
 )
 (junction (pt -272 456))
 (junction (pt 1224 128))
